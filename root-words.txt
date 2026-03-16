@@ -1,84 +1,100 @@
-# root-words.txt
+# root-words.txt — Upper Level SSAT
 # Format: root | origin | meaning | word1,word2,word3,word4,word5 | Example sentence.
-# Lines starting with # are comments and are ignored by the app.
+# Lines starting with # are comments
 
-bene- | Latin | good, well | benevolent,benefactor,benign,benefit,benediction | A benefactor does good things to help others.
-mal- | Latin | bad, evil | malevolent,malice,malign,malfunction,malodorous | Malodorous literally means 'bad-smelling'.
-chron- | Greek | time | chronology,synchronize,anachronism,chronic,chronicle | A chronology lists events in order of time.
-port- | Latin | carry | portable,transport,import,export,portfolio | Portable means you can carry it around with you.
-scrib-/script- | Latin | write | describe,prescribe,manuscript,inscription,subscribe | A manuscript is something written by hand.
-vis-/vid- | Latin | see | visible,vision,video,evidence,supervise | Evidence is what you see that proves something is true.
-aud- | Latin | hear | audible,audience,auditorium,audio,inaudible | An audience is the group that hears a performance.
-dict- | Latin | say, speak | dictate,predict,dictionary,contradict,verdict | To predict is to say what will happen before it does.
-spec-/spect- | Latin | look, see | spectator,inspect,spectacular,suspect,circumspect | A spectator is someone who looks at an event happening.
-voc-/vok- | Latin | voice, call | vocal,invoke,vocabulary,advocate,provoke | Your vocabulary is the collection of words you can call on.
-gen- | Greek/Latin | birth, origin, kind | generate,genetics,generous,genuine,generation | Your generation is the group of people born around your time.
-path- | Greek | feeling, disease | sympathy,empathy,pathetic,apathy,telepathy | Empathy means you feel what another person is feeling.
-phil- | Greek | love | philosophy,philanthropy,bibliophile,philharmonic,Anglophile | A bibliophile is a person who loves books.
-loqu-/loc- | Latin | speak | loquacious,eloquent,soliloquy,elocution,colloquial | Loquacious people speak a lot -- maybe too much!
-mut- | Latin | change | mutate,immutable,mutual,mutation,permutation | Immutable means something that cannot change -- ever.
-greg- | Latin | flock, group | gregarious,congregation,aggregate,segregate,egregious | A gregarious person loves being in a group.
-viv-/vit- | Latin | life, alive | vivid,vivacious,revive,vital,vitamin | Vital means necessary for life -- from the Latin for life.
-ten-/tain- | Latin | hold, keep | tenacious,retain,contain,detention,sustain | Someone tenacious holds on to their goal no matter what.
-circum- | Latin | around | circumspect,circumference,circumstance,circumnavigate,circuit | Circumference is the distance around a circle.
-ab- | Latin | away from, off | aberrant,absent,abduct,abnormal,abstract | Aberrant behavior goes away from what is considered normal.
-uni- | Latin | one | uniform,unique,unite,unicorn,unanimous | Unanimous means everyone is united as one voice.
-bi-/duo- | Latin | two | bicycle,bilingual,binary,duplicate,duet | A bilingual person speaks two languages.
-tri- | Latin/Greek | three | triangle,triple,trilogy,tripod,trinity | A trilogy is a set of three books or films.
-multi-/poly- | Latin/Greek | many | multiply,multitude,polygon,polyglot,polyphony | A polyglot speaks many languages.
-omni- | Latin | all, every | omnivore,omnipotent,omniscient,omnipresent,omnibus | An omniscient narrator knows everything in the story.
-semi- | Latin | half | semicircle,semifinal,semiconductor,semicolon,semitone | A semicircle is exactly half of a circle.
-micro- | Greek | small | microscope,microphone,microbe,microchip,microcosm | A microbe is a living thing too small to see without a microscope.
-macro-/mega- | Greek | large, great | macroscopic,megaphone,megalopolis,megabyte,macroeconomics | A megalopolis is an extremely large city or cluster of cities.
-ped-/pod- | Latin/Greek | foot | pedestrian,pedal,podium,tripod,expedition | A pedestrian travels by foot.
-man-/manu- | Latin | hand | manual,manufacture,manuscript,manipulate,maneuver | Manufacture originally meant 'to make by hand'.
-duc-/duct- | Latin | lead | conduct,deduce,educate,introduce,aqueduct | To educate means to lead someone toward knowledge.
-vert-/vers- | Latin | turn | convert,reverse,divert,versatile,introvert | An introvert turns inward -- toward their own thoughts.
-mov-/mot-/mob- | Latin | move | motion,motivate,mobile,promote,remove | Motivation is the force that moves you to act.
-grad-/gress- | Latin | step, go | progress,gradual,graduate,regress,digress | Progress means stepping forward toward a goal.
-cur-/curs- | Latin | run | current,cursor,occur,concur,precursor | A precursor is something that runs ahead -- it comes before.
-miss-/mit- | Latin | send | mission,transmit,submit,dismiss,emit | To transmit means to send something across a distance.
-ven-/vent- | Latin | come | intervene,convention,advent,prevent,venture | To intervene means to come between two parties.
-cede-/cess- | Latin | go, yield | succeed,proceed,recede,concede,excess | To concede means to yield -- to give in and admit defeat.
-ante-/pre- | Latin | before | antecedent,preview,precede,anterior,predict | An antecedent is something that comes before something else.
-post- | Latin | after, behind | postpone,postscript,posterior,postwar,posthumous | A postscript (P.S.) is a note added after a letter is finished.
-re- | Latin | again, back | return,repeat,reconsider,rebuild,revive | To revive means to bring back to life -- to live again.
-neo-/nov- | Greek/Latin | new | neon,neologism,novel,renovate,novice | A neologism is a newly coined word or phrase.
-prim-/proto- | Latin/Greek | first | primary,primitive,prototype,protagonist,premier | A prototype is the first model made before the final version.
-sens-/sent- | Latin | feel, sense | sensitive,sensation,consent,resent,sentiment | Sentiment means a feeling or opinion -- from the heart.
-cred- | Latin | believe, trust | credible,incredible,credit,credulous,credentials | A credulous person believes things too easily.
-cogn-/gno- | Latin/Greek | know | recognize,cognitive,diagnosis,incognito,agnostic | To recognize means to know something again when you see it.
-sci- | Latin | know | science,conscience,conscious,omniscient,prescient | Your conscience is your inner knowledge of right and wrong.
-mem-/mnem- | Latin/Greek | memory | remember,memorial,memoir,amnesia,mnemonic | A mnemonic is a trick to help your memory -- like 'ROY G BIV' for rainbow colors.
-psych- | Greek | mind, soul | psychology,psychic,psychiatry,psyche,psychosis | Psychology is the study of the human mind and behavior.
-phob- | Greek | fear | phobia,claustrophobia,arachnophobia,xenophobia,acrophobia | Acrophobia is the fear of heights -- 'acro' means peak or high point.
-bio- | Greek | life | biology,biography,biodiversity,antibiotic,symbiosis | A biography is the story of a life written by another person.
-geo- | Greek | earth | geology,geography,geometry,geothermal,geocentric | Geography is the study of the Earth and its features.
-hydr- | Greek | water | hydrate,hydrogen,hydraulic,hydroelectric,dehydrate | To dehydrate means to remove water from something.
-therm- | Greek | heat | thermometer,thermal,thermostat,geothermal,hypothermia | A thermostat regulates heat to keep a room at the right temperature.
-lum-/luc-/lux- | Latin | light | illuminate,lucid,luminous,translucent,elucidate | Lucid means clear and easy to understand -- like a beam of light.
-sol- | Latin | sun, alone | solar,solitary,soliloquy,solstice,parasol | A solstice is when the sun reaches its highest or lowest point in the sky.
-terr- | Latin | earth, land | terrain,territory,terrarium,subterranean,extraterrestrial | Subterranean means below the ground -- under the earth.
-aqu- | Latin | water | aquatic,aquarium,aqueduct,aquifer,aquamarine | An aqueduct is a structure that carries water across a distance.
-astro-/aster- | Greek | star | astronomy,astronaut,asterisk,asteroid,astrology | An asterisk (*) is a small star-shaped symbol used in writing.
-in-/im-/ir-/il- | Latin | not, without | impossible,invisible,irrational,illegal,injustice | Irrational means not rational -- without clear reasoning.
-dis-/dif- | Latin | not, opposite, apart | disagree,disorder,dishonest,differ,disperse | To disperse means to spread apart -- the opposite of gathering together.
-contra-/anti- | Latin/Greek | against | contradict,antibiotic,contrary,antidote,anticipate | To contradict someone is to say something against what they said.
-de- | Latin | down, away, undo | decrease,descend,degrade,deflate,denounce | To deflate something is to take the air away -- to bring it down.
-ex-/e- | Latin | out, from | export,exclude,exhale,exit,expel | To exhale is to breathe out -- to push air out from your lungs.
-sub- | Latin | under, below | submarine,subway,submerge,subtract,substandard | A submarine travels under the water.
-super-/sur- | Latin | over, above, beyond | superior,superfluous,surpass,surplus,supernatural | Superfluous means more than what is needed -- going over and beyond.
-trans- | Latin | across, through | transport,transform,transmit,transparent,transcend | To transcend something means to go beyond its limits.
-inter- | Latin | between, among | interrupt,international,intervene,interact,intermediate | To intervene means to come between two people or events.
-intra-/intro- | Latin | within, inside | introvert,introspect,intravenous,intramural,intrinsic | An introvert looks inside themselves rather than outward.
-pop-/dem- | Latin/Greek | people | popular,democracy,population,epidemic,demographic | Democracy means government by the people.
-jur-/jud-/just- | Latin | law, right, judge | jury,judge,justice,justify,prejudice | Prejudice means pre-judging someone before you know the facts.
-struct- | Latin | build | structure,construct,destroy,instruction,infrastructure | Infrastructure is the built foundation that holds a society together.
-fac-/fic-/fect- | Latin | make, do | factory,fiction,affect,manufacture,beneficial | A factory is a place where things are made.
-pos-/pon- | Latin | put, place | position,compose,postpone,deposit,impose | To postpone means to put something off until a later time.
-magn-/max- | Latin | great, large | magnificent,magnify,maximum,magnanimous,magnitude | Magnanimous means great-spirited -- very generous and forgiving.
-min-/mini- | Latin | small, less | minimum,miniature,minor,minimize,minute | A miniature is a very small version of something.
-fort- | Latin | strong | fortify,fortress,effort,comfort,forte | Your forte is your strongest skill -- what you do best.
-ver- | Latin | true | verify,verdict,verity,verisimilitude,aver | To verify something is to check whether it is true.
-brev- | Latin | short | brief,brevity,abbreviate,breve,breviloquent | Brevity means shortness -- a brief speech has brevity.
-clar- | Latin | clear | clarify,clarity,declare,clarinet,clairvoyant | To clarify something is to make it clear and easy to understand.
+per- | Latin | through, thoroughly | persevere,permeate,pernicious,perspicacious,permeable | The toxin began to permeate the groundwater, spreading through every layer of soil.
+anim- | Latin | mind, soul, spirit | animate,unanimous,magnanimous,animosity,inanimate | Her magnanimous decision to forgive her rival earned her widespread admiration.
+cred- | Latin | believe, trust | credible,incredible,credulous,discredit,credentials | The witness's credible testimony convinced the jury of the defendant's innocence.
+fid- | Latin | faith, trust | fidelity,fiduciary,confident,perfidy,infidelity | The senator's perfidy was exposed when secret letters revealed his betrayal of allies.
+flect-/flex- | Latin | bend | reflect,deflect,flexible,inflection,genuflect | The diplomat's careful inflection suggested he was choosing every word with precision.
+flu-/flux- | Latin | flow | fluent,affluent,fluctuate,confluence,influx | The sudden influx of refugees overwhelmed the border town's limited resources.
+fort- | Latin | strong, strength | fortify,fortitude,fortress,comfort,forte | She displayed remarkable fortitude throughout the grueling months of chemotherapy.
+frag-/fract- | Latin | break | fragment,fracture,infraction,fragile,refractory | The refractory student refused every attempt by teachers to correct his behavior.
+fus- | Latin | pour, melt | fusion,diffuse,infuse,profuse,transfusion | The speaker used humor to diffuse the tension that had built up during the debate.
+grat- | Latin | pleasing, thankful | gratitude,gratify,ingrate,gratuity,congratulate | His ingrate response to the generous scholarship stunned everyone in the room.
+greg- | Latin | flock, group | congregate,segregate,aggregate,gregarious,egregious | The egregious error in the financial report caused the stock price to plummet.
+her-/hes- | Latin | stick, cling | adhere,coherent,inherent,hesitate,adhesive | A coherent argument depends on ideas that stick together in a logical sequence.
+junct-/jug- | Latin | join, connect | junction,conjunction,adjunct,injunction,conjugate | The court issued an injunction to prevent the company from dumping waste in the river.
+lev- | Latin | light, rise | levitate,elevate,alleviate,levity,lever | The nurse gave medication to alleviate the patient's severe post-surgical pain.
+liber- | Latin | free | liberate,liberal,liberty,deliberate,liberation | The underground railroad helped liberate thousands from the bondage of slavery.
+loc-/loco- | Latin | place | location,relocate,allocate,local,locomotive | The committee struggled to allocate funds fairly among the competing departments.
+log-/logue- | Greek | word, reason, study | logic,dialogue,prologue,monologue,catalogue | The prologue to the novel established a tone of dread that persisted throughout.
+luc-/lum- | Latin | light | lucid,translucent,elucidate,illuminate,luminous | The professor's lucid explanation finally made the complex theorem comprehensible.
+magn- | Latin | great, large | magnificent,magnify,magnitude,magnanimous,magnate | The magnitude of the disaster was not fully understood until satellite images arrived.
+mal- | Latin | bad, evil | malicious,malevolent,malady,malign,malpractice | The doctor was sued for malpractice after operating on the wrong patient.
+man-/manu- | Latin | hand | manual,manuscript,manufacture,mandate,manipulate | The archaeologist carefully unrolled the ancient manuscript to reveal its faded text.
+mit-/miss- | Latin | send | transmit,mission,emit,missile,remit | The radio tower was built to transmit signals across the entire mountain range.
+mor-/mort- | Latin | death | mortal,immortal,mortify,moribund,morbid | The once-thriving industry was now moribund, kept alive only by government subsidies.
+mut- | Latin | change | mutate,immutable,commute,permutation,transmute | The immutable laws of physics cannot be altered regardless of circumstance.
+narr- | Latin | tell, relate | narrate,narrative,narrator,narration,unreliable | The unreliable narrator made it impossible to distinguish truth from fabrication.
+neg- | Latin | deny, not | negate,negative,negligent,renege,negligible | The negligent contractor ignored safety codes, putting every worker at risk.
+nomen-/nomin- | Latin | name | nominate,nomenclature,nominal,denomination,ignominious | The scientist proposed a new nomenclature to classify the newly discovered species.
+nov-/neo- | Latin/Greek | new | novel,innovate,renovate,neologism,novice | The neologism spread rapidly through social media and entered common usage within months.
+omni- | Latin | all, every | omniscient,omnipotent,omnivore,omnipresent,omnibus | The omniscient narrator knew the secret thoughts of every character in the story.
+oper- | Latin | work | operate,cooperate,operation,opus,inoperable | The tumor was declared inoperable due to its proximity to critical brain structures.
+pac- | Latin | peace | pacify,pacific,pacifist,pacification,appease | The envoy worked tirelessly to pacify the warring factions along the border.
+path- | Greek | feeling, suffering, disease | empathy,sympathy,apathy,pathology,antipathy | The counselor's genuine empathy helped her clients feel understood and less alone.
+ped-/pod- | Latin/Greek | foot, child | pedestrian,pediatric,podium,expedite,impede | Bureaucratic red tape continued to impede the delivery of aid to flood victims.
+pel-/puls- | Latin | drive, push | compel,repel,expel,impulse,propulsion | The speaker's passionate argument compelled even skeptics to reconsider their views.
+pend-/pens- | Latin | hang, weigh, pay | pending,suspend,depend,compensate,expenditure | The verdict was left pending while the judge reviewed the newly submitted evidence.
+phil- | Greek | love, fond of | philosophy,philanthropy,bibliophile,philharmonic,anglophile | The billionaire's philanthropy funded hospitals and schools across three continents.
+phon- | Greek | sound, voice | phonics,symphony,microphone,cacophony,euphony | The cacophony of car alarms and shouting made it impossible to concentrate.
+plen-/plet- | Latin | full, fill | plenty,replenish,plentiful,complete,deplete | Overfishing had depleted the once-plentiful stocks of cod in the North Atlantic.
+pon-/pos- | Latin | put, place | postpone,compose,depose,impose,dispose | The senator moved to postpone the vote until all members had reviewed the bill.
+port- | Latin | carry | portable,transport,import,export,portfolio | The diplomat's portfolio contained sensitive documents that could not leave his sight.
+pot- | Latin | power, able | potential,potent,impotent,omnipotent,potentate | The dictator ruled as an absolute potentate, brooking no opposition whatsoever.
+prim- | Latin | first, chief | primary,primitive,primordial,primacy,premier | The primordial forests of the Amazon have existed largely unchanged for millennia.
+prob-/prov- | Latin | test, prove, good | probe,approve,reprove,probable,probity | His unquestioned probity made him the natural choice to oversee the audit.
+rect- | Latin | right, straight, rule | correct,rector,rectify,erect,rectangle | The engineer was called in to rectify the serious flaws in the building's foundation.
+rupt- | Latin | break, burst | rupture,interrupt,corrupt,abrupt,eruption | The volcanic eruption sent ash clouds drifting across the continent for weeks.
+sanct- | Latin | holy, sacred | sanctuary,sanctify,sanction,sanctimonious,sacrosanct | The treaty was considered sacrosanct by both nations and could not be renegotiated.
+scrib-/script- | Latin | write | describe,prescribe,scripture,manuscript,inscription | The doctor prescribed a low-sodium diet along with the new blood pressure medication.
+sect-/sec- | Latin | cut, divide | section,dissect,bisect,intersect,sector | The biology students were asked to carefully dissect the specimen and label its organs.
+sens-/sent- | Latin | feel, perceive | sensitive,sensation,consent,resent,sentiment | Her sentimental attachment to the old house made selling it extraordinarily difficult.
+sol- | Latin | alone, sun | solitary,soliloquy,solstice,desolate,isolate | The hamlet was utterly desolate in winter, abandoned by all but a handful of residents.
+solv-/solut- | Latin | loosen, free, answer | solve,dissolve,resolve,absolve,solution | The priest could not absolve him of guilt until he made full restitution to his victims.
+spec-/spect- | Latin | look, see | spectator,inspect,circumspect,perspective,retrospect | In retrospect, the decision to expand during a recession seemed obviously reckless.
+spir- | Latin | breathe, spirit | inspire,aspire,expire,conspire,respiration | The young athletes aspired to compete at the Olympic level before graduating college.
+string-/strict- | Latin | bind, tighten | strict,restrict,constrict,stringent,astringent | The new stringent regulations forced several smaller manufacturers out of business.
+struct- | Latin | build, arrange | structure,construct,instruct,obstruct,infrastructure | Fallen trees obstructed the mountain road for several days after the storm.
+tact-/tang- | Latin | touch | tactile,tangible,contact,intangible,intact | The artifact was recovered intact, showing no signs of damage despite its great age.
+ten-/tain- | Latin | hold, keep | tenacious,retain,sustain,detain,pertinacious | The tenacious researcher spent fifteen years pursuing the elusive cure for the disease.
+terr- | Latin | earth, land | territory,terrain,terrestrial,subterranean,extraterrestrial | The subterranean cavern stretched for miles beneath the seemingly ordinary hillside.
+tort-/tors- | Latin | twist, wind | torture,distort,contort,extort,tortuous | The tortuous mountain road switchbacked so sharply that drivers could travel only slowly.
+tract- | Latin | pull, drag | tractor,attract,distract,extract,intractable | The intractable conflict had resisted every diplomatic solution proposed over decades.
+turb- | Latin | disturb, confusion | turbulent,disturb,perturb,turbulence,imperturbable | The imperturbable pilot calmly guided the plane through severe turbulence over the Alps.
+ven-/vent- | Latin | come, arrive | convene,prevent,adventure,intervene,convention | The United Nations chose to intervene before the conflict escalated into full-scale war.
+ver- | Latin | true, genuine | verify,verdict,veracious,aver,verisimilitude | The novel's verisimilitude was so strong that many readers mistook it for a memoir.
+verb- | Latin | word | verbal,verbose,adverb,verbatim,proverb | The judge demanded a verbatim transcript of every word spoken during the hearing.
+viv-/vit- | Latin | life, alive | vivid,vital,revive,vivacious,vitamin | The vivacious host kept the party energized from the first toast to the final farewell.
+voc-/vok- | Latin | call, voice | vocal,invoke,revoke,evoke,provocative | The governor moved to revoke the contractor's license after the safety violations surfaced.
+vol- | Latin | wish, will | voluntary,benevolent,malevolent,volunteer,volition | She left the prestigious firm of her own volition, choosing purpose over salary.
+vulg- | Latin | common, crowd | vulgar,divulge,vulgarity,promulgate,expurgate | The whistleblower risked everything to divulge the corporation's fraudulent practices.
+acr-/acri- | Latin/Greek | sharp, bitter | acrid,acrimony,acrimonious,acrobat,exacerbate | The acrimonious divorce left both parties emotionally exhausted and financially drained.
+alter- | Latin | other, different | alternate,alternative,altercation,altruism,alter | The heated altercation in the lobby disrupted the entire office for the rest of the day.
+ambi- | Latin | both, around | ambiguous,ambivalent,ambidextrous,ambient,ambit | Her ambivalent response made it unclear whether she supported or opposed the proposal.
+ann-/enn- | Latin | year | annual,anniversary,perennial,millennium,annuity | The perennial debate over school funding resurfaced at every legislative session.
+anthrop- | Greek | human, mankind | anthropology,misanthrope,philanthropist,anthropomorphic,anthropocentric | The misanthrope retreated to his mountain cabin, preferring solitude to human company.
+apt-/ept- | Latin | fit, suited | apt,aptitude,adapt,adept,inept | His inept handling of the negotiation cost the company a multimillion-dollar contract.
+arch- | Greek | chief, first, rule | archetype,monarchy,anarchy,hierarchy,patriarch | The archetype of the tragic hero recurs in literature from ancient Greece to modern film.
+aud- | Latin | hear | audible,audience,auditorium,auditory,inaudible | The speaker's voice was barely audible above the noise of the crowded convention floor.
+ben-/bene- | Latin | good, well | benefit,benevolent,benefactor,benign,benediction | The anonymous benefactor donated two million dollars to rebuild the community library.
+bio- | Greek | life | biology,biography,biosphere,antibiotic,biodegradable | The biosphere reserve protects one of the last remaining habitats of the mountain gorilla.
+cap-/cept- | Latin | take, seize | capture,accept,intercept,concept,perception | The spy was trained to intercept coded transmissions without alerting the enemy.
+chron- | Greek | time | chronology,anachronism,synchronize,chronic,chronicle | The anachronism of a wristwatch in the medieval battle scene ruined the film's illusion.
+cogn-/gnos- | Latin/Greek | know | recognize,cognizant,diagnose,agnostic,incognito | The doctor was cognizant of the risks before recommending the experimental treatment.
+corp- | Latin | body | corpse,corporal,incorporate,corporation,corpulent | The small startup voted to incorporate so it could attract outside investment more easily.
+curs-/curr- | Latin | run | current,currency,recur,precursor,cursory | A cursory glance at the data was enough to reveal the fundamental flaw in the study.
+dem-/demo- | Greek | people | democracy,epidemic,demographic,demagogue,endemic | The demagogue exploited public fear to consolidate power rather than address real problems.
+dict- | Latin | say, speak | dictate,predict,contradict,verdict,diction | The defense attorney worked hard to contradict the prosecution's version of events.
+duc-/duct- | Latin | lead | conduct,deduce,induce,produce,aqueduct | The detective was able to deduce the suspect's motive from a handful of overlooked clues.
+equ- | Latin | equal, fair | equal,equitable,equanimity,equilibrium,adequate | She maintained her equanimity throughout the crisis, never allowing panic to cloud her judgment.
+fer- | Latin | carry, bear | transfer,fertile,infer,defer,conifer | The scientist was forced to defer her conclusions until more data could be collected.
+gen- | Greek/Latin | birth, kind, race | generate,genesis,genetic,benign,progeny | The drought threatened the progeny of the herd, as young animals could not find water.
+grad-/gress- | Latin | step, go | progress,gradual,aggressive,digress,transgress | The speaker had a tendency to digress, wandering far from his original argument.
+hyper- | Greek | over, excessive | hyperbole,hypertension,hyperactive,hypercritical,hypersensitive | His use of hyperbole -- claiming the test was the hardest in history -- amused his classmates.
+hypo- | Greek | under, below | hypothesis,hypocrite,hypothermia,hypodermic,hypocritical | The hypocrite preached generosity in public while hoarding wealth in private.
+ject- | Latin | throw | project,reject,inject,trajectory,conjecture | The rocket's trajectory was calculated to bring it precisely into lunar orbit.
+lingu- | Latin | language, tongue | bilingual,linguistics,lingual,multilingual,linguist | The linguistics professor argued that language shapes the way its speakers perceive reality.
+micro- | Greek | small | microscope,microcosm,microbe,microphone,microscopic | The microcosm of village politics mirrored the tensions playing out on the national stage.
+mono- | Greek | one, single | monotone,monologue,monopoly,monochrome,monotonous | The tech giant's monopoly on the market stifled competition and drove up prices.

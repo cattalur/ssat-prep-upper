@@ -1,191 +1,199 @@
-# analogies.txt
-# Format: stem | type | ans | choiceA | choiceB | choiceC | choiceD | choiceE | tip
-# Each choice is written as: word1~word2  (renders as "word1 is to word2")
-# ans is the index of the correct choice: 0=A, 1=B, 2=C, 3=D, 4=E
-# Lines starting with # are comments and are ignored by the app.
-#
-# Types: Habitat, Tool to User, Function, Part to Whole, Category, Characteristic,
-#        Action to Subject, Action to Object, Degree, Synonym, Antonym,
-#        Cause & Effect, Sequence, Creator to Creation, Material, Measurement, Word Form
+# ── Upper Level SSAT Analogies — 160 questions ────────────────────────────────
+# Format: stem | type | ans | choiceA_w1~choiceA_w2 | choiceB | choiceC | choiceD | choiceE | tip
+# Lines starting with # are comments
 
-# ── Habitat ──────────────────────────────────────────────────────────────────
-Deer is to forest as | Habitat | 1 | apple~fruit | whale~ocean | lion~tiger | cage~bird | gazelle~Africa | A deer lives in a forest; a whale lives in the ocean. Both show animal to natural habitat.
-Rabbit is to burrow as | Habitat | 0 | bird~nest | fish~water | bear~fur | ant~picnic | snake~rattle | A rabbit lives in a burrow; a bird lives in a nest. Both are animal to home/dwelling.
-Bee is to hive as | Habitat | 3 | bear~claw | bear~fur | bear~honey | bear~den | fish~river | A bee lives in a hive; a bear lives in a den. Both are animal to home/dwelling.
-Ant is to anthill as | Habitat | 3 | bat~wing | bat~insect | bat~night | bat~cave | bat~echo | Ants live in an anthill; bats live in a cave.
-Camel is to desert as | Habitat | 2 | polar bear~snow | polar bear~fur | polar bear~Arctic | polar bear~cold | polar bear~seal | A camel lives in the desert; a polar bear lives in the Arctic.
-Frog is to pond as | Habitat | 1 | monkey~banana | monkey~jungle | monkey~tree | monkey~tail | monkey~grass | A frog lives in a pond; a monkey lives in the jungle.
-Eagle is to sky as | Habitat | 4 | shark~water | shark~fin | shark~teeth | shark~reef | shark~ocean | An eagle soars through the sky; a shark lives in the ocean.
+# ── DEGREE ────────────────────────────────────────────────────────
+Perfidious is to disloyal as | Degree | 3 | obsequious~polite | acerbic~sharp | truculent~irritable | treacherous~unreliable | loquacious~talkative | Perfidious (betraying utterly) is an extreme form of disloyal; treacherous is an extreme form of unreliable.
+Abstruse is to difficult as | Degree | 0 | recondite~obscure | pellucid~clear | loquacious~wordy | acerbic~critical | taciturn~quiet | Abstruse (extremely hard to understand) is a more extreme form of difficult; recondite (known only to a few) is an extreme form of obscure.
+Vituperate is to criticize as | Degree | 2 | praise~flatter | condemn~disapprove | excoriate~censure | admonish~warn | rebuke~scold | Vituperate (harshly abuse verbally) is far more extreme than criticize; excoriate (strip harshly) is far more extreme than censure.
+Obsequious is to polite as | Degree | 1 | austere~simple | fawning~complimentary | laconic~brief | acerbic~tart | recalcitrant~reluctant | Obsequious (excessively servile) is an extreme form of polite; fawning (gushingly complimentary) is an extreme form of complimentary.
+Truculent is to confrontational as | Degree | 4 | eloquent~articulate | pernicious~harmful | austere~plain | arcane~mysterious | belligerent~aggressive | Truculent (eager to argue or fight) is an extreme form of confrontational; belligerent (warlike) is an extreme form of aggressive.
+Acrimony is to displeasure as | Degree | 3 | serenity~calm | equanimity~balance | avarice~desire | rancor~bitterness | hubris~pride | Acrimony (bitter hostility) is an extreme form of displeasure; rancor (deep-seated resentment) is an extreme form of bitterness.
+Loquacious is to talkative as | Degree | 0 | garrulous~chatty | reticent~shy | verbose~wordy | taciturn~quiet | eloquent~persuasive | Loquacious (excessively talkative) is an extreme form of talkative; garrulous (tediously talkative) is an extreme form of chatty.
+Recalcitrant is to reluctant as | Degree | 2 | pliable~rigid | docile~obedient | intransigent~unyielding | compliant~agreeable | obstinate~firm | Recalcitrant (stubbornly defiant) is an extreme form of reluctant; intransigent (refusing all compromise) is an extreme form of unyielding.
+Pariah is to outcast as | Degree | 1 | celebrity~popular | exile~banished | hermit~reclusive | ascetic~disciplined | vagabond~nomadic | Pariah (utterly rejected person) is an extreme form of outcast; exile (one formally expelled) is an extreme form of the banished.
+Sycophant is to flatterer as | Degree | 3 | mentor~advisor | critic~reviewer | patron~supporter | toady~yes-man | benefactor~donor | Sycophant (self-seeking flatterer) is an extreme form of flatterer; toady (one who flatters excessively) is an extreme form of yes-man.
+Impecunious is to poor as | Degree | 4 | frugal~thrifty | avaricious~greedy | penurious~stingy | austere~plain | destitute~needy | Impecunious (having very little money) is an extreme form of poor; destitute (completely without resources) is an extreme form of needy.
+Inveterate is to habitual as | Degree | 0 | incorrigible~unruly | persistent~determined | resolute~firm | steadfast~loyal | chronic~recurring | Inveterate (deep-rooted, long-established) is an extreme form of habitual; incorrigible (beyond correction) is an extreme form of unruly.
+Prodigious is to large as | Degree | 2 | diminutive~tiny | colossal~big | stupendous~impressive | negligible~small | paltry~little | Prodigious (remarkably great in size) is an extreme form of large; stupendous (astonishingly impressive) is an extreme form of impressive.
+Acerbic is to critical as | Degree | 1 | loquacious~quiet | mordant~biting | pellucid~clear | recondite~known | austere~comfortable | Acerbic (sharply harsh) is an extreme form of critical; mordant (savagely biting) is an extreme form of biting.
 
-# ── Tool to User ──────────────────────────────────────────────────────────────
-Scalpel is to surgeon as | Tool to User | 0 | brush~painter | stage~actor | pen~student | wrench~car | lens~eye | A scalpel is the defining tool of a surgeon; a brush is the defining tool of a painter.
-Stethoscope is to doctor as | Tool to User | 1 | gavel~courtroom | gavel~judge | gavel~verdict | gavel~lawyer | gavel~law | A stethoscope is the defining tool of a doctor; a gavel is the defining tool of a judge.
-Baton is to conductor as | Tool to User | 0 | whistle~referee | whistle~sport | whistle~signal | whistle~player | whistle~game | A baton is the defining tool of a conductor; a whistle is the defining tool of a referee.
-Paintbrush is to painter as | Tool to User | 3 | chisel~stone | chisel~marble | chisel~artist | chisel~sculptor | chisel~carve | A paintbrush is the defining tool of a painter; a chisel is the defining tool of a sculptor.
-Plow is to farmer as | Tool to User | 2 | oar~boat | oar~water | oar~rower | oar~paddle | oar~river | A plow is the defining tool of a farmer; an oar is the defining tool of a rower.
-Needle is to tailor as | Tool to User | 2 | trowel~brick | trowel~wall | trowel~mason | trowel~cement | trowel~plumber | A needle is the defining tool of a tailor; a trowel is the defining tool of a mason.
-Microscope is to biologist as | Tool to User | 2 | telescope~space | telescope~lens | telescope~astronomer | telescope~universe | telescope~science | A microscope is the defining tool of a biologist; a telescope is the defining tool of an astronomer.
-Hypothesis is to scientist as | Tool to User | 2 | blueprint~engineer | blueprint~builder | blueprint~architect | blueprint~designer | blueprint~planner | A hypothesis is the starting plan of a scientist; a blueprint is the starting plan of an architect.
-Hypothesis is to scientist as | Tool to User | 2 | blueprint~engineer | blueprint~builder | blueprint~architect | blueprint~designer | blueprint~planner | A hypothesis is the starting plan of a scientist; a blueprint is the starting plan of an architect.
+# ── FUNCTION ──────────────────────────────────────────────────────
+Aegis is to protection as | Function | 3 | shield~defense | armor~offense | weapon~deterrence | bulwark~fortification | parapet~concealment | An aegis provides protection; a bulwark provides fortification. Both are means of defense.
+Rhetoric is to persuasion as | Function | 0 | dialectic~reasoning | poetry~emotion | prose~narration | logic~contradiction | satire~mockery | Rhetoric is the art used for persuasion; dialectic is the method used for reasoning.
+Cipher is to secrecy as | Function | 2 | lock~door | key~opening | encryption~confidentiality | password~account | code~message | A cipher ensures secrecy; encryption ensures confidentiality. Both protect information.
+Catharsis is to emotion as | Function | 1 | stimulus~response | purgation~excess | meditation~thought | exercise~muscle | nutrition~energy | Catharsis purges or releases emotion; purgation removes excess. Both are cleansing functions.
+Syllabus is to instruction as | Function | 4 | calendar~time | ledger~accounting | roster~attendance | agenda~meeting | blueprint~construction | A syllabus guides instruction; a blueprint guides construction. Both provide a plan.
+Mnemonic is to memory as | Function | 3 | anesthetic~pain | metaphor~comparison | glossary~definition | compass~navigation | map~distance | A mnemonic device aids memory; a compass aids navigation. Both are tools that guide.
+Antiseptic is to infection as | Function | 0 | inoculation~disease | antidote~venom | bandage~bruise | splint~fracture | tourniquet~bleeding | An antiseptic prevents infection; an inoculation prevents disease. Both are preventive measures.
+Levy is to revenue as | Function | 1 | fine~punishment | tariff~commerce | tribute~power | subsidy~industry | grant~education | A levy raises revenue; a tariff regulates commerce. Both are fiscal instruments.
 
-# ── Function ──────────────────────────────────────────────────────────────────
-Pencil is to writing as | Function | 0 | mop~cleaning | sunlight~raining | apron~cooking | excitement~driving | chocolate~sweetness | A pencil is used for writing; a mop is used for cleaning.
-Faucet is to water as | Function | 1 | fridge~food | fan~air | dust~vacuum | broom~bristles | outlet~electricity | A faucet controls the flow of water; a fan controls the flow of air.
-Rudder is to boat as | Function | 1 | engine~car | steering wheel~car | sail~wind | anchor~dock | oar~paddle | A rudder steers a boat; a steering wheel steers a car.
-Telephone is to communication as | Function | 2 | travel~vacation | garage~car | stove~cooking | multiplication~division | tyrant~assimilation | A telephone is used for communication; a stove is used for cooking.
-Dam is to flood as | Function | 2 | helmet~head | helmet~sport | helmet~injury | helmet~protection | helmet~bicycle | A dam prevents flooding; a helmet prevents injury.
-Dictionary is to meaning as | Function | 2 | map~travel | map~geography | map~direction | map~location | map~distance | A dictionary provides meaning of words; a map provides direction for travel.
-Lighthouse is to ship as | Function | 2 | traffic light~road | traffic light~signal | traffic light~car | traffic light~pedestrian | traffic light~intersection | A lighthouse guides a ship safely; a traffic light guides a car safely through intersections.
-Navigate is to destination as | Function | 1 | cheat~success | strive~goal | contrive~improvise | concede~failure | maneuver~departure | You navigate toward a destination; you strive toward a goal. Both show effort toward an end point.
-Construe is to meaning as | Function | 2 | navigate~map | navigate~ship | navigate~destination | navigate~ocean | navigate~direction | To construe is to find and interpret meaning; to navigate is to find your way to a destination.
+# ── PART-TO-WHOLE ─────────────────────────────────────────────────
+Couplet is to sonnet as | Part-to-Whole | 2 | note~scale | measure~symphony | stanza~epic poem | refrain~ballad | verse~lyric | A couplet is a two-line unit that forms part of a sonnet; a stanza is a unit that forms part of an epic poem.
+Sinew is to muscle as | Part-to-Whole | 0 | neuron~brain | cortex~skull | marrow~bone | ligament~joint | tendon~limb | A sinew (tendon) is part of the muscular system; a neuron is part of the brain. Both are structural components.
+Overture is to opera as | Part-to-Whole | 3 | prelude~symphony | prologue~play | preface~novel | preamble~constitution | foreword~essay | An overture is the opening part of an opera; a preamble is the opening part of a constitution.
+Filament is to lightbulb as | Part-to-Whole | 1 | nucleus~atom | piston~engine | valve~heart | membrane~cell | circuit~computer | A filament is the key component inside a lightbulb; a piston is the key component inside an engine.
+Lemma is to theorem as | Part-to-Whole | 4 | axiom~proof | premise~argument | hypothesis~experiment | definition~concept | corollary~proof | A lemma is a preparatory proposition used to prove a theorem; a corollary is a direct result of a proof.
 
-# ── Part to Whole ─────────────────────────────────────────────────────────────
-Petal is to flower as | Part to Whole | 0 | branch~tree | seed~growth | leaf~green | thorn~rose | stem~root | A petal is one part of a flower; a branch is one part of a tree.
-Paragraph is to essay as | Part to Whole | 2 | chapter~library | chapter~sentence | chapter~novel | chapter~reading | chapter~author | A paragraph is one part of an essay; a chapter is one part of a novel.
-Soldier is to army as | Part to Whole | 0 | player~team | captain~ship | country~nation | medal~honor | weapon~battle | A soldier is one member of an army; a player is one member of a team.
-Spoke is to wheel as | Part to Whole | 3 | rung~rope | rung~step | rung~stair | rung~ladder | rung~climb | A spoke is one part of a wheel; a rung is one part of a ladder.
-Act is to play as | Part to Whole | 1 | inning~pitcher | inning~baseball game | inning~home run | inning~season | inning~score | An act is one part of a play; an inning is one part of a baseball game.
-Brick is to wall as | Part to Whole | 0 | plank~floor | wood~house | hammer~nail | tile~clay | stone~rock | Many bricks make up a wall; many planks make up a floor.
-Page is to book as | Part to Whole | 3 | panel~glass | panel~museum | panel~window | panel~comic strip | panel~cartoon | A page is one part of a book; a panel is one part of a comic strip.
-Novel is to chapter as | Part to Whole | 0 | play~scene | book~library | film~director | poem~stanza | song~chorus | A novel is divided into chapters; a play is divided into scenes.
-Summit is to mountain as | Part to Whole | 2 | crown~king | crown~jewel | crown~head | crown~throne | crown~glory | The summit is the very top of a mountain; the crown is the very top of the head.
-Verse is to song as | Part to Whole | 2 | frame~picture | frame~gallery | frame~film | frame~painting | frame~canvas | A verse is one part of a song; a frame is one still image in a film.
-Paragraph is to essay as | Part to Whole | 0 | act~drama | line~stanza | word~letter | sentence~word | title~chapter | A paragraph is one section of an essay; an act is one section of a drama.
+# ── CAUSE-AND-EFFECT ──────────────────────────────────────────────
+Obfuscation is to confusion as | Cause-and-Effect | 0 | elucidation~understanding | exaggeration~doubt | omission~clarity | repetition~forgetting | contradiction~agreement | Obfuscation (deliberately making unclear) causes confusion; elucidation (making clear) causes understanding.
+Indolence is to stagnation as | Cause-and-Effect | 2 | torpor~energy | zeal~fatigue | assiduity~progress | lethargy~vigor | apathy~achievement | Indolence (laziness) leads to stagnation; assiduity (careful diligence) leads to progress.
+Mendacity is to distrust as | Cause-and-Effect | 1 | veracity~suspicion | candor~confidence | hypocrisy~respect | magnanimity~resentment | parsimony~gratitude | Mendacity (habitual lying) causes distrust; candor (frank honesty) causes confidence.
+Negligence is to catastrophe as | Cause-and-Effect | 3 | prudence~caution | foresight~surprise | vigilance~oversight | diligence~prevention | recklessness~success | Negligence (failure to take care) can lead to catastrophe; diligence (careful attention) leads to prevention of harm.
+Hubris is to nemesis as | Cause-and-Effect | 0 | arrogance~downfall | confidence~achievement | boldness~caution | ambition~failure | pride~admiration | Hubris (excessive pride) brings nemesis (divine retribution); arrogance leads to downfall.
+Parsimony is to deprivation as | Cause-and-Effect | 4 | generosity~excess | frugality~abundance | thrift~indulgence | prodigality~gain | profligacy~ruin | Parsimony (extreme stinginess) can cause deprivation; profligacy (reckless extravagance) leads to ruin.
+Equivocation is to mistrust as | Cause-and-Effect | 2 | obfuscation~clarity | mendacity~confidence | transparency~suspicion | candor~goodwill | silence~understanding | Equivocation (using ambiguous language) causes mistrust; transparency causes goodwill and open understanding.
+Acrimony is to estrangement as | Cause-and-Effect | 1 | concord~conflict | bitterness~alienation | warmth~distance | hostility~reconciliation | indifference~passion | Acrimony (bitter hostility) leads to estrangement; bitterness leads to alienation. Both show negative emotions causing separation.
 
-# ── Category ──────────────────────────────────────────────────────────────────
-Arboretum is to garden as | Category | 4 | park~mountain | orchard~farm | ranch~wildlife | flowerbed~daisies | aquarium~zoo | An arboretum is a specialized type of garden (for trees); an aquarium is a specialized type of zoo (for fish).
-Sculpture is to art as | Category | 2 | diving~ocean | subway~passenger | tango~dance | crayon~coloring | letter~envelope | A sculpture is a specific type of art; a tango is a specific type of dance.
-Sonnet is to poem as | Category | 2 | waltz~music | waltz~rhythm | waltz~dance | waltz~ballroom | waltz~movement | A sonnet is a specific type of poem; a waltz is a specific type of dance.
-Oak is to tree as | Category | 1 | rose~thorn | rose~flower | rose~garden | rose~petal | rose~red | An oak is a specific type of tree; a rose is a specific type of flower.
-Mammal is to human as | Category | 0 | apple~fruit | avarice~gluttony | philosopher~knowledge | goat~sheep | relationship~friendship | A human is a specific type of mammal; an apple is a specific type of fruit.
-Algebra is to mathematics as | Category | 1 | poetry~writing | poetry~literature | poetry~science | poetry~school | poetry~words | Algebra is a specific branch of mathematics; poetry is a specific branch of literature.
-Physics is to science as | Category | 3 | calculus~metaphysics | calculus~art | calculus~philosophy | calculus~mathematics | calculus~entertainment | Physics is a specific branch of science; calculus is a specific branch of mathematics.
-Comedy is to film as | Category | 2 | mystery~detective | mystery~clue | mystery~novel | mystery~suspense | mystery~secret | A comedy is a specific type of film; a mystery is a specific type of novel.
-Website is to internet as | Category | 1 | cookie~browser | book~library | newspaper~video | information~data | telephone~radio | A website is one item found on the internet; a book is one item found in a library.
-Granite is to rock as | Category | 1 | oxygen~air | oxygen~gas | oxygen~element | oxygen~molecule | oxygen~breath | Granite is a specific type of rock; oxygen is a specific type of gas.
-Waltz is to dance as | Category | 0 | haiku~poem | haiku~syllable | haiku~Japan | haiku~short | haiku~writing | A waltz is a specific type of dance; a haiku is a specific type of poem.
+# ── CHARACTERISTIC ────────────────────────────────────────────────
+Recalcitrant is to authority as | Characteristic | 3 | obsequious~flattery | truculent~kindness | laconic~brevity | defiant~compliance | austere~excess | A recalcitrant person resists authority; a defiant person resists compliance. Both are defined by resistance.
+Ascetic is to luxury as | Characteristic | 0 | austere~comfort | opulent~simplicity | abstemious~indulgence | lavish~extravagance | frugal~wealth | An ascetic person renounces luxury; an austere person avoids comfort. Both are defined by self-denial.
+Sycophant is to obsequiousness as | Characteristic | 2 | misanthrope~charity | demagogue~honesty | despot~cruelty | mentor~ignorance | philanthropist~greed | A sycophant is defined by obsequiousness (fawning flattery); a despot is defined by cruelty.
+Loquacious is to silence as | Characteristic | 1 | taciturn~speech | verbose~brevity | garrulous~concision | eloquent~inarticulateness | reticent~verbosity | A loquacious person is incapable of silence; a verbose person is incapable of brevity. Both are defined by excessive speech.
+Truculent is to aggression as | Characteristic | 4 | equable~volatility | serene~agitation | phlegmatic~excitability | placid~turbulence | irascible~temper | A truculent person is defined by aggression; an irascible person is defined by a quick temper.
+Pellucid is to clarity as | Characteristic | 0 | abstruse~incomprehensibility | arcane~familiarity | limpid~obscurity | recondite~accessibility | esoteric~commonness | Pellucid is defined by perfect clarity; abstruse is defined by incomprehensibility.
+Taciturn is to words as | Characteristic | 2 | miserly~extravagance | loquacious~verbosity | parsimonious~expenditure | prodigal~thrift | frugal~indulgence | A taciturn person is defined by a scarcity of words; a parsimonious person is defined by extreme restraint in expenditure.
+Obdurate is to persuasion as | Characteristic | 3 | malleable~resistance | pliable~stubbornness | tractable~obstinacy | impervious~influence | susceptible~immunity | An obdurate person is unmoved by persuasion; an impervious person is unaffected by influence.
 
-# ── Characteristic ────────────────────────────────────────────────────────────
-Pianist is to hands as | Characteristic | 0 | ballerina~feet | scientist~laboratory | hospital~doctors | artist~face | head~body | A pianist's defining body part is their hands; a ballerina's defining body part is their feet.
-Solitary is to hermit as | Characteristic | 1 | busy~homework | greedy~miser | policeman~society | school~learning | hungry~stomach | A hermit is defined by being solitary; a miser is defined by being greedy.
-Trustworthy is to friend as | Characteristic | 3 | greedy~money | idiotic~stupidity | intelligent~studying | caring~parent | reptilian~horse | Trustworthiness is a defining quality of a good friend; caring is a defining quality of a good parent.
-Pious is to belief as | Characteristic | 4 | wise~rashness | disagreeable~personality | gold~color | hardship~persistence | athletic~strength | A pious person is defined by strong belief; an athletic person is defined by physical strength.
-Pessimist is to gloom as | Characteristic | 2 | optimist~happiness | optimist~surprise | optimist~hope | optimist~change | optimist~energy | A pessimist is defined by gloom; an optimist is defined by hope.
-Porous is to water as | Characteristic | 0 | transparent~light | rough~texture | hollow~air | dense~weight | elastic~shape | A porous material allows water to pass through it; a transparent material allows light to pass through it.
-Jousting is to lance as | Characteristic | 2 | jumping~trampoline | hunting~sport | fencing~sword | glamorizing~celebrities | caroling~song | Jousting is performed with a lance; fencing is performed with a sword.
-Eloquent is to speech as | Characteristic | 2 | graceful~ballet | graceful~beauty | graceful~movement | graceful~dancer | graceful~art | Eloquent describes beautiful precise speech; graceful describes beautiful precise movement.
-Bibliophile is to books as | Characteristic | 1 | audiophile~sound | audiophile~music | audiophile~radio | audiophile~hearing | audiophile~recording | A bibliophile loves books; an audiophile loves high-quality music and audio.
-Benefactor is to generosity as | Characteristic | 0 | tyrant~cruelty | soldier~bravery | teacher~patience | student~curiosity | villain~malice | A benefactor is defined by generosity; a tyrant is defined by cruelty.
-Vandal is to destruction as | Characteristic | 0 | philanthropist~generosity | criminal~jail | coward~fear | judge~verdict | volunteer~work | A vandal is defined by causing destruction; a philanthropist is defined by acts of generosity.
-Fastidious is to detail as | Characteristic | 1 | zealous~religion | zealous~cause | zealous~study | zealous~effort | zealous~belief | A fastidious person pays extreme attention to detail; a zealous person is extremely dedicated to a cause.
-Surgeon is to operating room as | Characteristic | 0 | teacher~classroom | chef~restaurant | pilot~airplane | actor~stage | athlete~field | A surgeon works in an operating room; a teacher works in a classroom.
-Persuasive is to argument as | Characteristic | 2 | tall~stack | long~conversation | compelling~evidence | unsupported~assertion | significant~relevant | A persuasive person makes a strong argument; compelling evidence makes a strong case.
-Strident is to sound as | Characteristic | 2 | pungent~taste | pungent~sight | pungent~smell | pungent~touch | pungent~hearing | Strident describes a harsh sound; pungent describes a sharp strong smell.
-Omnivore is to plants and meat as | Characteristic | 2 | herbivore~fish | herbivore~anything | herbivore~plants | herbivore~meat | herbivore~berries | An omnivore eats both plants and meat; an herbivore eats only plants.
-Latitude is to north-south as | Characteristic | 2 | longitude~geography | longitude~direction | longitude~east-west | longitude~coordinates | longitude~distance | Latitude measures position in the north-south direction; longitude measures in the east-west direction.
-Amnesia is to memory as | Characteristic | 2 | blindness~glasses | blindness~sight | blindness~vision | blindness~darkness | blindness~reading | Amnesia is the loss of memory; blindness is the loss of vision.
+# ── SYNONYM ───────────────────────────────────────────────────────
+Perfidious is to treacherous as | Synonym | 0 | veracious~mendacious | obsequious~arrogant | recalcitrant~amenable | perspicacious~obtuse | truculent~belligerent | Perfidious and treacherous both mean deceitfully disloyal; truculent and belligerent both mean aggressively hostile.
+Acerbic is to mordant as | Synonym | 2 | pellucid~opaque | abstruse~lucid | caustic~vitriolic | laconic~verbose | austere~lavish | Acerbic and mordant both mean sharply biting in speech; caustic and vitriolic are synonyms meaning corrosively harsh.
+Equivocate is to prevaricate as | Synonym | 4 | ameliorate~exacerbate | obfuscate~clarify | ameliorate~worsen | vituperate~praise | dissemble~deceive | Equivocate and prevaricate both mean to use deliberately vague language; dissemble and deceive both mean to conceal the truth.
+Taciturn is to reticent as | Synonym | 3 | loquacious~garrulous | verbose~laconic | eloquent~inarticulate | diffident~confident | reserved~outgoing | Taciturn and reticent both mean habitually silent; loquacious and garrulous are synonyms meaning excessively talkative — note that C reverses the pair.
+Auspicious is to propitious as | Synonym | 1 | ominous~favorable | felicitous~opportune | inauspicious~fortunate | portentous~trivial | baleful~benign | Auspicious and propitious both mean favorable; felicitous and opportune both mean well-suited.
+Ameliorate is to meliorate as | Synonym | 0 | alleviate~aggravate | palliate~relieve | rectify~worsen | mitigate~intensify | remedy~harm | Ameliorate and meliorate are synonyms meaning to make better; palliate and relieve are synonyms meaning to ease.
+Abstruse is to recondite as | Synonym | 2 | pellucid~murky | arcane~commonplace | esoteric~obscure | limpid~turbid | lucid~opaque | Abstruse and recondite are synonyms meaning obscure and known only to the learned; esoteric and obscure are synonyms.
+Ascetic is to abstemious as | Synonym | 4 | profligate~frugal | opulent~austere | lavish~parsimonious | dissolute~disciplined | austere~spartan | Ascetic and abstemious both describe self-restraint; austere and spartan both describe extreme plainness and severity.
+Avarice is to rapacity as | Synonym | 3 | magnanimity~greed | philanthropy~avarice | generosity~parsimony | cupidity~greed | liberality~stinginess | Avarice and rapacity are synonyms meaning greed; cupidity and greed are also synonyms describing excessive desire for wealth.
+Perspicacious is to astute as | Synonym | 0 | sagacious~obtuse | shrewd~gullible | discerning~undiscriminating | sagacious~perceptive | naive~cunning | Perspicacious and astute both mean having keen insight; sagacious and perceptive are also synonyms.
 
-# ── Action to Subject / Object ────────────────────────────────────────────────
-Abdicate is to monarch as | Action to Subject | 0 | resign~governor | impeach~president | abduct~hostage | elude~outlaw | abscond~runaway | To abdicate is how a monarch gives up power; to resign is how a governor steps down.
-Abdicate is to monarch as | Action to Subject | 0 | resign~governor | retire~employee | graduate~student | dismiss~worker | escape~prisoner | Abdicate means a monarch formally gives up their throne; resign means an official formally steps down.
-Mow is to lawn as | Action to Object | 2 | prune~plum | prune~raisin | prune~tree | prune~hair | prune~meadow | You mow a lawn; you prune a tree. Both are action and the specific object of that action.
-Sculpt is to clay as | Action to Object | 1 | carve~stone | carve~wood | carve~art | carve~tool | carve~chisel | You sculpt clay; you carve wood. Both describe a craft and its material.
-Knit is to yarn as | Action to Object | 1 | weave~fabric | weave~thread | weave~loom | weave~silk | weave~needle | You knit yarn to make fabric; you weave thread to make cloth.
+# ── ANTONYM ───────────────────────────────────────────────────────
+Perfidious is to loyal as | Antonym | 2 | veracious~honest | obsequious~arrogant | recalcitrant~compliant | loquacious~verbose | acerbic~mild | Perfidious (treacherously disloyal) and loyal are opposites; recalcitrant (defiantly stubborn) and compliant (yielding) are opposites.
+Acerbic is to mellifluous as | Antonym | 0 | caustic~honeyed | truculent~placid | loquacious~taciturn | austere~opulent | pellucid~abstruse | Acerbic (harshly sharp) and mellifluous (sweetly smooth) are opposites; caustic and honeyed are also opposites.
+Obsequious is to imperious as | Antonym | 3 | verbose~loquacious | laconic~terse | austere~spartan | subservient~domineering | pellucid~lucid | Obsequious (excessively submissive) and imperious (arrogantly domineering) are opposites; subservient and domineering are also opposites.
+Truculent is to pacific as | Antonym | 1 | acerbic~mild | bellicose~peaceable | loquacious~verbose | recalcitrant~stubborn | austere~plain | Truculent (aggressively hostile) and pacific (peacefully calm) are opposites; bellicose (warlike) and peaceable are also opposites.
+Loquacious is to taciturn as | Antonym | 4 | verbose~prolix | garrulous~loquacious | eloquent~articulate | reticent~reserved | voluble~laconic | Loquacious (excessively talkative) and taciturn (habitually silent) are opposites; voluble (fluently talkative) and laconic (using few words) are opposites.
+Auspicious is to baleful as | Antonym | 2 | ominous~portentous | propitious~fortunate | felicitous~inauspicious | benign~malignant | fortuitous~accidental | Auspicious (favorable) and baleful (menacing) are opposites; felicitous (well-suited, fortunate) and inauspicious (unfavorable) are opposites.
+Pellucid is to abstruse as | Antonym | 0 | limpid~turbid | arcane~familiar | recondite~accessible | esoteric~mainstream | perspicuous~obscure | Pellucid (perfectly clear) and abstruse (extremely obscure) are opposites; limpid (clear) and turbid (muddy, unclear) are opposites.
+Ameliorate is to exacerbate as | Antonym | 3 | alleviate~relieve | mitigate~palliate | aggravate~worsen | rectify~impair | remedy~cure | Ameliorate (to improve) and exacerbate (to make worse) are opposites; rectify (to correct) and impair (to damage) are opposites.
+Austere is to dissolute as | Antonym | 1 | ascetic~frugal | spartan~profligate | laconic~verbose | abstemious~restrained | parsimonious~extravagant | Austere (severely self-disciplined) and dissolute (indulgent and immoral) are opposites; spartan (rigorously self-restrained) and profligate (recklessly extravagant) are opposites.
+Avarice is to magnanimity as | Antonym | 4 | parsimony~thrift | greed~desire | cupidity~rapacity | frugality~thrift | rapacity~generosity | Avarice (extreme greed) and magnanimity (noble generosity) are opposites; rapacity (greed) and generosity are also opposites.
 
-# ── Degree ────────────────────────────────────────────────────────────────────
-Novel is to poem as | Degree | 3 | letter~alphabet | toy~child | elephant~dinosaur | marathon~sprint | urban~rural | A novel is long; a poem is short. A marathon is long; a sprint is short. Both contrast in length.
-Chilly is to freezing as | Degree | 2 | warm~pleasant | warm~summer | warm~scorching | warm~comfortable | warm~mild | Freezing is an extreme form of chilly; scorching is an extreme form of warm.
-Tired is to exhausted as | Degree | 1 | hungry~thirsty | hungry~famished | hungry~empty | hungry~weak | hungry~eating | Exhausted is an extreme form of tired; famished is an extreme form of hungry.
-Dislike is to loathe as | Degree | 0 | fear~dread | enjoy~like | know~forget | see~hear | love~care | Loathe is an extreme form of dislike; dread is an extreme form of fear.
-Jog is to sprint as | Degree | 0 | walk~march | run~swim | skip~hop | move~stand | fall~trip | A sprint is more intense than a jog; a march is more purposeful and intense than a walk.
-Whisper is to shout as | Degree | 2 | trickle~water | trickle~river | trickle~flood | trickle~drop | trickle~quiet | A shout is extreme compared to a whisper; a flood is extreme compared to a trickle.
-Annoyed is to furious as | Degree | 3 | pleased~exasperated | pleased~calm | pleased~sad | pleased~overjoyed | pleased~awake | Furious is an extreme form of annoyed; overjoyed is an extreme form of pleased.
-Breeze is to hurricane as | Degree | 3 | drizzle~cloud | drizzle~weather | drizzle~umbrella | drizzle~downpour | drizzle~wet | A hurricane is an extreme form of a breeze; a downpour is an extreme form of a drizzle.
-Scratch is to wound as | Degree | 0 | mistake~disaster | cut~bleed | hurt~injury | pain~scar | bruise~fall | A wound is far more serious than a scratch; a disaster is far more serious than a mistake.
-Yawn is to sleepy as | Degree | 1 | fidget~bored | fidget~restless | fidget~nervous | fidget~active | fidget~distracted | A yawn is a physical sign of sleepiness; fidgeting is a physical sign of restlessness.
-Worried is to panicked as | Degree | 1 | sad~cheerful | annoyed~furious | happy~joyful | tired~weary | scared~nervous | Panicked is an extreme form of worried; furious is an extreme form of annoyed.
-Rain is to downpour as | Degree | 1 | wind~storm | wind~gale | wind~air | wind~breeze | wind~tornado | A downpour is an extreme form of rain; a gale is an extreme powerful form of wind.
-Tap is to pound as | Degree | 2 | suggest~advise | suggest~hint | suggest~demand | suggest~request | suggest~tell | Pounding is more forceful than tapping; demanding is more forceful than suggesting.
-Annoyed is to furious as | Degree | 2 | thin~skinny | thin~slender | thin~gaunt | thin~weak | thin~fragile | Furious is an extreme form of annoyed; gaunt (extremely thin) is an extreme form of thin.
-Fond is to devoted as | Degree | 2 | cool~warm | cool~temperature | cool~frigid | cool~refreshing | cool~cold | Devoted is an extreme form of fond; frigid is an extreme form of cool.
+# ── CATEGORY ──────────────────────────────────────────────────────
+Haiku is to verse as | Category | 3 | epic~narrative | soliloquy~monologue | elegy~lament | sonnet~poem | limerick~rhyme | A haiku is a specific type of verse; a sonnet is a specific type of poem.
+Soliloquy is to speech as | Category | 0 | elegy~poem | dirge~music | satire~prose | panegyric~oration | epitaph~inscription | A soliloquy is a specific type of speech (spoken alone on stage); an elegy is a specific type of poem (a lament).
+Despot is to ruler as | Category | 2 | senator~legislator | magnate~businessman | autocrat~leader | dissident~rebel | oligarch~elite | A despot is a specific type of ruler (one with absolute power); an autocrat is a specific type of leader (one who rules alone).
+Archipelago is to landform as | Category | 4 | peninsula~continent | isthmus~landmass | atoll~island | mesa~plateau | fjord~coastal feature | An archipelago is a specific type of landform (a chain of islands); a fjord is a specific type of coastal feature (a narrow inlet).
+Elegy is to poetry as | Category | 1 | requiem~music | requiem~hymn | requiem~composition | requiem~performance | requiem~tradition | An elegy is a specific type of poetry (a mournful lament); a requiem is a specific type of musical composition (a mass for the dead).
+Allegory is to narrative as | Category | 0 | parable~story | metaphor~figure of speech | analogy~comparison | symbol~image | fable~tale | An allegory is a specific type of narrative with hidden moral meaning; a parable is a specific type of story with a moral lesson.
+Oligarchy is to government as | Category | 3 | monarchy~republic | democracy~autocracy | theocracy~anarchy | plutocracy~government | bureaucracy~institution | An oligarchy is a specific type of government (ruled by a few); a plutocracy is also a specific type of government (ruled by the wealthy).
+Ode is to lyric as | Category | 2 | ballad~epic | epic~prose | sonnet~lyric | elegy~narrative | limerick~comedy | An ode is a specific type of lyric poem; a sonnet is also a specific type of lyric poem.
 
-# ── Synonym ───────────────────────────────────────────────────────────────────
-Brave is to courageous as | Synonym | 1 | sad~happy | smart~intelligent | tired~exhausted | fast~slow | calm~stormy | Brave and courageous are synonyms. Smart and intelligent are also synonyms.
-Candid is to honest as | Synonym | 2 | verbose~brief | diligent~lazy | vivacious~lively | stoic~emotional | bold~timid | Candid and honest are synonyms. Vivacious and lively are synonyms.
-Frugal is to thrifty as | Synonym | 2 | angry~joyful | brave~cowardly | meticulous~careful | famous~unknown | kind~cruel | Frugal and thrifty both mean careful with money. Meticulous and careful are synonyms.
-Tenacious is to persistent as | Synonym | 2 | loquacious~silent | loquacious~quiet | loquacious~talkative | loquacious~intelligent | loquacious~friendly | Tenacious and persistent both mean determined. Loquacious and talkative both mean talking a great deal.
-Serene is to tranquil as | Synonym | 2 | turbulent~peaceful | turbulent~stormy | turbulent~chaotic | turbulent~windy | turbulent~unsettled | Serene and tranquil are synonyms meaning calm. Turbulent and chaotic are synonyms meaning disordered.
-Bold is to audacious as | Synonym | 3 | timid~brave | timid~courageous | timid~shy | timid~diffident | timid~nervous | Bold and audacious are synonyms meaning daring. Timid and diffident are synonyms meaning lacking confidence.
-Remorseful is to regretful as | Synonym | 1 | jubilant~sorrowful | elated~overjoyed | angry~calm | tired~energized | kind~wicked | Remorseful and regretful both mean feeling sorry. Elated and overjoyed both mean extremely happy.
-Plausible is to credible as | Synonym | 1 | incredible~amazing | incredible~unbelievable | incredible~fantastic | incredible~wonderful | incredible~possible | Plausible and credible both mean believable. Incredible and unbelievable both mean hard to believe.
-Coerce is to force as | Synonym | 1 | appease~anger | persuade~convince | demand~request | threaten~warn | compel~suggest | Coerce and force are synonyms. Persuade and convince are synonyms.
-Apex is to peak as | Synonym | 2 | valley~hill | base~bottom | summit~crest | equator~pole | border~boundary | Apex and peak are synonyms meaning the very top. Summit and crest are also synonyms.
-Gloss is to luster as | Synonym | 2 | dullness~brightness | surface~texture | sheen~shine | smooth~rough | color~hue | Gloss and luster are synonyms meaning a shiny surface. Sheen and shine are also synonyms.
-Scour is to search as | Synonym | 0 | scrutinize~examine | leer~glance | absorb~release | invigorate~tire | grimace~smile | Scour means to search thoroughly; scrutinize means to examine very carefully.
-Bedevil is to torment as | Synonym | 1 | evoke~destroy | evoke~elicit | evoke~survey | evoke~antagonize | evoke~burn | Bedevil and torment are synonyms meaning to cause distress. Evoke and elicit both mean to draw out.
-Avarice is to greed as | Synonym | 2 | philanthropy~wealth | philanthropy~charity | philanthropy~generosity | philanthropy~kindness | philanthropy~giving | Avarice and greed both mean extreme desire for wealth. Philanthropy and generosity both mean giving to help others.
-Correlation is to association as | Synonym | 2 | integration~separation | disturbance~peace | connection~link | correction~error | election~vote | Correlation and association are synonyms. Connection and link are also synonyms.
-Palatable is to acceptable as | Synonym | 1 | invigorating~exhausting | tasty~delicious | bland~flavorless | edible~eatable | appealing~attractive | Palatable means acceptable. Tasty and delicious are synonyms showing a stronger degree.
-Subsidy is to financial aid as | Synonym | 0 | grant~scholarship | loan~debt | tax~burden | fee~cost | penalty~fine | A subsidy is a form of financial aid; a grant is a form of scholarship or financial support.
+# ── WORKER-TO-TOOL ────────────────────────────────────────────────
+Lexicographer is to dictionary as | Worker-to-Tool | 3 | cartographer~atlas | typographer~font | stenographer~transcript | philologist~etymology | archivist~record | A lexicographer compiles dictionaries; a philologist studies etymology (word origins). Both work with language.
+Numismatist is to coins as | Worker-to-Tool | 1 | sommelier~wine glass | philatelist~stamps | archivist~documents | bibliophile~library | curator~museum | A numismatist studies and collects coins; a philatelist studies and collects stamps.
+Choreographer is to movement as | Worker-to-Tool | 0 | librettist~text | conductor~tempo | dramaturg~narrative | composer~harmony | arranger~score | A choreographer works with movement in dance; a librettist works with text (the words of an opera).
+Rhetorician is to persuasion as | Worker-to-Tool | 2 | dialectician~debate | logician~fallacy | strategist~planning | theorist~proof | polemicist~controversy | A rhetorician employs persuasion; a strategist employs planning. Both are defined by their primary instrument.
+Sommelier is to wine as | Worker-to-Tool | 4 | curator~exhibit | docent~tour | archivist~file | restaurateur~menu | connoisseur~art | A sommelier has specialized expertise in wine; a connoisseur has specialized expertise in art.
 
-# ── Antonym ───────────────────────────────────────────────────────────────────
-Brave is to cowardly as | Antonym | 1 | weak~strong | generous~miserly | bright~shiny | tired~sleepy | tall~large | Brave and cowardly are opposites. Generous and miserly are opposites.
-Diligent is to lazy as | Antonym | 0 | organized~chaotic | patient~quiet | helpful~kind | smart~clever | active~busy | Diligent and lazy are opposites. Organized and chaotic are opposites.
-Benevolent is to malevolent as | Antonym | 3 | serene~calm | serene~peaceful | serene~beautiful | serene~turbulent | serene~quiet | Benevolent (good) and malevolent (evil) are opposites. Serene (calm) and turbulent (chaotic) are opposites.
-Transparent is to opaque as | Antonym | 0 | rigid~flexible | bright~shiny | clear~clean | solid~hard | dark~gloomy | Transparent (see-through) and opaque (can't see through) are opposites. Rigid and flexible are opposites.
-Wane is to grow as | Antonym | 2 | kindle~spark | kindle~fire | kindle~extinguish | kindle~burn | kindle~ignite | Wane means to decrease; grow is its opposite. Kindle means to start a fire; extinguish means to put it out.
-Timid is to dauntless as | Antonym | 0 | frugal~opulent | pensive~sad | garrulous~loquacious | serene~calm | brave~bold | Timid (fearful) and dauntless (fearless) are opposites. Frugal (thrifty) and opulent (extravagant) are opposites.
-Wisdom is to fools as | Antonym | 1 | humor~clowns | folly~sages | jails~criminals | knowledge~teachers | joy~sorrow | Fools lack wisdom. Sages (wise people) lack folly -- both pairs are opposites.
-Dilate is to contract as | Antonym | 2 | expand~grow | expand~inflate | expand~narrow | expand~widen | expand~stretch | Dilate means to widen; contract means to shrink. Expand and narrow are opposites.
-Remorseful is to unrepentant as | Antonym | 0 | slender~stout | wily~sly | miserable~somber | aggravated~resentful | lithe~flexible | Remorseful (feeling regret) and unrepentant (no regret) are opposites. Slender and stout are opposites.
-Plausible is to incredible as | Antonym | 0 | possible~unlikely | critical~admonishing | ability~power | pleasant~amenable | potential~actual | Plausible (believable) and incredible (unbelievable) are opposites. Possible and unlikely are opposites.
-Collusion is to cooperation as | Antonym | 0 | smuggling~importing | character~cast | surfing~swimming | cooking~ordering out | enmity~friendship | Collusion is an illegal, secretive form of cooperation. Smuggling is an illegal form of importing.
-Placid is to turbulent as | Antonym | 0 | volatile~stable | calm~serene | quiet~silent | angry~furious | tired~exhausted | Placid (calm) and turbulent (chaotic) are opposites. Volatile (unpredictable) and stable (steady) are opposites.
-Stingy is to generous as | Antonym | 0 | reckless~cautious | clever~sly | happy~cheerful | quiet~soft | large~huge | Stingy and generous are opposites. Reckless (careless) and cautious (careful) are opposites.
-Castigate is to praise as | Antonym | 0 | berate~commend | scold~punish | critique~improve | judge~decide | correct~fix | Castigate means to harshly criticize -- the opposite of praise. Berate means to scold -- the opposite of commend.
-Obstinate is to yielding as | Antonym | 0 | verbose~brief | candid~frank | resilient~strong | diligent~busy | serene~peaceful | Obstinate (refusing to change) and yielding are opposites. Verbose (too many words) and brief are opposites.
-Credulous is to skeptical as | Antonym | 3 | naive~gullible | wise~foolish | curious~inquisitive | trusting~doubtful | quick~slow | Credulous (believing too easily) and skeptical (questioning) are opposites. Trusting and doubtful are opposites.
-Somber is to festive as | Antonym | 0 | gloomy~cheerful | dark~dim | serious~stern | quiet~silent | sad~unhappy | Somber and festive are opposites. Gloomy and cheerful are opposites.
-Laconic is to verbose as | Antonym | 0 | brief~wordy | quiet~loud | short~long | terse~rambling | concise~succinct | Laconic (very few words) and verbose (too many words) are opposites. Brief and wordy are also opposites.
-Impetuous is to cautious as | Antonym | 0 | rash~deliberate | bold~brave | quick~speedy | careful~thorough | smart~wise | Impetuous (acting without thinking) and cautious are opposites. Rash and deliberate are also opposites.
-Mitigate is to worsen as | Antonym | 0 | alleviate~intensify | remedy~cure | reduce~lessen | prevent~stop | hide~conceal | Mitigate (reduce harm) and worsen are opposites. Alleviate (ease suffering) and intensify are opposites.
-Stagnant is to flowing as | Antonym | 0 | dormant~active | still~calm | quiet~peaceful | slow~sluggish | weak~tired | Stagnant (not moving) and flowing are opposites. Dormant (inactive) and active are opposites.
-Shrewd is to naive as | Antonym | 0 | cunning~gullible | smart~foolish | wise~ignorant | clever~slow | alert~oblivious | Shrewd (sharp judgment) and naive (lacking judgment) are opposites. Cunning and gullible are opposites.
-Pacific is to war as | Antonym | 0 | abstemious~indulgence | abstemious~ocean | abstemious~peace | abstemious~fasting | abstemious~religion | Pacific means peaceful; war is its opposite. Abstemious means self-restrained -- indulgence is its opposite.
+# ── ACTION-TO-OBJECT ──────────────────────────────────────────────
+Expurgate is to text as | Action-to-Object | 1 | redact~document | bowdlerize~content | censor~speech | abridge~length | annotate~margin | To expurgate means to remove objectionable parts from text; to bowdlerize means to remove offensive content. Both are actions performed on written material.
+Indict is to suspect as | Action-to-Object | 3 | acquit~defendant | exonerate~criminal | convict~jury | arraign~accused | sentence~prisoner | To indict is to formally charge a suspect; to arraign is to formally charge an accused person in court.
+Annotate is to manuscript as | Action-to-Object | 0 | gloss~text | edit~draft | revise~proof | critique~argument | analyze~data | To annotate is to add notes to a manuscript; to gloss is to add explanatory notes to a text.
+Ameliorate is to condition as | Action-to-Object | 2 | exacerbate~situation | mitigate~harm | rectify~problem | palliate~suffering | alleviate~pain | To ameliorate is to improve a condition; to rectify is to correct a problem.
+Vitiate is to contract as | Action-to-Object | 4 | nullify~law | rescind~order | revoke~license | invalidate~claim | abrogate~treaty | To vitiate is to impair or invalidate a contract; to abrogate is to repeal or formally cancel a treaty.
 
-# ── Cause & Effect ────────────────────────────────────────────────────────────
-Practice is to improvement as | Cause & Effect | 0 | study~knowledge | sleep~energy | eat~hunger | rest~fatigue | work~play | Practice causes improvement; study causes knowledge.
-Drought is to water as | Cause & Effect | 2 | famine~poverty | famine~hunger | famine~food | famine~crops | famine~rain | A drought is a shortage of water; a famine is a shortage of food.
-Insult is to offense as | Cause & Effect | 2 | compliment~praise | compliment~flattery | compliment~gratitude | compliment~kindness | compliment~happiness | An insult causes offense; a compliment causes gratitude.
-Mitigate is to harm as | Cause & Effect | 3 | irrigate~farm | instigate~violence | substantiate~claims | alleviate~suffering | celebrate~joy | To mitigate is to reduce harm; to alleviate is to reduce suffering.
-Curiosity is to discovery as | Cause & Effect | 2 | apathy~failure | apathy~boredom | apathy~stagnation | apathy~confusion | apathy~silence | Curiosity leads to discovery; apathy (lack of interest) leads to stagnation (no growth).
-Diligence is to success as | Cause & Effect | 0 | procrastination~failure | talent~practice | effort~reward | laziness~rest | ambition~goal | Diligence (hard work) causes success; procrastination (constant delay) causes failure.
-Insult is to offense as | Cause & Effect | 2 | atone~mistake | atone~guilt | atone~wrongdoing | atone~regret | atone~shame | You atone (make amends) for wrongdoing; an insult leads to offense. Both show cause and response.
+# ── PRODUCT-TO-SOURCE ─────────────────────────────────────────────
+Lacquer is to resin as | Product-to-Source | 0 | varnish~sap | dye~plant | ink~pigment | wax~beeswax | oil~seed | Lacquer is derived from resin; varnish is also derived from sap or resin.
+Papyrus is to reed as | Product-to-Source | 1 | parchment~hide | vellum~calf | linen~flax | silk~cocoon | cotton~boll | Papyrus is made from the papyrus reed plant; linen is made from flax.
+Amber is to resin as | Product-to-Source | 3 | coal~mineral | pearl~shell | ivory~tusk | obsidian~lava | granite~sediment | Amber is fossilized tree resin; obsidian is volcanic glass formed from rapidly cooled lava.
+Mead is to honey as | Product-to-Source | 0 | sake~rice | sake~grain | sake~yeast | sake~water | sake~barley | Mead is an alcoholic drink made from honey; sake is an alcoholic drink made from rice.
+Cashmere is to goat as | Product-to-Source | 2 | wool~lamb | linen~cotton | silk~silkworm | velvet~cotton | tweed~sheep | Cashmere fiber comes from goats; silk thread comes from the silkworm.
+Charcoal is to wood as | Product-to-Source | 4 | steel~ore | cement~limestone | glass~silica | bronze~copper | coke~coal | Charcoal is produced by heating wood; coke is produced by heating coal.
+Latex is to rubber tree as | Product-to-Source | 1 | turpentine~pine tree | resin~birch tree | pitch~oak tree | tar~coal | sap~maple tree | Latex is the fluid produced by rubber trees and processed into rubber; resin is produced by birch trees.
+# ── DEGREE (continued) ────────────────────────────────────────────
+Incensed is to annoyed as | Degree | 3 | content~pleased | irate~irritated | placid~calm | furious~angry | serene~tranquil | Incensed (extremely enraged) is a more extreme form of annoyed; furious is a more extreme form of angry.
+Destitute is to poor as | Degree | 0 | impoverished~needy | indigent~lacking | penurious~thrifty | insolvent~broke | bankrupt~indebted | Destitute (utterly without resources) is an extreme form of poor; impoverished is an extreme form of needy.
+Excoriate is to criticize as | Degree | 2 | commend~praise | rebuke~scold | lambaste~berate | admonish~caution | censure~disapprove | Excoriate (strip harshly, denounce severely) is far more extreme than criticize; lambaste is far more extreme than berate.
+Torrential is to rainy as | Degree | 1 | overcast~cloudy | deluge~wet | monsoon~drizzly | blustery~windy | parching~dry | Torrential (extremely heavy rain) is a more extreme form of rainy; monsoon is a more extreme form of drizzly.
+Odious is to unpleasant as | Degree | 4 | reprehensible~blameworthy | despicable~objectionable | noxious~harmful | loathsome~distasteful | heinous~bad | Odious (deeply repulsive) is an extreme form of unpleasant; heinous (utterly wicked) is an extreme form of bad.
+Ravenous is to hungry as | Degree | 0 | voracious~eager | famished~peckish | parched~thirsty | exhausted~tired | insatiable~wanting | Ravenous (intensely hungry) is an extreme form of hungry; voracious is an intense, consuming form of eager.
+Stupefied is to surprised as | Degree | 3 | astonished~startled | bemused~confused | flabbergasted~taken aback | mortified~embarrassed | confounded~puzzled | Stupefied (overwhelmingly stunned) is an extreme form of surprised; flabbergasted is an extreme form of taken aback.
+Immaculate is to clean as | Degree | 2 | spotless~tidy | pristine~neat | impeccable~orderly | irreproachable~proper | sterile~hygienic | Immaculate (perfectly clean) is an extreme form of clean; impeccable is an extreme form of orderly.
+Execrable is to bad as | Degree | 1 | mediocre~poor | abysmal~weak | atrocious~terrible | dire~serious | wretched~unpleasant | Execrable (utterly detestable) is an extreme form of bad; atrocious (horrifyingly cruel) is an extreme form of terrible.
 
-# ── Sequence ──────────────────────────────────────────────────────────────────
-High school is to college as | Sequence | 3 | kindergarten~pre-school | maturity~youth | teenager~school | apprenticeship~job | urbanite~city | High school prepares you for college; an apprenticeship prepares you for a job.
-Puppy is to dog as | Sequence | 2 | foal~colt | foal~pony | foal~horse | foal~mare | foal~stable | A puppy is a baby dog; a foal is a baby horse.
-Bud is to bloom as | Sequence | 0 | caterpillar~butterfly | egg~nest | plant~flower | seed~soil | leaf~tree | A bud grows into a bloom; a caterpillar transforms into a butterfly.
-Apprentice is to master as | Sequence | 0 | student~professor | child~adult | intern~employee | rookie~veteran | beginner~expert | An apprentice learns from and eventually becomes a master; a student learns from a professor.
-Dawn is to morning as | Sequence | 2 | dusk~night | dusk~sunset | dusk~evening | dusk~dark | dusk~twilight | Dawn is the start of morning; dusk is the start of evening.
-Germinate is to seed as | Sequence | 2 | hatch~chick | hatch~nest | hatch~egg | hatch~bird | hatch~shell | To germinate means a seed begins to develop; to hatch means an egg opens and develops.
+# ── FUNCTION (continued) ──────────────────────────────────────────
+Anesthetic is to sensation as | Function | 0 | sedative~consciousness | stimulant~drowsiness | analgesic~pain | purgative~toxin | antidote~poison | An anesthetic eliminates sensation; a sedative reduces consciousness. Both suppress bodily responses.
+Embargo is to trade as | Function | 2 | moratorium~activity | injunction~legal action | prohibition~commerce | censure~speech | sanction~behavior | An embargo restricts trade; a prohibition restricts commerce. Both are official bans on an activity.
+Index is to reference as | Function | 4 | appendix~supplement | footnote~clarification | glossary~definition | bibliography~attribution | abstract~summary | An index facilitates reference within a text; an abstract provides a summary of a document. Both serve informational access functions.
+Antibody is to pathogen as | Function | 3 | vaccine~immunity | quarantine~exposure | disinfectant~germ | antitoxin~venom | pesticide~insect | An antibody neutralizes a pathogen; an antitoxin neutralizes venom. Both are defensive agents.
+Corroboration is to testimony as | Function | 2 | refutation~argument | exoneration~accusation | authentication~document | alibi~suspicion | affidavit~statement | Corroboration strengthens testimony; authentication verifies a document. Both establish validity.
+Annal is to history as | Function | 5 | ledger~finance | manifest~cargo | dossier~intelligence | logbook~navigation | chronicle~events | Annals record history systematically; a logbook records navigation events. Both are systematic records.
 
-# ── Creator to Creation ───────────────────────────────────────────────────────
-Author is to novel as | Creator to Creation | 2 | composer~concert | composer~orchestra | composer~symphony | composer~stage | composer~musician | An author creates a novel; a composer creates a symphony.
-Playwright is to drama as | Creator to Creation | 2 | novelist~library | novelist~story | novelist~fiction | novelist~character | novelist~script | A playwright writes a drama; a novelist writes fiction.
-Choreographer is to ballet as | Creator to Creation | 2 | director~stage | director~audience | director~film | director~money | director~actor | A choreographer creates a ballet; a director creates a film.
-Architect is to building as | Creator to Creation | 1 | poet~stanza | poet~poem | poet~museum | poet~rhyme | poet~word | An architect creates a building; a poet creates a poem.
-Carpenter is to cabinet as | Creator to Creation | 2 | jeweler~gold | jeweler~ring | jeweler~necklace | jeweler~gem | jeweler~craft | A carpenter creates a cabinet; a jeweler creates a necklace.
+# ── PART-TO-WHOLE (continued) ─────────────────────────────────────
+Nave is to cathedral as | Part-to-Whole | 2 | aisle~church | transept~chapel | atrium~basilica | apse~sanctuary | choir~abbey | The nave is the central hall of a cathedral; the atrium is the central hall of a basilica.
+Octave is to sonata as | Part-to-Whole | 0 | movement~symphony | measure~concerto | cadenza~concerto | chord~score | bar~suite | An octave is a unit within a sonata; a movement is a major section of a symphony.
+Chromosome is to genome as | Part-to-Whole | 3 | gene~allele | protein~enzyme | nucleotide~gene | codon~chromosome | allele~genome | A chromosome is a structural unit of the genome; an allele is a variant form within the genome.
+Prologue is to play as | Part-to-Whole | 1 | coda~symphony | preface~treatise | overture~opera | epilogue~novel | index~anthology | A prologue is the opening section of a play; a coda is the closing section of a symphony.
+Axiom is to mathematical system as | Part-to-Whole | 4 | theorem~proof | postulate~geometry | lemma~theorem | corollary~formula | premise~syllogism | An axiom is a foundational assumption within a mathematical system; a premise is a foundational statement within a syllogism.
 
-# ── Material ──────────────────────────────────────────────────────────────────
-Tallow is to fat as | Material | 3 | leather~wood | leather~tanning | leather~wallet | leather~skin | leather~cow | Tallow is a product made from animal fat; leather is a product made from animal skin.
-Cider is to apple as | Material | 2 | wine~bottle | wine~vineyard | wine~grape | wine~ferment | wine~vintage | Cider is a drink made from apples; wine is a drink made from grapes.
-Tallow is to fat as | Material | 0 | glass~sand | glass~window | glass~break | glass~clear | glass~bottle | Tallow is made from animal fat; glass is made from sand.
+# ── CAUSE-AND-EFFECT (continued) ──────────────────────────────────
+Sophistry is to fallacy as | Cause-and-Effect | 2 | veracity~distortion | candor~error | chicanery~deception | transparency~confusion | probity~corruption | Sophistry (deliberately deceptive reasoning) produces fallacy; chicanery (trickery) produces deception.
+Prolixity is to tedium as | Cause-and-Effect | 0 | concision~brevity | verbosity~boredom | brevity~engagement | succinctness~clarity | terseness~confusion | Prolixity (excessive length) produces tedium; verbosity (wordiness) produces boredom. Both excessive tendencies bore an audience.
+Torpor is to inaction as | Cause-and-Effect | 3 | alacrity~activity | vigor~fatigue | lethargy~energy | languor~productivity | somnolence~alertness | Torpor (mental or physical inactivity) leads to inaction; languor (pleasant weariness) reduces productivity.
+Exacerbation is to suffering as | Cause-and-Effect | 2 | palliation~discomfort | mitigation~harm | aggravation~pain | alleviation~anguish | amelioration~distress | Exacerbation (making worse) intensifies suffering; aggravation intensifies pain.
+Repudiation is to estrangement as | Cause-and-Effect | 4 | endorsement~support | affirmation~doubt | validation~trust | sanctioning~disapproval | reconciliation~rift | Repudiation (rejection, disowning) leads to estrangement; reconciliation resolves a rift.
+Perspicacity is to insight as | Cause-and-Effect | 0 | acumen~discernment | obtuseness~understanding | dullness~perception | naivety~wisdom | density~clarity | Perspicacity (keen insight) produces discernment; acumen (sharp insight) also produces discernment.
 
-# ── Measurement ───────────────────────────────────────────────────────────────
-Pound is to weight as | Measurement | 2 | mile~foot | mile~height | mile~distance | mile~money | mile~speed | A pound is a unit used to measure weight; a mile is a unit used to measure distance.
-Pound is to weight as | Measurement | 2 | inch~foot | tall~height | mile~distance | money~rich | arithmetic~school | A pound is a unit of weight; a mile is a unit of distance. Both measure specific physical quantities.
+# ── CHARACTERISTIC (continued) ────────────────────────────────────
+Quixotic is to practicality as | Characteristic | 2 | pragmatic~idealism | visionary~realism | utopian~feasibility | idealistic~ambition | romantic~cynicism | A quixotic person disregards practicality; a utopian person disregards feasibility.
+Sanguine is to despair as | Characteristic | 0 | optimistic~hopelessness | phlegmatic~excitement | melancholic~happiness | stoic~emotion | choleric~calmness | A sanguine person is incapable of despair; an optimistic person is incapable of hopelessness.
+Punctilious is to carelessness as | Characteristic | 3 | meticulous~precision | fastidious~sloppiness | scrupulous~thoroughness | finicky~neglect | assiduous~rigor | A punctilious person is defined by absence of carelessness; a finicky person is defined by rejection of neglect.
+Mercurial is to consistency as | Characteristic | 1 | volatile~stability | capricious~predictability | erratic~reliability | fickle~steadiness | impulsive~deliberation | A mercurial person lacks consistency; a capricious person lacks predictability.
+Intrepid is to timidity as | Characteristic | 4 | audacious~boldness | dauntless~cowardice | valiant~courage | gallant~bravery | indomitable~fear | An intrepid person is defined by lack of timidity; an indomitable person is defined by lack of fear.
+Enigmatic is to transparency as | Characteristic | 2 | cryptic~clarity | inscrutable~readability | opaque~lucidity | ambiguous~precision | arcane~openness | An enigmatic person defies transparency; an opaque subject defies lucidity.
 
-# ── Word Form ─────────────────────────────────────────────────────────────────
-Computer is to computerize as | Word Form | 2 | motor~engine | motor~machine | motor~motorize | motor~drive | motor~electric | Computerize is the verb form of computer. Motorize is the verb form of motor.
-Wide is to width as | Word Form | 1 | long~longer | long~length | long~tall | long~distance | long~size | Width is the noun form of the adjective wide; length is the noun form of the adjective long.
+# ── SYNONYM (continued) ───────────────────────────────────────────
+Vacuous is to vapid as | Synonym | 3 | erudite~ignorant | profound~shallow | trite~original | inane~fatuous | pedantic~casual | Vacuous and vapid both mean lacking substance; inane and fatuous are synonyms meaning foolish and empty.
+Sagacious is to perspicacious as | Synonym | 1 | obtuse~shrewd | discerning~insightful | astute~naive | percipient~oblivious | incisive~vague | Sagacious and perspicacious both mean having keen wisdom; discerning and insightful are also synonyms.
+Nefarious is to heinous as | Synonym | 0 | villainous~wicked | benevolent~malicious | reprehensible~praiseworthy | odious~admirable | execrable~virtuous | Nefarious and heinous both mean utterly wicked; villainous and wicked are also synonyms.
+Plethora is to surfeit as | Synonym | 2 | dearth~abundance | scarcity~plenty | glut~excess | paucity~surplus | lack~profusion | Plethora and surfeit both mean an overabundance; glut and excess are also synonyms.
+Intractable is to recalcitrant as | Synonym | 4 | malleable~rigid | tractable~defiant | amenable~stubborn | pliable~unyielding | obdurate~immovable | Intractable and recalcitrant both mean stubbornly unmanageable; obdurate and immovable are also synonyms.
+Fastidious is to meticulous as | Synonym | 3 | slovenly~precise | careless~careful | sloppy~thorough | assiduous~diligent | negligent~thorough | Fastidious and meticulous both mean attentive to small details; assiduous and diligent are synonyms.
+Enervate is to debilitate as | Synonym | 0 | invigorate~weaken | fortify~exhaust | invigorate~exhaust | vitiate~strengthen | galvanize~sap | Enervate and debilitate both mean to weaken; look for the synonym pair, not the antonym pair.
+
+# ── ANTONYM (continued) ───────────────────────────────────────────
+Sanguine is to pessimistic as | Antonym | 2 | phlegmatic~apathetic | stoic~indifferent | optimistic~despairing | choleric~calm | melancholic~joyful | Sanguine (optimistically cheerful) and pessimistic are opposites; optimistic and despairing are also opposites.
+Venal is to incorruptible as | Antonym | 0 | mercenary~selfless | corrupt~honest | nefarious~upright | mendacious~truthful | perfidious~loyal | Venal (open to bribery) and incorruptible are opposites; mercenary (motivated by money) and selfless are opposites.
+Torpid is to vivacious as | Antonym | 4 | somnolent~drowsy | lethargic~sluggish | inert~active | languid~energetic | stagnant~dynamic | Torpid (sluggishly inactive) and vivacious (lively) are opposites; stagnant (motionless) and dynamic (energetic) are opposites.
+Effusive is to reticent as | Antonym | 2 | gushing~reserved | demonstrative~expressive | voluble~laconic | exuberant~subdued | verbose~taciturn | Effusive (pouring out words freely) and reticent (silent) are opposites; voluble and laconic are opposites.
+Salutary is to deleterious as | Antonym | 1 | beneficial~harmful | wholesome~noxious | remedial~therapeutic | curative~destructive | restorative~recuperative | Salutary (beneficial) and deleterious (harmful) are opposites; beneficial and harmful are the most direct pair.
+Munificent is to parsimonious as | Antonym | 0 | lavish~stingy | liberal~generous | opulent~austere | magnanimous~miserly | beneficent~frugal | Munificent (extremely generous) and parsimonious (extremely stingy) are opposites; lavish and stingy are opposites.
+Intrepid is to pusillanimous as | Antonym | 2 | audacious~brave | dauntless~fearless | valiant~craven | timid~bold | courageous~gallant | Intrepid (fearlessly brave) and pusillanimous (cowardly) are opposites; valiant (brave) and craven (cowardly) are opposites.
+
+# ── CATEGORY (continued) ──────────────────────────────────────────
+Hyperbole is to figure of speech as | Category | 3 | simile~comparison | metaphor~analogy | litotes~understatement | synecdoche~rhetoric | irony~tone | Hyperbole is a specific figure of speech (exaggeration); synecdoche is a specific figure of speech (part representing whole).
+Stoicism is to philosophy as | Category | 1 | empiricism~science | utilitarianism~ethics | existentialism~thought | pragmatism~approach | rationalism~knowledge | Stoicism is a specific school of philosophy; utilitarianism is a specific school of ethics.
+Stalagmite is to geological formation as | Category | 0 | stalactite~cave feature | moraine~glacial deposit | escarpment~rock face | butte~landform | aquifer~water source | A stalagmite is a specific geological formation (rising from a cave floor); a stalactite is a specific cave feature (hanging from the ceiling).
+Schism is to division as | Category | 2 | heresy~belief | partition~separation | rift~breach | fissure~split | coup~takeover | A schism is a specific type of division (especially within an institution); a partition is a specific type of separation.
+Libretto is to text as | Category | 3 | score~notation | score~opera | script~drama | lyric~song | stanza~verse | A libretto is a specific type of text (the words of an opera); a script is a specific type of text used in drama.
+Referendum is to vote as | Category | 0 | plebiscite~poll | election~selection | ballot~choice | caucus~meeting | primary~contest | A referendum is a specific type of vote (on a policy question); a plebiscite is a specific type of popular poll.
+Dirge is to music as | Category | 3 | elegy~poem | requiem~mass | lament~expression | threnody~composition | keening~mourning | A dirge is a specific type of music (a funeral song); a threnody is a specific type of composition (a song of lamentation).
+
+# ── WORKER-TO-TOOL (continued) ────────────────────────────────────
+Cartographer is to map as | Worker-to-Tool | 1 | taxonomist~specimen | calligrapher~brush | lexicographer~definition | geographer~territory | surveyor~chart | A cartographer creates maps; a lexicographer creates dictionaries. Both produce reference tools.
+Paleontologist is to fossil as | Worker-to-Tool | 0 | archaeologist~artifact | anthropologist~culture | geologist~strata | biologist~organism | ecologist~ecosystem | A paleontologist works with fossils; an archaeologist works with artifacts. Both excavate evidence of the past.
+Actuary is to risk as | Worker-to-Tool | 2 | statistician~data | strategist~plan | analyst~trend | economist~policy | auditor~accounts | An actuary calculates risk; a statistician analyzes data. Both use quantitative methods.
+Stenographer is to shorthand as | Worker-to-Tool | 4 | typographer~typeface | calligrapher~script | compositor~type | proofreader~manuscript | cryptographer~cipher | A stenographer uses shorthand to record speech; a cryptographer uses cipher to encode messages.
+
+# ── ACTION-TO-OBJECT (continued) ──────────────────────────────────
+Bowdlerize is to literature as | Action-to-Object | 2 | redact~document | censor~film | sanitize~content | abridge~text | expurgate~scripture | To bowdlerize is to remove offensive passages from literature; to sanitize is to remove objectionable content.
+Corroborate is to evidence as | Action-to-Object | 0 | substantiate~claim | verify~fact | authenticate~document | validate~hypothesis | confirm~testimony | To corroborate is to support evidence; to substantiate is to support a claim. Both actions reinforce.
+Sequester is to jury as | Action-to-Object | 3 | isolate~patient | quarantine~traveler | confine~prisoner | impound~vehicle | detain~suspect | To sequester is to isolate a jury from outside influence; to impound is to seize and hold a vehicle.
+Exhume is to body as | Action-to-Object | 1 | excavate~artifact | disinter~remains | unearth~relic | retrieve~sample | recover~specimen | To exhume is to dig up a body; to disinter is to unearth remains. Both describe removal from the ground.
+
+# ── PRODUCT-TO-SOURCE (continued) ────────────────────────────────
+Pewter is to tin as | Product-to-Source | 2 | brass~zinc | bronze~tin | sterling~silver | alloy~metal | solder~lead | Pewter is an alloy made primarily of tin; sterling is an alloy made primarily of silver.
+Indigo is to plant as | Product-to-Source | 0 | saffron~crocus | cochineal~insect | vermillion~mineral | ochre~earth | carmine~flower | Indigo dye is derived from a plant; saffron is derived from the crocus flower.
+Vinegar is to wine as | Product-to-Source | 3 | brine~salt | molasses~sugar | malt~barley | cider vinegar~apple | buttermilk~cream | Vinegar is produced by further fermenting wine; cider vinegar is produced from apples.
+Serum is to blood as | Product-to-Source | 1 | plasma~marrow | whey~milk | extract~herb | concentrate~juice | essence~flower | Serum is derived by processing blood; whey is derived by processing milk. Both are liquid products of biological sources.

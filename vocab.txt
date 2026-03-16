@@ -1,207 +1,272 @@
-# vocab.txt
+# Upper Level SSAT Vocabulary -- 200 words
 # Format: word | pos | level | definition | example sentence | root
-# pos: adj, noun, verb, adv
-# level: 1 (easier), 2 (medium), 3 (harder)
-# root: write the root string, or "none" if there is no root
-# Lines starting with # are comments and are ignored by the app.
-
-Benevolent | adj | 1 | Kind and generous toward others | The benevolent teacher tutored students after school for free. | bene- (good)
-Malevolent | adj | 2 | Having a wish to do harm to others | The malevolent villain plotted to ruin the entire city. | mal- (bad)
-Eloquent | adj | 2 | Fluent and persuasive in speaking or writing | Her eloquent speech moved the entire crowd to tears. | none
-Garrulous | adj | 3 | Excessively talkative, especially on trivial matters | The garrulous student kept interrupting the lesson. | garr- (chatter)
-Tenacious | adj | 2 | Persistent and determined; not giving up easily | The tenacious athlete practiced six hours every single day. | ten- (hold)
-Resilient | adj | 1 | Able to recover quickly from difficulty | After failing the test, the resilient student studied harder. | none
-Meticulous | adj | 2 | Showing extreme care and precision about details | Her meticulous notes had zero errors in them. | none
-Diligent | adj | 1 | Hardworking and careful in doing one's duties | The diligent student reviewed every chapter before the test. | none
-Capricious | adj | 3 | Prone to sudden, unpredictable changes in mood | The capricious weather changed from sunny to stormy in minutes. | none
-Pensive | adj | 2 | Engaged in deep, quiet thought, often with sadness | She sat pensive by the window, missing her old friends. | pens- (weigh)
-Vivacious | adj | 2 | Attractively lively and full of energy | Her vivacious personality made every party fun. | viv- (life)
-Stoic | adj | 2 | Enduring pain or hardship without showing feelings | He remained stoic even as everyone around him panicked. | none
-Gregarious | adj | 3 | Enjoying and actively seeking social company | The gregarious puppy ran up to every person at the park. | greg- (flock)
-Loquacious | adj | 3 | Tending to talk a great deal; very talkative | The loquacious host narrated every single photo in the album. | loqu- (speak)
-Serene | adj | 1 | Calm, peaceful, and untroubled | The lake was completely serene before sunrise. | none
-Trepidation | noun | 2 | A feeling of fear or anxiety about something | She felt trepidation before her first solo performance. | none
-Acumen | noun | 3 | Keen judgment and insight in a particular area | Her business acumen helped the team double its sales. | none
-Wistful | adj | 2 | Having a longing for something past or absent | He gave a wistful smile remembering childhood summers. | none
-Ubiquitous | adj | 3 | Appearing or found everywhere at the same time | Smartphones have become ubiquitous in modern life. | none
-Frugal | adj | 1 | Careful with money and resources; thrifty | Her frugal habits meant she always had savings. | none
-Haughty | adj | 2 | Arrogantly superior and disdainful toward others | The haughty princess refused to speak to the servants. | none
-Candid | adj | 1 | Truthful and straightforward; frank and honest | She gave a candid answer even though the truth stung. | none
-Eminent | adj | 2 | Famous and respected in a particular field | The eminent scientist had already won three Nobel Prizes. | none
-Didactic | adj | 3 | Intended to teach a lesson; overly instructive | Aesop's fables are didactic stories designed to teach morals. | none
-Languid | adj | 2 | Weak or slow in movement; lacking energy | The languid summer afternoon made everyone drowsy. | none
-Furtive | adj | 2 | Attempting to avoid notice; sneaky | He cast a furtive glance before passing the note. | none
-Benign | adj | 2 | Gentle and kindly; not harmful | Despite the rumors, the old man was completely benign. | bene- (good)
-Raucous | adj | 2 | Making or constituting a harsh, loud noise | The raucous crowd cheered when the home team scored. | none
-Buoyant | adj | 2 | Cheerful and optimistic; able to float | Despite the setback, she remained buoyant and full of hope. | none
-Nonchalant | adj | 2 | Relaxed and calm; casually showing no concern | She seemed completely nonchalant about the big test. | none
-Inquisitive | adj | 1 | Very curious; eager to learn and know things | The inquisitive child asked questions about absolutely everything. | quer- (seek)
-Zealous | adj | 2 | Showing great enthusiasm in pursuit of a cause | She was zealous in her commitment to protecting the environment. | none
-Immutable | adj | 3 | Unchanging over time; unable to be altered | The laws of mathematics are immutable. | im-(not)+mut-(change)
-Querulous | adj | 3 | Complaining in a petulant, whining manner | The querulous child complained about every single dinner choice. | none
-Dauntless | adj | 2 | Showing fearlessness and bold determination | The dauntless explorer ventured into the unknown jungle alone. | none
-Verbose | adj | 2 | Using far more words than are needed | His verbose essay could easily have been half the length. | verb- (word)
-Wane | verb | 2 | To decrease gradually in vigor, power, or extent | Her enthusiasm for the project began to wane after weeks. | none
-Kindle | verb | 1 | To light a fire; to arouse or stir up a feeling | That book kindled her love of science forever. | none
-Circumspect | adj | 3 | Thinking carefully before acting; very cautious | A circumspect driver always checks all mirrors before turning. | circum-(around)+spec-(look)
-Acrimonious | adj | 3 | Bitter and angry in manner or tone of voice | The acrimonious argument left both friends feeling deeply hurt. | none
-Oblivious | adj | 1 | Unaware of or unconcerned about what is happening | He was completely oblivious to the surprise party preparations. | none
-Dubious | adj | 2 | Hesitant; not fully convinced; of questionable quality | She was dubious about the salesman's exaggerated promises. | none
-Ambiguous | adj | 2 | Open to more than one meaning; unclear | The instructions were so ambiguous that everyone did it differently. | ambi- (both)
-Scrupulous | adj | 3 | Very careful and thorough; having strong moral principles | The scrupulous accountant double-checked every single number. | none
-Opulent | adj | 3 | Rich, luxurious, and impressively expensive-looking | The opulent mansion had golden doorknobs and marble floors. | none
-Hapless | adj | 2 | Unfortunate and consistently unlucky | The hapless traveler missed all four of his connecting flights. | none
-Jocular | adj | 3 | Fond of joking; characterized by jokes and humor | His jocular manner made even difficult topics feel fun. | none
-Pedantic | adj | 3 | Overly focused on minor details; showing off learning | His pedantic corrections made him unpopular at parties. | none
-Notorious | adj | 1 | Famous for something bad; having a bad reputation | The notorious pirate was feared across all seven seas. | none
-Judicious | adj | 3 | Showing good sense and sound judgment | She made a judicious decision to wait before speaking. | none
-Adamant | adj | 2 | Refusing to be persuaded; firmly decided | She was adamant that she would not change her answer. | none
-Adept | adj | 1 | Very skilled or proficient at something | He was adept at solving even the hardest math puzzles. | none
-Affable | adj | 2 | Friendly, good-natured, and easy to talk to | The affable librarian helped every student with a smile. | none
-Alacrity | noun | 3 | Brisk and cheerful readiness to do something | She accepted the challenge with great alacrity. | none
-Aloof | adj | 2 | Not friendly or forthcoming; cool and distant | The new student seemed aloof, but she was just shy. | none
-Altruistic | adj | 3 | Showing unselfish concern for the well-being of others | Her altruistic decision to donate her prize money inspired everyone. | none
-Amicable | adj | 2 | Having a friendly and pleasant manner | Despite their disagreement, the two teams reached an amicable solution. | none
-Apathy | noun | 2 | Lack of interest, enthusiasm, or concern | His apathy toward the election surprised his politically active friends. | path- (feeling)
-Appease | verb | 2 | To make someone calmer by giving what they want | The teacher tried to appease the upset student with extra time. | none
-Arrogant | adj | 1 | Having an exaggerated sense of one's own importance | The arrogant champion refused to congratulate the runner-up. | none
-Articulate | adj | 1 | Having the ability to speak fluently and clearly | The articulate student explained her idea without any hesitation. | none
-Astute | adj | 2 | Very clever; showing an ability to accurately assess situations | The astute detective noticed the clue that everyone else missed. | none
-Audacious | adj | 2 | Showing a willingness to take surprisingly bold risks | It was audacious to challenge the champion in her first match. | aud- (dare)
-Austere | adj | 3 | Severe in manner; plain and simple without luxury | The austere classroom had only desks, a board, and one window. | none
-Banal | adj | 3 | So common as to be lacking interest; predictable | The movie had a banal plot that everyone could predict. | none
-Belligerent | adj | 2 | Hostile and aggressive; eager to argue or fight | The belligerent player was removed from the game for arguing. | none
-Blithe | adj | 3 | Showing a casual, cheerful indifference | She gave a blithe shrug, as if the problem didn't matter. | none
-Boisterous | adj | 1 | Noisy, energetic, and cheerful | The boisterous crowd erupted when the band took the stage. | none
-Boorish | adj | 3 | Rough and bad-mannered; unpleasant to be around | His boorish behavior at the dinner embarrassed his family. | none
-Brevity | noun | 2 | Concise and exact use of words in writing or speech | The coach admired her brevity -- she said exactly what was needed. | brev- (short)
-Callous | adj | 2 | Showing an insensitive disregard for others | The callous remark brought tears to her younger sister's eyes. | none
-Clamor | noun | 1 | A loud and confused noise; to make such a noise | The clamor of the cafeteria made it hard to think. | none
-Clemency | noun | 3 | Mercy and leniency shown toward an offender | The judge showed clemency and reduced the boy's punishment. | none
-Coerce | verb | 2 | To persuade someone to do something using force or threats | No one should coerce a student into changing their answer. | none
-Cogent | adj | 3 | Clear, logical, and convincing | Her cogent argument convinced even the most skeptical judges. | none
-Complacent | adj | 2 | Showing uncritical satisfaction with oneself | The complacent team stopped practicing and quickly lost the championship. | none
-Concise | adj | 1 | Giving a lot of information clearly in few words | A good essay title should be concise and descriptive. | none
-Condescending | adj | 2 | Acting as though others are inferior; patronizing | Her condescending tone made her teammates feel disrespected. | none
-Convoluted | adj | 3 | Extremely complex and difficult to follow | The convoluted instructions made the simple game impossible to start. | none
-Copious | adj | 2 | Abundant in supply; more than enough | She took copious notes and never missed a single detail. | none
-Credulous | adj | 3 | Too ready to believe things; easily fooled | The credulous child believed every tall tale his brother told. | none
-Cryptic | adj | 2 | Having a meaning that is mysterious or hard to understand | She left a cryptic note that none of her friends could decode. | crypt- (hidden)
-Cunning | adj | 1 | Having skill in achieving goals in clever or sly ways | The cunning fox tricked the other animals in every fable. | none
-Cynical | adj | 2 | Believing that people are motivated only by self-interest | A cynical reader doubts that any character acts from pure kindness. | none
-Decorum | noun | 3 | Behavior expected in polite society; proper conduct | The principal reminded students that decorum was expected at assembly. | none
-Deferential | adj | 3 | Showing great respect by submitting to others' wishes | The new student was deferential to the teacher's every instruction. | none
-Deliberate | adj | 1 | Done with intention; careful and unhurried | She made a deliberate choice to read ten pages every night. | none
-Desolate | adj | 2 | Feeling completely alone or abandoned; empty and bleak | The desolate playground looked especially sad in the winter rain. | none
-Diffident | adj | 3 | Modest or shy due to a lack of self-confidence | The diffident student spoke so softly the teacher had to lean in. | none
-Discern | verb | 2 | To recognize or find out something; to perceive clearly | Even in the fog, she could discern the outline of the lighthouse. | none
-Disdain | noun | 2 | Feeling that something is unworthy of consideration | He looked at the messy locker with obvious disdain. | none
-Disparage | verb | 3 | To regard or represent as being of little worth | Good sportsmanship means never disparaging your opponent. | none
-Docile | adj | 2 | Ready to accept control or instruction; quiet and easy to manage | The docile puppy followed every command on the first try. | none
-Dogmatic | adj | 3 | Inclined to lay down principles as undeniably true | The dogmatic professor refused to consider any other interpretation. | none
-Dormant | adj | 2 | Temporarily inactive; in a state of rest or sleep | The volcano had been dormant for three hundred years. | none
-Ebullient | adj | 3 | Cheerful and full of energy; enthusiastic | Her ebullient laugh filled the entire hallway with joy. | none
-Eccentric | adj | 1 | Unconventional and slightly strange in behavior | The eccentric inventor covered every wall of his house with blueprints. | none
-Egregious | adj | 3 | Outstandingly bad; shockingly terrible | Copying someone's entire essay was an egregious act of dishonesty. | greg- (flock)
-Empathy | noun | 1 | The ability to understand and share the feelings of another | Her empathy allowed her to comfort friends going through hard times. | path- (feeling)
-Enigmatic | adj | 3 | Difficult to interpret or understand; mysterious | The enigmatic smile on the portrait puzzled art historians for centuries. | none
-Ephemeral | adj | 3 | Lasting for a very short time | A rainbow is ephemeral -- beautiful but gone in minutes. | none
-Erratic | adj | 2 | Not regular or consistent; unpredictable | The erratic signal made it impossible to watch the game online. | none
-Erudite | adj | 3 | Having or showing deep, wide knowledge | The erudite professor had memorized passages from hundreds of books. | none
-Exasperate | verb | 2 | To irritate or frustrate someone intensely | The constant interruptions began to exasperate even the patient teacher. | none
-Exemplary | adj | 2 | Serving as a desirable model; representing the best | Her exemplary behavior earned her the school's character award. | none
-Exuberant | adj | 2 | Filled with lively energy and enthusiasm | The exuberant fans rushed onto the field after the final whistle. | none
-Fastidious | adj | 3 | Very attentive to accuracy and detail; difficult to please | The fastidious editor corrected every missing comma in the manuscript. | none
-Fervent | adj | 2 | Having or displaying a passionate intensity | She was a fervent believer in the power of public libraries. | none
-Fickle | adj | 2 | Changing frequently, especially regarding loyalties | The fickle fan cheered for whichever team was winning. | none
-Flourish | verb | 1 | To grow or develop in a healthy, vigorous way | Given water and sunlight, even a small plant will flourish. | none
-Forlorn | adj | 2 | Pitifully sad and abandoned; hopeless | The forlorn kitten sat alone at the back of the shelter. | none
-Formidable | adj | 2 | Inspiring fear or respect through impressive strength | The formidable chess champion had not lost a match in two years. | none
-Forthright | adj | 2 | Direct and outspoken; frank | Her forthright critique helped the team fix the project immediately. | none
-Frivolous | adj | 2 | Not having any serious purpose or value; silly | The judge dismissed the frivolous complaint in under a minute. | none
-Gullible | adj | 1 | Easily persuaded to believe something; naive | The gullible tourist believed every wild story the guide told. | none
-Hamper | verb | 2 | To hinder or impede the movement or progress of something | Knee pain began to hamper her progress in the race. | none
-Humility | noun | 1 | A modest view of one's own importance | Despite winning three trophies, she spoke with genuine humility. | none
-Impartial | adj | 2 | Treating all rivals or disputants equally; unbiased | The impartial judge considered both sides before making a decision. | none
-Impulsive | adj | 1 | Acting or done without forethought | His impulsive decision to skip practice cost the team the game. | none
-Indignant | adj | 2 | Feeling or showing anger about something unjust or wrong | She was indignant when her correct answer was marked wrong. | none
-Ingenious | adj | 2 | Clever, original, and inventive | Her ingenious solution used only materials already in the classroom. | none
-Innate | adj | 2 | Inborn; natural, not learned | Some musicians seem to have an innate sense of rhythm. | none
-Integrity | noun | 1 | The quality of being honest and having strong moral principles | A person of integrity does the right thing even when no one watches. | none
-Intricate | adj | 2 | Very complicated or detailed | The intricate pattern on the quilt took three years to sew. | none
-Irascible | adj | 3 | Having or showing a tendency to be easily angered | The irascible coach shouted at every small mistake. | none
-Laudable | adj | 2 | Deserving praise and commendation | Her laudable effort to recycle inspired the whole neighborhood. | laud- (praise)
-Lethargic | adj | 2 | Affected by lethargy; sluggish and apathetic | After the long flight, everyone felt lethargic and slow. | none
-Lucid | adj | 2 | Expressed clearly; easy to understand | Her lucid explanation made the confusing concept finally make sense. | luc- (light)
-Magnanimous | adj | 3 | Very generous or forgiving, especially toward a rival | The magnanimous winner shook every opponent's hand after the match. | magn- (great)
-Malleable | adj | 3 | Easily influenced; able to be shaped or changed | Young minds are malleable, which is why teaching matters so much. | none
-Mendacious | adj | 3 | Not telling the truth; lying | The mendacious student invented an excuse for every missing homework. | none
-Methodical | adj | 2 | Done according to a systematic plan; orderly | Her methodical approach to studying meant she rarely forgot anything. | none
-Mollify | verb | 3 | To appease the anger or anxiety of someone | The coach tried to mollify the disappointed players after the loss. | none
-Mundane | adj | 2 | Lacking interest or excitement; ordinary | She turned even the most mundane chore into something fun. | none
-Nefarious | adj | 3 | Wicked or criminal; extremely evil | The nefarious scheme was uncovered before anyone was harmed. | none
-Negligent | adj | 2 | Failing to take proper care in doing something | The negligent worker left safety equipment scattered on the floor. | none
-Nostalgic | adj | 1 | Feeling a sentimental longing for the past | The old photographs made her deeply nostalgic for childhood summers. | none
-Obstinate | adj | 2 | Stubbornly refusing to change one's opinion | The obstinate child refused to apologize no matter what. | none
-Ominous | adj | 1 | Giving the impression that something bad is going to happen | The ominous dark clouds made the hikers turn back immediately. | none
-Pacify | verb | 2 | To quell the anger or agitation of someone | She tried to pacify the crying baby with a soft song. | pac- (peace)
-Perceptive | adj | 2 | Having or showing a good ability to understand things | Her perceptive question impressed the entire panel of judges. | none
-Placid | adj | 2 | Calm and peaceful; not easily upset | The placid lake reflected the mountains without a single ripple. | none
-Plausible | adj | 2 | Seeming reasonable or probable | Her explanation was plausible -- it could easily have been true. | none
-Pompous | adj | 2 | Affectedly grand, solemn, or self-important | The pompous speaker used long words just to sound impressive. | none
-Pragmatic | adj | 2 | Dealing with things in a practical, realistic way | She was pragmatic about the setback and immediately made a new plan. | none
-Precarious | adj | 2 | Not securely held; dangerously uncertain | The precarious stack of books looked ready to fall at any moment. | none
-Profound | adj | 2 | Very great or intense; showing deep insight or understanding | Reading that novel had a profound effect on how she saw the world. | none
-Prudent | adj | 2 | Acting with care and thought for the future | It was prudent to study a little each night rather than all at once. | none
-Reticent | adj | 3 | Not revealing one's thoughts or feelings readily; reserved | Despite winning the prize, she was reticent during the interview. | none
-Sagacious | adj | 3 | Having or showing keen mental discernment; wise | The sagacious counselor gave advice that students remembered for years. | none
-Sanguine | adj | 3 | Optimistic, especially in difficult situations | Even after losing two games, the coach remained sanguine about the season. | none
-Skeptical | adj | 1 | Not easily convinced; having doubts or reservations | She was skeptical of claims that couldn't be backed up with evidence. | none
-Spontaneous | adj | 1 | Performed without planning; natural and unforced | The spontaneous dance party in the hallway lifted everyone's spirits. | none
-Subdued | adj | 2 | Quiet and restrained; not intense or strong | The crowd was subdued after the heartbreaking loss. | none
-Subtle | adj | 2 | So delicate as to be difficult to analyze | There was a subtle difference in the two paintings that few could spot. | none
-Succinct | adj | 2 | Briefly and clearly expressed | Her succinct summary covered every major point in just four sentences. | none
-Superfluous | adj | 3 | Unnecessary, especially through being more than enough | The editor removed all superfluous words to sharpen the writing. | none
-Tactful | adj | 1 | Having or showing skill in dealing with sensitive situations | A tactful person can disagree without hurting anyone's feelings. | none
-Tranquil | adj | 1 | Free from disturbance; calm | The tranquil garden made a perfect place to read on a Sunday morning. | none
-Transparent | adj | 1 | Easy to perceive or detect; open and honest | Her transparent excitement about the surprise ruined the secret. | none
-Turbulent | adj | 2 | Moving unsteadily; full of confusion and disorder | The turbulent flight had everyone gripping their armrests tightly. | none
-Unassuming | adj | 2 | Not pretentious or arrogant; modest | Despite her fame, she remained completely unassuming and warm. | none
-Vacillate | verb | 3 | To waver between different opinions or actions; be indecisive | He vacillated so long between the two choices that the deadline passed. | none
-Valiant | adj | 1 | Possessing or showing courage or determination | The valiant firefighter ran into the burning building without hesitation. | none
-Venerate | verb | 3 | To regard with great respect and reverence | The students venerated the founder whose portrait hung in the hall. | none
-Vigilant | adj | 2 | Keeping careful watch for possible danger or difficulties | A vigilant lifeguard watches the water at all times without distraction. | none
-Vindictive | adj | 3 | Having or showing a strong desire for revenge | A vindictive character wants others to suffer for wrongs done to them. | none
-Volatile | adj | 2 | Liable to change rapidly and unpredictably | The volatile weather changed from sunshine to hailstorm in minutes. | none
-Whimsical | adj | 2 | Playfully quaint or fanciful in an appealing way | The whimsical illustration showed a dragon reading a tiny book. | none
-Zeal | noun | 1 | Great energy or enthusiasm in pursuit of a cause | Her zeal for science led her to read every book in the library. | none
-Acute | adj | 2 | Present to a severe or intense degree; sharp | She had an acute sense of hearing and could detect the faintest sound. | none
-Brevity | noun | 2 | Concise expression; shortness of time | His answer impressed everyone with its brevity -- just two words. | brev- (short)
-Clemency | noun | 3 | Mercy and leniency shown toward an offender | The judge showed clemency by reducing the sentence. | none
-Divert | verb | 1 | To cause to change course; to distract from something | A funny story can divert attention from a difficult moment. | none
-Elusive | adj | 2 | Difficult to find, catch, or achieve | The solution to the puzzle remained elusive for days. | none
-Fallacy | noun | 3 | A mistaken belief; a failure in reasoning | It is a fallacy to think that memorizing facts equals understanding. | none
-Genial | adj | 2 | Friendly and cheerful; pleasantly warm | The genial host made every guest feel instantly welcome. | gen- (birth/kind)
-Hubris | noun | 3 | Excessive pride or self-confidence; arrogance | His hubris led him to challenge the champion without any training. | none
-Implicit | adj | 3 | Implied though not directly stated | Her silence carried an implicit message that she was unhappy. | none
-Jeopardize | verb | 2 | To put someone or something into a situation with risk of loss | One bad decision could jeopardize the entire season. | none
-Keen | adj | 1 | Having a sharp or penetrating mind; eager | She had a keen eye for small errors that others missed. | none
-Lurid | adj | 3 | Vivid in a disturbing way; shocking | The report painted a lurid picture of the damage from the storm. | none
-Marvel | verb | 1 | To be filled with wonder or astonishment | She could only marvel at the beauty of the ancient temple. | none
-Negate | verb | 2 | To nullify or make ineffective; to deny the existence of | One careless sentence can negate an otherwise excellent argument. | none
-Oblique | adj | 3 | Neither parallel nor at a right angle; not explicit | His oblique compliment was so indirect she almost missed it. | none
-Paramount | adj | 2 | More important than anything else; supreme | Safety is paramount when working with any kind of equipment. | none
-Quell | verb | 2 | To put an end to; to suppress or extinguish | The teacher quickly quelled the argument before it escalated. | none
-Ratify | verb | 3 | To sign or give formal consent to; to make officially valid | All members must ratify the agreement before it becomes binding. | none
-Scrutinize | verb | 2 | To examine or inspect closely and critically | The detective scrutinized every detail of the crime scene. | none
-Tenuous | adj | 3 | Very thin or weak; having little substance | His argument rested on a tenuous connection between two facts. | ten- (hold)
-Undermine | verb | 2 | To damage or weaken gradually from within | Constant criticism can undermine a person's confidence. | none
-Viable | adj | 2 | Capable of working successfully; feasible | The team presented two viable solutions to the problem. | none
-Wary | adj | 1 | Feeling or showing caution about possible dangers | She was wary of trusting someone she had just met. | none
-Xenophobia | noun | 3 | Intense dislike or fear of people from other countries | The history teacher explained how xenophobia leads to discrimination. | xeno- (foreign)
-Yearn | verb | 1 | To have an intense feeling of longing | After months away, she yearned to see her old friends again. | none
-Zenith | noun | 2 | The highest point reached; the peak of something | At the zenith of her career, she had won every major award. | none
-Absolve | verb | 3 | To formally declare that someone is free from blame | The investigation absolved her of any wrongdoing. | ab- (away)
-Bizarre | adj | 1 | Very strange or unusual | The plot of the story became more bizarre with every chapter. | none
-Chronicle | noun | 2 | A factual written account of important events in order of time | The book was a chronicle of the explorer's five-year journey. | chron- (time)
-Diligence | noun | 1 | Careful and persistent work or effort | Her diligence in practicing daily showed in her final performance. | none
+Abstruse | adj | 3 | Difficult to understand; obscure and complex in meaning | The professor's abstruse lecture left even the graduate students confused and searching for clarity. | ab- (away)
+Acerbic | adj | 2 | Sharp, biting, or harsh in tone or manner | Her acerbic remarks during the debate silenced her opponent more effectively than any argument could. | acer (sharp, bitter)
+Ameliorate | verb | 2 | To make something bad or unsatisfactory better; to improve | The new policy was designed to ameliorate the suffering of those affected by the economic crisis. | melior (better)
+Anachronism | noun | 2 | Something out of its proper historical time period | A knight carrying a smartphone would be a glaring anachronism in any medieval drama. | ana- (against) + chronos (time)
+Anathema | noun | 3 | Something greatly detested or loathed; a formal curse | Compromise was anathema to the ideological purists who controlled the organization's agenda. | ana- (up) + tithenai (to place)
+Antipathy | noun | 2 | A deep-seated feeling of dislike or aversion toward someone | The two rivals regarded each other with barely concealed antipathy throughout the entire negotiation. | anti- (against) + pathos (feeling)
+Apocryphal | adj | 3 | Of doubtful authenticity; widely believed but likely not true | The apocryphal tale of Washington chopping down the cherry tree has no historical basis whatsoever. | apo- (away) + kryptein (to hide)
+Approbation | noun | 3 | Approval or praise, especially from an authority or respected source | The young artist beamed with pride upon receiving approbation from the most celebrated critic in the field. | ad- (to) + probare (to approve)
+Arcane | adj | 2 | Known only to a few; mysterious and secret | The text was filled with arcane references that only scholars specializing in medieval alchemy could decipher. | arcanus (secret, closed)
+Arduous | adj | 2 | Requiring great effort and endurance; difficult and exhausting | The arduous climb to the summit tested the mountaineers' physical and mental limits for three grueling days. | arduus (steep, high)
+Ascetic | adj | 2 | Practicing severe self-discipline and abstaining from indulgence | The ascetic monk owned nothing but a robe and refused all food except bread and water. | asketes (monk, hermit)
+Assuage | verb | 2 | To make an unpleasant feeling less intense; to soothe or relieve | Nothing could assuage her grief in the days following the sudden and unexpected loss of her mentor. | ad- (to) + suavis (sweet)
+Attenuate | verb | 3 | To reduce in force or effect; to weaken or thin out | The new filters attenuate the high-frequency noise enough to make the recording usable for broadcast. | ad- (to) + tenuis (thin)
+Auspicious | adj | 2 | Giving a favorable indication of future success; promising | Winning the regional championship was an auspicious start to what would become a legendary athletic career. | avis (bird) + specere (to look)
+Avarice | noun | 2 | Extreme greed for wealth or material gain | His avarice eventually consumed every relationship he had, as he sacrificed loyalty for financial advantage. | avere (to crave)
+Axiom | noun | 2 | A universally accepted principle or truth requiring no proof | It is a political axiom that leaders who ignore public sentiment rarely survive the next election cycle. | axios (worthy)
+Perfidious | adj | 3 | Guilty of betrayal or treachery; deceitful and untrustworthy | The perfidious spy had been feeding false intelligence to both sides for nearly a decade undetected. | per- (through) + fides (faith)
+Obsequious | adj | 3 | Excessively compliant or servile; fawning in a sycophantic manner | The obsequious assistant agreed with every idea his boss proposed, no matter how flawed or impractical. | ob- (toward) + sequi (to follow)
+Recalcitrant | adj | 3 | Stubbornly resistant to authority or control; uncooperative | The recalcitrant student refused to follow any classroom rules, making the teacher's job nearly impossible. | re- (back) + calcitrare (to kick)
+Equivocate | verb | 3 | To use ambiguous language to avoid commitment or to deceive | The politician continued to equivocate when pressed on the issue, giving no direct answer to any question. | equi- (equal) + vocare (to call)
+Sycophant | noun | 3 | A person who flatters important people to gain personal advantage | Every powerful ruler attracts sycophants who praise every decision regardless of its wisdom or outcome. | sykon (fig) + phainein (to show)
+Truculent | adj | 3 | Eager or quick to argue or fight; aggressively defiant | The truculent defendant interrupted the proceedings repeatedly, earning a stern rebuke from the presiding judge. | trux (fierce, savage)
+Vituperate | verb | 3 | To blame or insult in strong or violent language; to berate harshly | The angry critic proceeded to vituperate the playwright for what he called an insult to serious theater. | vitium (fault) + parare (to prepare)
+Pellucid | adj | 3 | Translucently clear; easily understood; lucid and transparent in style | Her pellucid explanation of the theorem made the concept accessible even to students with no prior background. | per- (through) + lucere (to shine)
+Perfunctory | adj | 2 | Done with minimal effort; carried out as routine with little care | His perfunctory apology convinced no one; his tone made it clear he felt no genuine remorse. | per- (through) + fungi (to perform)
+Perspicacious | adj | 3 | Having a ready insight into things; shrewd and discerning in judgment | The perspicacious investor identified the company's potential years before its competitors recognized the opportunity. | perspicax (sharp-sighted)
+Loquacious | adj | 2 | Tending to talk a great deal; overly talkative in nature | The loquacious guide described every artifact in exhaustive detail, prolonging the museum tour by two hours. | loqui (to speak)
+Ignominious | adj | 2 | Deserving or causing public disgrace or shame; humiliating | The team's ignominious defeat in the first round shocked fans who had expected a championship run. | in- (not) + nomen (name, reputation)
+Inimical | adj | 3 | Tending to obstruct or harm; hostile or unfavorable in effect | Prolonged stress is inimical to both cognitive performance and long-term physical health, as studies confirm. | inimicus (enemy)
+Insipid | adj | 2 | Lacking vigor or interest; dull and flat; lacking strong flavor | The insipid screenplay offered no surprises, relying entirely on clichés and predictable character arcs throughout. | in- (not) + sapidus (tasty)
+Intransigent | adj | 3 | Unwilling to change one's views or agree; uncompromising and stubborn | Both parties remained intransigent throughout the talks, making any form of lasting agreement impossible. | in- (not) + transigere (to come to agreement)
+Invective | noun | 3 | Insulting, abusive, or highly critical language; a verbal attack | The editorial was a torrent of invective aimed at the administration's handling of the economic downturn. | in- (against) + vehere (to carry)
+Laconic | adj | 2 | Using very few words; brief and concise to the point of seeming rude | The general's laconic reply -- a single word -- conveyed his complete disdain for the enemy's surrender terms. | Lakon (Spartan, known for brevity)
+Lassitude | noun | 2 | Physical or mental weariness; lack of energy after effort or illness | A profound lassitude settled over the refugees after weeks of travel with little food or rest. | lassus (weary, tired)
+Malediction | noun | 3 | A curse or the utterance of a curse against someone | The villagers feared the old woman's malediction and avoided crossing her path whenever possible. | male- (badly) + dicere (to speak)
+Mendacity | noun | 3 | The tendency to be untruthful; habitual dishonesty in speech | The witness's mendacity was exposed under cross-examination when her story contradicted physical evidence at the scene. | mendax (lying)
+Mercurial | adj | 2 | Subject to sudden unpredictable changes of mood; volatile and impulsive | Her mercurial temperament made her both an exciting collaborator and an exhausting one to work with daily. | Mercurius (the god Mercury)
+Misanthrope | noun | 2 | A person who dislikes and distrusts other people and society generally | The reclusive misanthrope rejected every invitation and eventually cut off all contact with former friends and family. | misos (hatred) + anthropos (human)
+Nebulous | adj | 2 | Not clearly defined or stated; hazy, vague, or indistinct in form | The proposal was too nebulous to gain approval; investors demanded specific timelines and measurable outcomes. | nebula (mist, cloud)
+Nefarious | adj | 2 | Wicked, criminal, or villainous in a shocking way | The journalist uncovered the corporation's nefarious scheme to dump toxic waste in protected wetland areas. | nefas (crime, sin)
+Obdurate | adj | 3 | Stubbornly refusing to change one's position; hardened against persuasion | Even after seeing the evidence, the obdurate chairman refused to reconsider the deeply flawed proposal. | ob- (against) + durare (to harden)
+Obloquy | noun | 3 | Strong public criticism or verbal abuse; a state of disgrace | After the scandal broke, the former official faced a torrent of obloquy from citizens who had once admired him. | ob- (against) + loqui (to speak)
+Obstreperous | adj | 2 | Noisy and difficult to control; loudly boisterous and unruly | The obstreperous crowd refused to settle down even after the speaker had taken the podium three times. | ob- (against) + strepere (to make noise)
+Officious | adj | 2 | Asserting authority or giving unsolicited advice in an overbearing way | The officious manager hovered over every desk, offering corrections to work that required no correction at all. | officium (duty, service)
+Onerous | adj | 2 | Involving a great deal of effort and burden; troublesome and oppressive | The new compliance requirements were so onerous that several small businesses chose to close rather than comply. | onus (burden)
+Opprobrious | adj | 3 | Expressing scorn or criticism; bringing shame or disgrace | The senator's opprobrious remarks about the minority community drew immediate condemnation across the political spectrum. | ob- (against) + probrum (disgrace)
+Ossify | verb | 3 | To become rigid and unchanging; to stop developing or progressing | Without fresh ideas, institutions tend to ossify, clinging to outdated structures long after their usefulness has passed. | os (bone)
+Paucity | noun | 2 | The presence of something only in small or insufficient quantities | The paucity of available evidence made it nearly impossible for the investigators to build a solid case. | paucus (few, little)
+Pejorative | adj | 2 | Expressing contempt or disapproval; having a disparaging tone | The word was once neutral but has acquired such a pejorative connotation that most writers now avoid it. | pejorare (to make worse)
+Penury | noun | 3 | Extreme poverty; a state of being very poor and lacking basic necessities | Having squandered his inheritance within a decade, he found himself in penury before the age of forty. | penuria (want, scarcity)
+Perennial | adj | 2 | Lasting or existing for a very long time; enduring year after year | Traffic congestion remains a perennial problem in the city, defying every solution proposed by urban planners. | per- (through) + annus (year)
+Peremptory | adj | 3 | Insisting on immediate obedience; not allowing refusal or contradiction | Her peremptory tone made it clear that she expected compliance, not discussion, on the matter at hand. | per- (through) + emere (to take)
+Pervasive | adj | 2 | Spreading widely throughout an area or group; omnipresent and permeating | A pervasive sense of unease settled over the community after a series of unexplained incidents near the school. | per- (through) + vadere (to go)
+Phlegmatic | adj | 3 | Having a calm, unemotional, and stoically composed temperament | The phlegmatic surgeon maintained steady hands and a clear head even during the most complicated procedures. | phlegma (flame, phlegm)
+Pique | verb | 2 | To stimulate interest or curiosity; also to feel irritated or resentful | The cryptic inscription on the ancient wall piqued the archaeologist's curiosity beyond anything she had encountered before. | piquer (to prick, sting)
+Polemical | adj | 3 | Relating to or involving controversial debate; strongly critical or disputatious | Her polemical essay attacking standardized testing sparked a vigorous national debate among educators and policymakers alike. | polemos (war, conflict)
+Proclivity | noun | 2 | A natural tendency toward a particular behavior or activity | His proclivity for risk-taking made him well-suited for entrepreneurship but difficult to insure against liability. | pro- (forward) + clivus (slope)
+Prodigal | adj | 2 | Spending money or resources freely and recklessly; wastefully extravagant | The prodigal heir exhausted the family fortune within five years through gambling and lavish entertainment. | prodigus (wasteful)
+Profligate | adj | 3 | Recklessly extravagant or wasteful; licentious and openly immoral | The profligate noble threw banquets weekly while his tenants struggled to afford basic food and shelter. | pro- (forward) + fligare (to strike down)
+Propitious | adj | 2 | Giving or indicating a good chance of success; favorable and auspicious | The clear skies and calm winds provided propitious conditions for the launch of the experimental aircraft. | pro- (before) + pius (favorable)
+Prosaic | adj | 2 | Having the style of prose; lacking poetic beauty; dull and ordinary | The wedding toast was disappointingly prosaic, containing none of the wit or warmth the occasion deserved. | prosa (prose)
+Puerile | adj | 2 | Childishly silly and trivial; immature and not worthy of serious consideration | The senator dismissed the accusation as puerile name-calling unworthy of a response in a serious forum. | puer (child, boy)
+Pugnacious | adj | 2 | Eager or quick to argue, quarrel, or fight; combative by disposition | The pugnacious defense attorney challenged every witness and objected to nearly every piece of submitted evidence. | pugnus (fist)
+Querulous | adj | 2 | Complaining in a petulant or whining manner; excessively fault-finding | The querulous passenger complained about the seat, the temperature, and the food during the entire three-hour flight. | queri (to complain)
+Quixotic | adj | 2 | Exceedingly idealistic and unrealistic; pursuing impractical romantic notions | The quixotic reformer believed he could end corruption in a single term, a goal his advisors considered impossible. | Don Quixote (literary character)
+Rancorous | adj | 2 | Having or showing deep bitterness or resentment; deeply malicious | Years of litigation had left both parties in a rancorous state, unable to exchange even basic civilities. | rancor (bitter hatred)
+Recondite | adj | 3 | Not known by many people; obscure in subject matter or meaning | The scholar's recondite expertise in early Sumerian dialects made her the only person qualified to translate the text. | re- (away) + condere (to store, hide)
+Redoubtable | adj | 3 | Causing fear or respect through being impressively formidable | The redoubtable champion had not lost a match in six years and was widely considered the greatest in history. | re- (intensive) + douter (to fear)
+Remonstrate | verb | 3 | To make a forceful protest against something; to object earnestly | Students gathered outside the administration building to remonstrate against the proposed cuts to arts funding. | re- (against) + monstrare (to show)
+Reprehensible | adj | 2 | Deserving censure or condemnation; morally blameworthy in action | Abandoning the injured animal on the roadside was reprehensible behavior that drew outrage from the entire community. | re- (intensive) + prehendere (to grasp)
+Repudiate | verb | 2 | To refuse to accept or support; to deny the truth or validity of | The senator publicly repudiated her earlier statements, claiming they had been taken completely out of context. | repudiare (to divorce, reject)
+Restive | adj | 3 | Stubbornly uncooperative; unable to remain still; resistant to control | The restive horse refused to enter the trailer despite the trainer's patient and repeated attempts to coax it. | re- (back) + stare (to stand)
+Ruminative | adj | 2 | Engaging in deep or considered thought; given to prolonged reflection | In a ruminative mood, she sat by the window for hours reviewing the choices that had led her here. | ruminare (to chew the cud)
+Salutary | adj | 2 | Producing good effects; beneficial, especially with regard to health or character | Losing the election proved to be a salutary experience that forced him to reconsider his entire approach. | salus (health, well-being)
+Sanctimonious | adj | 2 | Making a show of being morally superior to others; self-righteously pious | His sanctimonious lectures on honesty rang hollow when his own financial records came under scrutiny. | sanctus (holy) + monere (to warn)
+Sardonic | adj | 2 | Grimly mocking or cynical; dryly humorous with a bitter edge | Her sardonic smile told him she found his excuse neither convincing nor particularly original in its delivery. | sardonios (bitter, scornful)
+Scathing | adj | 2 | Witheringly scornful; severely critical in a way that causes pain | The scathing review described the novel as the most self-indulgent piece of fiction published that decade. | skathe (harm, injury)
+Sequester | verb | 2 | To isolate or hide away; to set apart from the general population | The jury was sequestered in a hotel for the duration of the high-profile trial to prevent outside influence. | sequestrare (to surrender, lay aside)
+Soporific | adj | 3 | Tending to induce sleep; drowsily dull and tedious in quality | The speaker's soporific monotone had half the audience nodding off before he reached his second main point. | sopor (deep sleep) + facere (to make)
+Specious | adj | 3 | Superficially plausible but actually wrong; deceptively attractive in appearance | His specious argument sounded reasonable to casual listeners but collapsed under the slightest logical examination. | speciosus (good-looking, plausible)
+Spurious | adj | 2 | Not genuine; false and deceptive in appearance or nature | The auction house withdrew the painting after experts determined the attribution was entirely spurious and unfounded. | spurius (illegitimate, false)
+Staid | adj | 2 | Sedate, respectable, and unadventurous in character or behavior | The staid accounting firm was the last place anyone expected to find a culture of creative risk-taking. | pp. of stay (fixed, settled)
+Stentorian | adj | 3 | Loud and powerful in sound; having a very strong, booming voice | The coach's stentorian voice carried across the entire stadium even during the loudest moments of the game. | Stentor (loud-voiced Greek herald)
+Stoic | adj | 2 | Enduring pain or hardship without displaying feelings; unemotionally resigned | Despite suffering three setbacks in a single month, she remained stoic and refused to let others see her struggle. | Stoa Poikile (painted porch -- Greek)
+Strident | adj | 2 | Loud and harsh; presenting one's views in an excessively forceful way | The strident protesters drowned out the opening remarks at the conference with relentless chanting outside the hall. | stridere (to make a harsh sound)
+Stymie | verb | 2 | To prevent or hinder the progress of; to thwart or obstruct effectively | The unexpected budget freeze stymied the entire research program and forced the team to postpone its findings. | stymie (golf term, obstruction)
+Sublimate | verb | 3 | To redirect an impulse into a socially acceptable activity; to refine | He sublimated his grief into his art, producing some of the most powerful paintings of his career. | sub- (under) + limen (threshold)
+Subterfuge | noun | 2 | Deceit used to achieve one's goal; a trick or scheme used to evade | The agent relied on elaborate subterfuge to extract information without ever arousing the subject's suspicion. | sub- (under) + terfugere (to flee)
+Supercilious | adj | 3 | Behaving as if others are inferior; having a condescending air of superiority | The supercilious critic dismissed the debut novel without engaging with a single one of its ideas seriously. | supercilium (eyebrow -- raised in disdain)
+Surreptitious | adj | 2 | Kept secret due to being improper; done stealthily or without permission | She cast a surreptitious glance at her phone during the lecture, hoping the professor would not notice. | sub- (under) + rapere (to seize)
+Taciturn | adj | 2 | Reserved or uncommunicative in speech; saying very little by habit | The taciturn detective revealed nothing during the press conference and slipped out before questions could be asked. | tacere (to be silent)
+Tendentious | adj | 3 | Promoting a particular cause or point of view; biased in presentation | The documentary was so tendentious that it omitted any evidence contradicting the filmmaker's predetermined conclusion. | tendere (to stretch, extend)
+Terse | adj | 2 | Sparing in the use of words; brief and direct, sometimes rudely so | His terse emails -- rarely more than a single sentence -- left colleagues unsure whether he was efficient or dismissive. | tersus (wiped, polished)
+Timorous | adj | 2 | Showing or suffering from nervousness or a lack of confidence; timid | The timorous applicant could barely be heard during the interview and failed to make any memorable impression. | timor (fear)
+Tortuous | adj | 2 | Full of twists and turns; excessively complex or lengthy and devious | The tortuous path through the mountain pass required hikers to double back several times before reaching the summit. | tortus (twisted)
+Tractable | adj | 2 | Easy to control or influence; readily willing to be managed or directed | The most tractable problems are those where the goals are clear and the methods well understood by all parties. | tractare (to handle, manage)
+Trenchant | adj | 3 | Vigorous and incisive in expression or style; sharp and penetrating in effect | His trenchant critique of the education system identified structural flaws that decades of reform had failed to address. | trencher (to cut -- Old French)
+Trite | adj | 2 | Overused and therefore lacking originality or freshness; worn out by repetition | The graduation speech was full of trite aphorisms that the audience had already heard dozens of times before. | tritus (worn, rubbed)
+Turbid | adj | 3 | Cloudy or muddy; not clear; confused or disordered in thought or style | The turbid water of the flooded river made it impossible to assess the depth or speed of the current. | turba (crowd, disorder)
+Unctuous | adj | 3 | Excessively flattering; oily and ingratiating in an insincere manner | The unctuous salesman's excessive praise for every customer choice made even the most gullible buyers suspicious. | unguere (to anoint)
+Undulate | verb | 2 | To move with a smooth wave-like motion; to rise and fall rhythmically | The fields of wheat undulated gently in the warm afternoon breeze, stretching to the distant tree line. | unda (wave)
+Unequivocal | adj | 2 | Leaving no doubt; expressed in completely clear and definitive terms | The scientist's conclusion was unequivocal: the data offered no support for the hypothesis under investigation. | in- (not) + aequi- (equal) + vox (voice)
+Vacuous | adj | 2 | Having or showing a lack of thought or intelligence; empty and meaningless | The celebrity interview was painfully vacuous, offering the public no insight beyond the guest's upcoming film. | vacuus (empty, void)
+Vapid | adj | 2 | Offering nothing stimulating or challenging; flat, dull, and uninteresting | The vapid conversation at the cocktail party drove the writer outside to find a more stimulating exchange. | vapidus (flat, insipid)
+Venal | adj | 3 | Open to bribery; willing to act dishonestly in exchange for payment | The venal official had been approving false permits in exchange for cash payments for nearly a decade. | venalis (for sale)
+Venial | adj | 3 | Denoting a sin or fault that is minor and pardonable; not seriously wrong | Forgetting an anniversary might be a venial offense, but repeatedly lying about it would be far more serious. | venia (forgiveness, indulgence)
+Verdant | adj | 2 | Green with growing plants; inexperienced or unsophisticated; fresh and new | After the long drought, the return of rain transformed the brown hillsides into verdant slopes within weeks. | viridis (green)
+Vestigial | adj | 3 | Forming a very small remnant of something that was once greater or more significant | The appendix is considered a vestigial organ with no known function in modern human digestion or immunity. | vestigium (footprint, trace)
+Vexatious | adj | 2 | Causing annoyance, frustration, or worry; used to cause trouble without good cause | The vexatious lawsuit was dismissed by the judge, who recognized it as a deliberate attempt to harass the defendant. | vexare (to shake, harass)
+Vicarious | adj | 2 | Experienced through another person's actions rather than one's own | She lived vicariously through the adventures described in her daughter's letters from across the world. | vicarius (substitute, deputy)
+Virulent | adj | 2 | Extremely harmful or malicious in its effects; bitterly hostile in manner | The virulent strain of the disease spread through the population far more rapidly than any model had predicted. | virus (poison, slime)
+Visceral | adj | 2 | Relating to deep inward feelings rather than to the intellect; gut-level | The photograph provoked a visceral reaction from viewers who had lived through the events it depicted. | viscera (internal organs)
+Vitriolic | adj | 3 | Filled with bitter criticism or malice; sharp and caustic in tone | The vitriolic review damaged the author's reputation far beyond what any measured critique could have accomplished. | vitriolum (sulfate -- burning acid)
+Voluble | adj | 2 | Speaking fluently and at length with ease; talkative and expressive | The voluble tour guide filled every moment of the journey with stories, histories, and lively personal anecdotes. | volvere (to roll)
+Wanton | adj | 2 | Deliberate and unprovoked; showing no care for the rights of others | The wanton destruction of the mural shocked the community, as the artwork had been widely celebrated for years. | wan- (deficient) + togen (trained)
+Wayward | adj | 2 | Difficult to control; following one's own desires rather than accepted norms | The wayward student eventually channeled her rebellious energy into founding a remarkably innovative technology startup. | none
+Wily | adj | 2 | Skilled at gaining advantage through cunning and deception; clever and shrewd | The wily negotiator always appeared to concede points while actually securing far better terms than his opponents realized. | wile (trick, stratagem)
+Winnow | verb | 2 | To remove inferior elements from a group; to separate good from bad | The editorial committee spent months winnowing the thousands of submissions down to a manageable list of finalists. | windwian (to blow -- Old English)
+Wizened | adj | 2 | Shriveled or wrinkled with age; small and dried up in appearance | The wizened farmer had worked the same land for sixty years and could predict weather better than any forecast. | wisnian (to wither -- Old English)
+Zealotry | noun | 2 | Fanatical and uncompromising pursuit of ideals; excessive enthusiasm for a cause | The movement's zealotry alienated potential supporters who agreed with its goals but not its extreme methods. | zelos (zeal, fervor)
+Abeyance | noun | 3 | A state of temporary suspension or inactivity; not yet in force or determined | The project was held in abeyance while the company awaited the outcome of the regulatory review. | abaer (to gape -- Old French)
+Abnegate | verb | 3 | To renounce or reject something desired; to give up one's rights or role | The monk chose to abnegate all worldly possessions as part of his commitment to a spiritual life. | ab- (away) + negare (to deny)
+Abrogate | verb | 3 | To formally revoke or cancel a law, right, or agreement | The new administration moved quickly to abrogate the treaty that had governed trade relations for thirty years. | ab- (away) + rogare (to propose a law)
+Accretion | noun | 3 | The process of growth or increase by gradual accumulation over time | The accretion of small procedural errors over months eventually produced a catastrophic failure in the system. | accrescere (to grow)
+Acrimony | noun | 2 | Bitterness or ill feeling in speech or manner; sharp and harsh in tone | The divorce proceedings were marked by such intense acrimony that the children refused to attend either parent's home. | acer (sharp, bitter)
+Adumbrate | verb | 3 | To indicate faintly or sketch out; to foreshadow or overshadow partially | The opening chapter adumbrates the tragedy that will unfold, leaving careful readers with a sense of deep foreboding. | ad- (to) + umbra (shadow)
+Alacrity | noun | 2 | Brisk and cheerful readiness to act; eager willingness to respond | She accepted the challenging assignment with alacrity, delighted to have the chance to prove her capabilities. | alacer (lively, eager)
+Amalgamate | verb | 2 | To combine or unite to form one organization or structure; to merge | The two pharmaceutical companies decided to amalgamate in order to pool their research resources and patents. | amalgama (mixture)
+Ambivalence | noun | 2 | The state of having mixed feelings about someone or something | Her ambivalence about accepting the promotion was clear; the opportunity excited her, but the sacrifice worried her greatly. | ambi- (both) + valere (to be strong)
+Amorphous | adj | 2 | Without a clearly defined shape or form; vague and not well organized | The amorphous blob of policy proposals lacked any coherent framework that legislators could use as a starting point. | a- (without) + morphe (shape)
+Anomalous | adj | 2 | Deviating from what is standard or expected; unusual and irregular in nature | The anomalous temperature readings from three consecutive days suggested that the sensor had been tampered with. | an- (not) + homalos (even, uniform)
+Antithetical | adj | 2 | Directly opposed or contrasted; characterized by complete opposition | His reckless approach to risk was antithetical to everything the conservative fund's prospectus had promised investors. | anti- (against) + tithenai (to place)
+Apposite | adj | 3 | Apt in the circumstances; highly appropriate and relevant to the situation | Her apposite quotation from the founding documents silenced the room and shifted the entire direction of debate. | ad- (to) + ponere (to put)
+Apprise | verb | 2 | To inform or tell someone of a situation; to give notice to | The captain was apprised of the mechanical issue before departure and chose to delay the flight accordingly. | appris (taught, informed -- French)
+Apropos | adj | 2 | Very appropriate to a particular situation; opportunely relevant | Her comment, though seemingly offhand, was completely apropos given the conversation that had just taken place. | a propos (to the purpose -- French)
+Archaic | adj | 2 | Very old-fashioned or outdated; belonging to an earlier period in history | The firm's archaic billing system required clerks to enter data manually into spreadsheets last updated in the 1990s. | archaios (ancient, old)
+Ardor | noun | 2 | Enthusiasm or passion; great warmth of feeling in pursuit of something | The young attorney's ardor for justice was evident in her willingness to take on cases no one else would accept. | ardere (to burn)
+Arrogate | verb | 3 | To take or claim something without justification; to assume power wrongfully | The interim director arrogated decision-making authority that the bylaws clearly reserved for the full board. | ad- (to) + rogare (to ask)
+Artifice | noun | 3 | Clever or cunning devices or expedients; a clever trick or stratagem | The magician's performance was a masterwork of artifice, using misdirection to conceal the mechanics of each illusion. | ars (art, skill) + facere (to make)
+Aspersion | noun | 3 | An attack on someone's reputation or character; a damaging false claim | Casting aspersions on a colleague's integrity without evidence is both professionally reckless and ethically indefensible. | aspergere (to sprinkle on)
+Assiduous | adj | 3 | Showing great care and perseverance; constant and diligent in application | The assiduous researcher spent three years verifying every footnote before submitting her manuscript for publication. | assiduus (constantly present)
+Atrophy | verb | 2 | To gradually decline in effectiveness due to lack of use or nourishment | Without regular practice, even exceptional musical skills can atrophy in a surprisingly short period of time. | a- (without) + trophe (nourishment)
+Augment | verb | 2 | To make something greater by adding to it; to increase or supplement | The university sought to augment its endowment by launching a fundraising campaign targeting alumni abroad. | augere (to increase)
+Authoritarian | adj | 2 | Favoring or enforcing strict obedience to authority at the expense of freedom | The authoritarian regime suppressed any form of press criticism and jailed journalists who reported unfavorable stories. | auctor (creator, authority)
+Belie | verb | 3 | To fail to give a true idea of something; to give a false impression | Her calm exterior belied the intense anxiety she felt as she waited for the board's final decision. | be- (about) + leogan (to lie -- Old English)
+Benighted | adj | 3 | In a state of moral or intellectual darkness; unenlightened and ignorant | The reformers viewed the peasantry as benighted and in need of education rather than political representation. | be- + night (darkness)
+Brazen | adj | 2 | Bold and without shame; enduring heat without flinching; made of brass | The suspect's brazen denial in the face of overwhelming evidence stunned the courtroom into complete silence. | braes (brass -- Old English)
+Broach | verb | 2 | To raise a sensitive or difficult subject for discussion; to introduce carefully | She hesitated before broaching the subject of her father's finances, knowing it was likely to cause conflict. | brocher (to pierce -- Old French)
+Burgeon | verb | 2 | To begin to grow or increase rapidly; to flourish and expand vigorously | The burgeoning technology sector in the small city attracted investment from firms across the entire region. | burjon (bud -- Old French)
+Cacophony | noun | 2 | A harsh, discordant mixture of sounds; a dissonant and unpleasant noise | The cacophony from the construction site made it impossible to conduct any work in the adjacent office building. | kakos (bad) + phone (sound)
+Calumny | noun | 3 | The making of false and defamatory statements about someone; slander | The calumny spread by his opponents effectively destroyed his career before the truth could be publicly established. | calumnia (false accusation)
+Castigate | verb | 3 | To reprimand or criticize someone severely; to punish in order to correct | The editorial board castigated the mayor for his handling of the crisis, calling for an immediate resignation. | castigare (to chastise, correct)
+Censure | noun | 2 | The expression of formal disapproval; official condemnation of an action or person | The board issued a formal censure against the member who had violated the code of professional conduct. | censere (to assess, judge)
+Chicanery | noun | 3 | The use of trickery to achieve one's purpose; deception and sharp practice | The verdict was overturned after investigators exposed the chicanery that had corrupted the original jury selection process. | chicaner (to quibble -- French)
+Circumlocution | noun | 3 | The use of many words where fewer would do; indirect and verbose expression | The diplomat's circumlocution was so thorough that no one in the room could determine what position he actually held. | circum- (around) + loqui (to speak)
+Clandestine | adj | 2 | Kept secret or done secretively, especially for subversive purposes | The clandestine meeting between the two rival executives took place in a private room far from the city center. | clam (secretly)
+Coalesce | verb | 2 | To come together to form one mass or whole; to merge gradually into unity | Over decades, the separate protest movements coalesced into a unified political force that could not be ignored. | co- (together) + alescere (to grow)
+Commensurate | adj | 2 | Corresponding in size or degree; in proportion to something else | The salary offered was not commensurate with the level of experience and expertise the position required. | com- (together) + mensura (measure)
+Compunction | noun | 3 | A feeling of guilt or moral scruple that prevents or follows action | He signed the order without compunction, convinced that circumstances fully justified the difficult decision he was making. | com- (with) + pungere (to prick)
+Confluence | noun | 2 | The junction of two rivers; a coming together of people, ideas, or things | The startup emerged from a confluence of technological innovation, available capital, and a gap in the existing market. | con- (together) + fluere (to flow)
+Congenital | adj | 2 | Present from birth; innate, as if natural or in one's constitution | Her congenital optimism made her both inspiring to colleagues and occasionally blind to genuine risks and obstacles. | con- (with) + genitus (born)
+Connive | verb | 3 | To secretly allow or plan a wrongful act; to conspire in wrongdoing | Several senior officials had connived with the contractor to inflate invoices and split the surplus funds. | connivere (to wink at, shut the eyes)
+Contentious | adj | 2 | Causing or likely to cause argument; relating to a heated dispute | The contentious rezoning proposal drew hundreds of residents to the town hall meeting in protest. | contendere (to strive, fight)
+Contrite | adj | 2 | Feeling or expressing remorse at the recognition of having done wrong | The contrite student apologized to the class after realizing his careless comment had caused genuine harm. | contritus (worn down, crushed)
+Convivial | adj | 2 | Friendly and lively; relating to good company and enjoyment at parties | The convivial atmosphere of the dinner party encouraged even the shyest guests to share their most amusing stories. | con- (with) + vivere (to live)
+Corroborate | verb | 2 | To confirm or give support to a statement or theory; to verify evidence | Three independent witnesses corroborated the account given by the plaintiff, significantly strengthening the case. | com- (together) + roborare (to strengthen)
+Cosmopolitan | adj | 2 | Familiar with and at ease in many different countries and cultures; worldly | Her cosmopolitan upbringing -- living in four countries before the age of fifteen -- gave her an unusually broad perspective. | kosmos (world) + polites (citizen)
+Craven | adj | 3 | Contemptibly lacking in courage; abjectly cowardly and without moral backbone | The craven officials who had approved the policy quietly distanced themselves the moment public criticism intensified. | cravanter (to overwhelm -- Old French)
+Culpable | adj | 2 | Deserving blame or censure; responsible for a fault or wrong action | Both managers were found equally culpable for the safety failures that led to the industrial accident. | culpa (fault, guilt)
+Cupidity | noun | 3 | Greed for money or possessions; excessive desire for wealth and power | The board member's cupidity led him to approve transactions that benefited his own investments at the company's expense. | cupidus (desirous) + cupere (to desire)
+Dearth | noun | 2 | A scarcity or lack of something; an insufficient supply of what is needed | The dearth of qualified candidates for the position forced the committee to extend its search by three months. | deore (dear, scarce -- Old English)
+Debacle | noun | 2 | A sudden disastrous defeat or failure; a complete and utter collapse | What was predicted to be an easy campaign turned into a debacle from which the party took years to recover. | debacler (to unbar -- French)
+Decadent | adj | 2 | Characterized by moral or cultural decline; excessively self-indulgent and luxurious | The decadent nobility spent lavishly on festivities while the rest of the population struggled with rising food prices. | de- (down) + cadere (to fall)
+Demagogue | noun | 3 | A political leader who appeals to popular prejudices and fears rather than reason | The demagogue rose to power by exploiting economic anxieties and directing public anger toward minority communities. | demos (people) + agogos (leading)
+Denigrate | verb | 2 | To criticize unfairly; to belittle or disparage the worth of a person | Attempts to denigrate the scientist's work because of her gender only strengthened her resolve to continue her research. | de- (down) + niger (black)
+Derivative | adj | 2 | Originating from another source; lacking originality or novelty | Critics noted that the novel was entirely derivative, borrowing its plot structure from at least three earlier works. | de- (from) + rivus (stream)
+Desultory | adj | 3 | Lacking a plan, purpose, or enthusiasm; disconnected and random in approach | Their desultory conversation drifted from topic to topic without ever reaching the central issue that both needed to address. | desultor (one who jumps -- circus rider)
+Dilettante | noun | 3 | A person who cultivates an interest without real commitment; a superficial amateur | He was dismissed by professionals as a dilettante who lacked the discipline to master any single creative discipline. | dilettare (to delight -- Italian)
+Dirge | noun | 2 | A lament for the dead; a mournful song or piece of music | The funeral was accompanied by a haunting dirge played on a lone violin in the back of the chapel. | dirige (direct -- from Latin funeral rite)
+Disaffected | adj | 2 | Dissatisfied with the people in authority and no longer willing to support them | Disaffected voters stayed home in large numbers, and their absence proved decisive in the final tally. | dis- (not) + affectus (influenced)
+Discordant | adj | 2 | Disagreeing or incongruous; producing a harsh or unpleasant combination | The discordant tones in the experimental composition unsettled the audience, which had expected a more conventional evening. | dis- (apart) + cor (heart)
+Disparate | adj | 2 | Essentially different and unable to be compared; made up of very different elements | The committee brought together disparate experts whose wildly different approaches somehow produced a coherent final report. | dis- (apart) + parare (to prepare)
+Dissonance | noun | 2 | Lack of harmony; a tension or clash from the combination of incompatible elements | The dissonance between his stated values and his actual behavior was not lost on those who knew him well. | dis- (apart) + sonare (to sound)
+Divisive | adj | 2 | Tending to cause disagreement or hostility between people; creating a split | The new policy proved divisive even within the party, fracturing an alliance that had held for more than a decade. | dividere (to divide)
+Dogma | noun | 2 | A principle or set of principles laid down by an authority as incontrovertibly true | Challenging the scientific dogma of the era was the most controversial act of her distinguished academic career. | dogma (opinion, belief -- Greek)
+Duplicity | noun | 3 | Deceitfulness; saying one thing while meaning another; double-dealing | The spy's duplicity was so complete that even his closest colleagues had no suspicion of his true allegiance. | duplex (double) + plicare (to fold)
+Efficacious | adj | 3 | Successful in producing a desired or intended result; effective as a remedy | The new antibiotic proved efficacious against strains that had resisted every previously available treatment option. | efficax (effective) + efficere (to accomplish)
+Effrontery | noun | 3 | Insolent or impertinent behavior; shameless boldness in defying convention | She had the effrontery to demand a raise two weeks after being formally reprimanded for poor performance. | effrons (shameless) + frons (forehead)
+Enervate | verb | 3 | To weaken someone physically or mentally; to drain of strength or vitality | The oppressive heat and humidity enervated the expedition team within hours of their arrival in the jungle. | e- (out) + nervus (sinew, nerve)
+Equanimity | noun | 3 | Mental calmness and composure, especially in a difficult situation | She accepted the devastating diagnosis with remarkable equanimity, refusing to let fear prevent her from continuing her work. | aequus (equal) + animus (mind, spirit)
+Equivocal | adj | 3 | Open to more than one interpretation; not having one obvious meaning | The committee's equivocal response gave supporters hope while simultaneously giving opponents grounds to claim victory. | aequi- (equal) + vox (voice)
+Espouse | verb | 2 | To adopt or support a cause, belief, or way of life; to advocate for | She had long espoused environmental reform and was surprised when the party refused to include it in the platform. | espouser (to marry, adopt -- Old French)
+Euphemism | noun | 2 | A mild or indirect word substituted for something harsh or blunt | The corporate announcement used the euphemism "workforce restructuring" to avoid the more alarming term "mass layoffs." | eu- (well) + pheme (speech)
+Excoriate | verb | 3 | To censure or criticize severely; to strip or remove the skin of | The investigative journalist proceeded to excoriate the pharmaceutical industry for its manipulation of clinical trial data. | ex- (out) + corium (hide, skin)
+Expedient | adj | 2 | Convenient and practical though possibly improper; serving immediate purpose | Accepting the deal was politically expedient but morally questionable, and the compromise haunted him for years afterward. | expedire (to free the foot, make ready)
+Extemporaneous | adj | 3 | Spoken or done without preparation; improvised on the spot without prior thought | His extemporaneous remarks at the ceremony moved the audience far more deeply than the prepared speech that followed. | ex- (out of) + tempus (time)
+Facile | adj | 2 | Appearing neat and comprehensive but lacking depth of understanding; too simple | The reporter offered a facile explanation for the conflict that ignored the centuries of cultural and economic tension underneath. | facilis (easy)
+Fallacious | adj | 2 | Based on a mistaken belief; containing an error in reasoning or logic | The argument was fallacious at its core, relying on a false analogy that did not survive basic scrutiny. | fallax (deceitful) + fallere (to deceive)
+Fatuous | adj | 3 | Silly and pointless; complacently self-satisfied and showing a lack of intelligence | His fatuous grin suggested he had no idea how poorly his presentation had been received by the selection committee. | fatuus (foolish, insipid)
+Filibuster | verb | 2 | To obstruct legislative action by making prolonged speeches; to delay proceedings | The senator filibustered for eleven hours, reading from a novel in order to delay the vote on the bill. | vrijbuiter (freebooter -- Dutch)
+Flagrant | adj | 2 | Conspicuously or obviously offensive; shamelessly wrong and impossible to overlook | The referee's flagrant bias against the visiting team prompted official complaints from three different sports organizations. | flagrare (to burn, blaze)
+Foment | verb | 3 | To instigate or stir up something undesirable, especially revolt or unrest | Foreign agents had been working for months to foment civil unrest by spreading misinformation across social networks. | fovere (to warm, cherish)
+Fortuitous | adj | 2 | Happening by chance rather than intention; fortunate but accidental in nature | The fortuitous discovery of the ancient manuscript occurred when a workman accidentally broke through a sealed wall. | fortuitus (accidental) + fors (chance)
+Fractious | adj | 2 | Easily irritated; tending to cause trouble or be unruly and difficult | The fractious coalition government collapsed within eight months under the weight of its own internal disagreements. | fractio (breaking) + frangere (to break)
+Gainsay | verb | 3 | To deny or contradict something; to speak or act against | No one could gainsay the evidence that had been assembled over three years of meticulous investigation and documentation. | gegn- (against) + secgan (to say -- Old English)
+Grandiloquent | adj | 3 | Pompous or extravagant in language, style, or manner; using inflated expression | His grandiloquent speech impressed no one in the audience, each of whom recognized the emptiness behind the elaborate words. | grandis (great) + loqui (to speak)
+Gratuitous | adj | 2 | Uncalled for; lacking good reason; given without charge but often referring to excess | The film was criticized for its gratuitous violence, which seemed designed to shock rather than serve the narrative. | gratuitus (freely given) + gratus (pleasing)
+Guile | noun | 2 | Sly or cunning intelligence; the use of deception to achieve one's goals | The experienced negotiator used guile rather than force, allowing opponents to think they were winning until the deal was signed. | wil (trick, stratagem -- Old Norse)
+Hackneyed | adj | 2 | Lacking in freshness or originality due to overuse; worn out and trite | The speech was full of hackneyed phrases that had appeared in dozens of similar addresses over the previous decade. | hackney (a horse for hire -- overworked)
+Hegemony | noun | 3 | Leadership or dominance, especially by one country or social group over others | The nation's cultural hegemony extended far beyond its borders, shaping tastes and values across the entire continent. | hegemon (leader) + hegeisthai (to lead)
+Histrionic | adj | 3 | Overly theatrical or melodramatic in character or style; excessively dramatic | Her histrionic reaction to the minor inconvenience embarrassed her colleagues, who handled the same situation with composure. | histrio (actor -- Latin)
+Impugn | verb | 3 | To dispute the truth, validity, or honesty of someone or something | The defense attorney moved to impugn the credibility of the prosecution's star witness during aggressive cross-examination. | im- (against) + pugnare (to fight)
+Inchoate | adj | 3 | Just begun and not fully formed or developed; undeveloped and rudimentary | The inchoate plan had potential but required months of refinement before it could be presented to potential investors. | incohare (to begin work on)
+Indefatigable | adj | 3 | Persisting tirelessly; incapable of being tired out by sustained effort | The indefatigable researcher worked through the night, driven by the conviction that she was on the verge of a breakthrough. | in- (not) + defatigare (to tire out)
+Insidious | adj | 3 | Proceeding in a subtle way but with harmful effects; treacherously cunning | The insidious spread of misinformation through trusted channels proved far more damaging than any overt propaganda campaign. | insidiae (ambush) + insidere (to sit in)
+Intractable | adj | 3 | Hard to control or deal with; not easily managed; stubbornly difficult to solve | The intractable conflict had resisted every diplomatic solution attempted over the course of three decades of negotiation. | in- (not) + tractare (to handle)
+Irrefutable | adj | 2 | Impossible to deny or disprove; entirely conclusive and undeniable in its evidence | The forensic evidence presented was irrefutable, leaving the jury no reasonable basis upon which to acquit the defendant. | in- (not) + refutare (to rebut)
+Lampoon | verb | 2 | To publicly criticize using ridicule and sarcasm; to satirize sharply | The satirical magazine lampooned the administration's economic policies with caricatures that spread rapidly across social media. | lampon (let us drink -- French satirical song)
+Licentious | adj | 3 | Promiscuous and unprincipled in sexual matters; disregarding accepted rules | The licentious behavior documented in the exposé shocked readers and triggered a formal investigation into the institution. | licentia (freedom, license)
+Lugubrious | adj | 3 | Looking or sounding sad and dismal; mournful in an exaggerated or comic way | The lugubrious expression on the accountant's face as he reviewed the quarterly numbers told the entire story. | lugere (to mourn)
+Magniloquent | adj | 3 | Using high-flown, extravagant language; speaking in a grandiose style | The magniloquent manifesto promised to reshape civilization itself but offered no concrete proposals for achieving any of its goals. | magnus (great) + loqui (to speak)
+Malfeasance | noun | 3 | Wrongdoing, especially by a public official; illegal conduct in an official capacity | The audit revealed systematic malfeasance that had allowed millions in public funds to be diverted over five years. | mal- (bad) + faisance (doing -- French)
+Maverick | noun | 2 | An independent-minded person who does not follow others; an unconventional thinker | The maverick engineer's refusal to follow standard protocols eventually led to a breakthrough the team had missed for years. | Maverick (Samuel Maverick -- Texas rancher)
+Morose | adj | 2 | Sullen and ill-tempered; in a gloomy state of mind with no inclination to speak | The morose executive sat in the corner of the reception without speaking to anyone for the entire evening. | morosus (peevish, difficult)
+Munificent | adj | 2 | More generous than is usual or necessary; very liberal in giving to others | The munificent donation from the anonymous alumnus funded three new research labs and a dozen annual scholarships. | munificus (generous) + munus (gift)
+Myopic | adj | 2 | Lacking imagination, foresight, or intellectual insight; short-sighted in perspective | The myopic decision to eliminate the research division saved money in the short term but destroyed future innovation capacity. | myops (short-sighted)
+Noxious | adj | 2 | Harmful, poisonous, or very unpleasant to health or morals | The factory's noxious emissions had contaminated the groundwater supply for an entire downstream community of thousands. | noxa (harm) + nocere (to hurt)
+Obfuscate | verb | 3 | To make something unclear or difficult to understand; to confuse deliberately | The legal language was so carefully crafted to obfuscate meaning that most signatories had no idea what they agreed to. | ob- (over) + fuscare (to darken)
+Obtuse | adj | 2 | Annoyingly insensitive or slow to understand; not sharp or quick in perception | The obtuse manager failed to notice the obvious signs of team burnout until three key employees had already resigned. | obtusus (blunted, dull)
+Odious | adj | 2 | Extremely unpleasant and deserving strong dislike; repugnant and detestable | The odious conditions in the factory were exposed by an undercover journalist whose footage shocked the public. | odium (hatred) + odisse (to hate)
+Ostracize | verb | 2 | To exclude someone from society or a group by common agreement | After the scandal, his former colleagues ostracized him so completely that he could not find work in his field. | ostrakon (potsherd used in voting -- Greek)
+Overwrought | adj | 2 | In a state of nervous excitement or anxiety; too elaborate or complex | Her overwrought performance in the emotional scene drew mixed reviews from critics who preferred restraint in the role. | over- + wrycan (to work -- Old English)
+Pathological | adj | 2 | Relating to or caused by a mental or physical disease; compulsive and habitual | His pathological need for control destroyed every collaborative project he was involved in throughout his career. | pathos (suffering, disease) + logos (study)
+Pernicious | adj | 3 | Having a harmful effect, especially in a gradual or subtle way; deadly | The pernicious influence of early childhood trauma can manifest in behavior patterns that persist well into adulthood. | per- (through) + nex (death, destruction)
+Platitude | noun | 2 | A remark or statement that has been used too often to be interesting | The speech was a succession of platitudes that said nothing meaningful about the very real crisis the community faced. | plat (flat -- French)
+Plethora | noun | 2 | A large or excessive amount of something; more than is needed or appropriate | A plethora of new applications flooded the market after the development platform was released as open-source software. | plethore (fullness) + plethein (to be full)
+Polarize | verb | 2 | To divide into two sharply contrasting groups or sets of opinions | The contentious legislation polarized the electorate in ways that made bipartisan compromise virtually impossible for years. | polus (pole -- Greek)
+Polemic | noun | 3 | A strong verbal or written attack on someone or something; a controversial argument | Her published polemic against the pharmaceutical industry sparked both admiration and fierce retaliation from corporate lobbyists. | polemos (war)
+Precipitous | adj | 2 | Dangerously steep; done suddenly and without careful consideration | The precipitous drop in consumer confidence alarmed economists who had predicted a more gradual shift in market behavior. | praeceps (headlong) + caput (head)
+Preclude | verb | 2 | To prevent something from happening; to make it impossible for something to occur | His prior conviction precluded him from serving on the board, regardless of his qualifications for the role. | prae- (before) + claudere (to close)
+Predilection | noun | 3 | A preference or special liking for something; a natural inclination toward a choice | Her predilection for underdog candidates led her to support campaigns that conventional wisdom consistently dismissed as hopeless. | prae- (before) + diligere (to love, choose)
+Prevaricate | verb | 3 | To speak or act in an evasive way; to avoid giving a direct answer | When asked directly about his involvement, the official began to prevaricate, offering contradictions that satisfied no one. | prae- (before) + varicare (to straddle)
+Probity | noun | 3 | The quality of having strong moral principles; complete and confirmed integrity | Her reputation for probity made her the unanimous choice to oversee the investigation into the organization's internal finances. | probus (honest, upright)
+Profundity | noun | 2 | Great depth of knowledge or thought; intellectual complexity or insight | The profundity of the philosopher's later work was only recognized decades after his death. | profundus (deep)
+Prolific | adj | 2 | Producing many works, results, or offspring; present in large numbers | The prolific author published seventeen novels in twenty years while maintaining a full-time teaching position at a university. | proles (offspring) + facere (to make)
+Propensity | noun | 2 | A natural tendency toward a particular behavior or type of outcome | His propensity for procrastination had cost him numerous opportunities that required timely action and quick decision-making. | propensus (inclined) + pendere (to hang)
+Provincial | adj | 2 | Of or concerning a province; unsophisticated and narrow-minded in outlook | The critic's provincial taste led her to dismiss international cinema in favor of a narrow national tradition. | provincia (province, territory)
+Ramification | noun | 2 | A consequence of an action, especially when complex or unwelcome | The full ramifications of the policy change would not be understood for years after its implementation and rollout. | ramus (branch)
+Rancor | noun | 2 | Bitterness or resentfulness; deeply felt ill will toward another person | Even after the legal dispute was resolved, the rancor between the two families persisted for another generation. | rancere (to stink, be rotten)
+Recant | verb | 2 | To say that one no longer holds an opinion previously stated; to withdraw | Under intense pressure from the church, the astronomer recanted his heliocentric views publicly while privately maintaining his position. | re- (back) + cantare (to sing, chant)
+Rectitude | noun | 3 | Morally correct behavior or thinking; strict adherence to ethical standards | The judge was known throughout the legal community for her unimpeachable rectitude and consistent impartiality. | rectus (right, straight)
+Redress | noun | 2 | Remedy or compensation for a wrong or grievance; the action of putting things right | The affected residents sought legal redress after the company refused to acknowledge its role in contaminating local waterways. | re- (back) + dresser (to arrange -- French)
+Refute | verb | 2 | To prove something to be wrong by argument or evidence; to disprove conclusively | The new data effectively refuted the widely held theory and forced the scientific community to reconsider its assumptions. | refutare (to rebut)
+Replete | adj | 2 | Filled or well supplied with something; fully sated after eating plentifully | The curriculum was replete with engaging case studies that brought abstract economic principles to life for students. | replere (to fill again)
+Resilience | noun | 2 | The capacity to recover quickly from difficulties; ability to spring back into shape | Her resilience in the face of repeated setbacks became the defining characteristic of her long and celebrated career. | resilire (to spring back)
+Rhetoric | noun | 2 | Language designed to have a persuasive or impressive effect; the art of effective speech | His rhetoric was powerful enough to move large audiences but too vague to translate into specific policy commitments. | rhetor (orator) + rhema (word, speech)
+Rigorous | adj | 2 | Extremely thorough and careful; adhering to standards with strict precision | The rigorous testing protocol ensured that no product reached consumers without passing every required safety and quality check. | rigor (stiffness, severity)
+Sanctify | verb | 2 | To make something holy or sacred; to give official authorization or approval | The treaty was sanctified by representatives of all five nations in a ceremony broadcast throughout the region. | sanctus (holy) + facere (to make)
+Seditious | adj | 3 | Inciting or causing people to rebel against the authority of a government | The pamphlet was declared seditious by the colonial authorities and its author was arrested within days of its publication. | seditio (going apart) + sed- (apart) + ire (to go)
+Stigmatize | verb | 2 | To describe or regard as worthy of disgrace; to mark as deserving condemnation | Society's tendency to stigmatize mental illness prevents many people from seeking the help they urgently need. | stigma (mark, brand -- Greek)
+Stultify | verb | 3 | To make someone appear foolish; to cause to lose enthusiasm and initiative | The endless bureaucracy seemed designed to stultify initiative and ensure that no new ideas could ever be implemented. | stultus (foolish) + facere (to make)
+Subjugate | verb | 2 | To bring under domination or control; to conquer and bring into subjection | The conquering empire moved swiftly to subjugate every newly acquired territory through a combination of force and legal control. | sub- (under) + jugum (yoke)
+Tirade | noun | 2 | A long, angry speech of criticism or accusation; a prolonged outburst | The manager's tirade in front of the entire staff left everyone uncomfortable and several employees in tears. | tirer (to pull, draw out -- French)
+Transient | adj | 2 | Lasting only for a short time; passing through with only a brief stay | The transient beauty of the northern lights lasted only minutes but left a permanent impression on all who witnessed it. | transire (to go across) + trans- (across)
+Unimpeachable | adj | 3 | Not able to be doubted, questioned, or criticized; entirely trustworthy and reliable | Her unimpeachable record of service made her the most credible voice in any debate about institutional reform. | un- + impeacare (to fetter -- Old French)
+Usurp | verb | 2 | To take a position of power illegally or by force; to seize without right | The general used the chaos following the election to usurp executive authority before civilian rule could be restored. | usurpare (to use, seize for use)
+Vehement | adj | 2 | Showing strong feeling; forceful, passionate, and intense in expression or belief | His vehement opposition to the proposal surprised colleagues who had expected him to support the reform initiative. | vehemens (violent, impetuous)
+Vignette | noun | 2 | A brief evocative description or account; a short scene illustrating a larger story | The novel opened with a telling vignette that established the protagonist's character without resorting to direct description. | vigne (vine -- French)
+Vitiate | verb | 3 | To impair or weaken the quality of; to destroy or undermine the effectiveness of | The contract was vitiated by a procedural error that made it legally unenforceable under the applicable statutes. | vitium (fault, defect)
+Volition | noun | 3 | The faculty or power of using one's will; a conscious choice made freely | She accepted the difficult assignment of her own volition, having considered and rejected every available alternative. | velle (to wish, will)
