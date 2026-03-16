@@ -1,0 +1,207 @@
+# vocab.txt
+# Format: word | pos | level | definition | example sentence | root
+# pos: adj, noun, verb, adv
+# level: 1 (easier), 2 (medium), 3 (harder)
+# root: write the root string, or "none" if there is no root
+# Lines starting with # are comments and are ignored by the app.
+
+Benevolent | adj | 1 | Kind and generous toward others | The benevolent teacher tutored students after school for free. | bene- (good)
+Malevolent | adj | 2 | Having a wish to do harm to others | The malevolent villain plotted to ruin the entire city. | mal- (bad)
+Eloquent | adj | 2 | Fluent and persuasive in speaking or writing | Her eloquent speech moved the entire crowd to tears. | none
+Garrulous | adj | 3 | Excessively talkative, especially on trivial matters | The garrulous student kept interrupting the lesson. | garr- (chatter)
+Tenacious | adj | 2 | Persistent and determined; not giving up easily | The tenacious athlete practiced six hours every single day. | ten- (hold)
+Resilient | adj | 1 | Able to recover quickly from difficulty | After failing the test, the resilient student studied harder. | none
+Meticulous | adj | 2 | Showing extreme care and precision about details | Her meticulous notes had zero errors in them. | none
+Diligent | adj | 1 | Hardworking and careful in doing one's duties | The diligent student reviewed every chapter before the test. | none
+Capricious | adj | 3 | Prone to sudden, unpredictable changes in mood | The capricious weather changed from sunny to stormy in minutes. | none
+Pensive | adj | 2 | Engaged in deep, quiet thought, often with sadness | She sat pensive by the window, missing her old friends. | pens- (weigh)
+Vivacious | adj | 2 | Attractively lively and full of energy | Her vivacious personality made every party fun. | viv- (life)
+Stoic | adj | 2 | Enduring pain or hardship without showing feelings | He remained stoic even as everyone around him panicked. | none
+Gregarious | adj | 3 | Enjoying and actively seeking social company | The gregarious puppy ran up to every person at the park. | greg- (flock)
+Loquacious | adj | 3 | Tending to talk a great deal; very talkative | The loquacious host narrated every single photo in the album. | loqu- (speak)
+Serene | adj | 1 | Calm, peaceful, and untroubled | The lake was completely serene before sunrise. | none
+Trepidation | noun | 2 | A feeling of fear or anxiety about something | She felt trepidation before her first solo performance. | none
+Acumen | noun | 3 | Keen judgment and insight in a particular area | Her business acumen helped the team double its sales. | none
+Wistful | adj | 2 | Having a longing for something past or absent | He gave a wistful smile remembering childhood summers. | none
+Ubiquitous | adj | 3 | Appearing or found everywhere at the same time | Smartphones have become ubiquitous in modern life. | none
+Frugal | adj | 1 | Careful with money and resources; thrifty | Her frugal habits meant she always had savings. | none
+Haughty | adj | 2 | Arrogantly superior and disdainful toward others | The haughty princess refused to speak to the servants. | none
+Candid | adj | 1 | Truthful and straightforward; frank and honest | She gave a candid answer even though the truth stung. | none
+Eminent | adj | 2 | Famous and respected in a particular field | The eminent scientist had already won three Nobel Prizes. | none
+Didactic | adj | 3 | Intended to teach a lesson; overly instructive | Aesop's fables are didactic stories designed to teach morals. | none
+Languid | adj | 2 | Weak or slow in movement; lacking energy | The languid summer afternoon made everyone drowsy. | none
+Furtive | adj | 2 | Attempting to avoid notice; sneaky | He cast a furtive glance before passing the note. | none
+Benign | adj | 2 | Gentle and kindly; not harmful | Despite the rumors, the old man was completely benign. | bene- (good)
+Raucous | adj | 2 | Making or constituting a harsh, loud noise | The raucous crowd cheered when the home team scored. | none
+Buoyant | adj | 2 | Cheerful and optimistic; able to float | Despite the setback, she remained buoyant and full of hope. | none
+Nonchalant | adj | 2 | Relaxed and calm; casually showing no concern | She seemed completely nonchalant about the big test. | none
+Inquisitive | adj | 1 | Very curious; eager to learn and know things | The inquisitive child asked questions about absolutely everything. | quer- (seek)
+Zealous | adj | 2 | Showing great enthusiasm in pursuit of a cause | She was zealous in her commitment to protecting the environment. | none
+Immutable | adj | 3 | Unchanging over time; unable to be altered | The laws of mathematics are immutable. | im-(not)+mut-(change)
+Querulous | adj | 3 | Complaining in a petulant, whining manner | The querulous child complained about every single dinner choice. | none
+Dauntless | adj | 2 | Showing fearlessness and bold determination | The dauntless explorer ventured into the unknown jungle alone. | none
+Verbose | adj | 2 | Using far more words than are needed | His verbose essay could easily have been half the length. | verb- (word)
+Wane | verb | 2 | To decrease gradually in vigor, power, or extent | Her enthusiasm for the project began to wane after weeks. | none
+Kindle | verb | 1 | To light a fire; to arouse or stir up a feeling | That book kindled her love of science forever. | none
+Circumspect | adj | 3 | Thinking carefully before acting; very cautious | A circumspect driver always checks all mirrors before turning. | circum-(around)+spec-(look)
+Acrimonious | adj | 3 | Bitter and angry in manner or tone of voice | The acrimonious argument left both friends feeling deeply hurt. | none
+Oblivious | adj | 1 | Unaware of or unconcerned about what is happening | He was completely oblivious to the surprise party preparations. | none
+Dubious | adj | 2 | Hesitant; not fully convinced; of questionable quality | She was dubious about the salesman's exaggerated promises. | none
+Ambiguous | adj | 2 | Open to more than one meaning; unclear | The instructions were so ambiguous that everyone did it differently. | ambi- (both)
+Scrupulous | adj | 3 | Very careful and thorough; having strong moral principles | The scrupulous accountant double-checked every single number. | none
+Opulent | adj | 3 | Rich, luxurious, and impressively expensive-looking | The opulent mansion had golden doorknobs and marble floors. | none
+Hapless | adj | 2 | Unfortunate and consistently unlucky | The hapless traveler missed all four of his connecting flights. | none
+Jocular | adj | 3 | Fond of joking; characterized by jokes and humor | His jocular manner made even difficult topics feel fun. | none
+Pedantic | adj | 3 | Overly focused on minor details; showing off learning | His pedantic corrections made him unpopular at parties. | none
+Notorious | adj | 1 | Famous for something bad; having a bad reputation | The notorious pirate was feared across all seven seas. | none
+Judicious | adj | 3 | Showing good sense and sound judgment | She made a judicious decision to wait before speaking. | none
+Adamant | adj | 2 | Refusing to be persuaded; firmly decided | She was adamant that she would not change her answer. | none
+Adept | adj | 1 | Very skilled or proficient at something | He was adept at solving even the hardest math puzzles. | none
+Affable | adj | 2 | Friendly, good-natured, and easy to talk to | The affable librarian helped every student with a smile. | none
+Alacrity | noun | 3 | Brisk and cheerful readiness to do something | She accepted the challenge with great alacrity. | none
+Aloof | adj | 2 | Not friendly or forthcoming; cool and distant | The new student seemed aloof, but she was just shy. | none
+Altruistic | adj | 3 | Showing unselfish concern for the well-being of others | Her altruistic decision to donate her prize money inspired everyone. | none
+Amicable | adj | 2 | Having a friendly and pleasant manner | Despite their disagreement, the two teams reached an amicable solution. | none
+Apathy | noun | 2 | Lack of interest, enthusiasm, or concern | His apathy toward the election surprised his politically active friends. | path- (feeling)
+Appease | verb | 2 | To make someone calmer by giving what they want | The teacher tried to appease the upset student with extra time. | none
+Arrogant | adj | 1 | Having an exaggerated sense of one's own importance | The arrogant champion refused to congratulate the runner-up. | none
+Articulate | adj | 1 | Having the ability to speak fluently and clearly | The articulate student explained her idea without any hesitation. | none
+Astute | adj | 2 | Very clever; showing an ability to accurately assess situations | The astute detective noticed the clue that everyone else missed. | none
+Audacious | adj | 2 | Showing a willingness to take surprisingly bold risks | It was audacious to challenge the champion in her first match. | aud- (dare)
+Austere | adj | 3 | Severe in manner; plain and simple without luxury | The austere classroom had only desks, a board, and one window. | none
+Banal | adj | 3 | So common as to be lacking interest; predictable | The movie had a banal plot that everyone could predict. | none
+Belligerent | adj | 2 | Hostile and aggressive; eager to argue or fight | The belligerent player was removed from the game for arguing. | none
+Blithe | adj | 3 | Showing a casual, cheerful indifference | She gave a blithe shrug, as if the problem didn't matter. | none
+Boisterous | adj | 1 | Noisy, energetic, and cheerful | The boisterous crowd erupted when the band took the stage. | none
+Boorish | adj | 3 | Rough and bad-mannered; unpleasant to be around | His boorish behavior at the dinner embarrassed his family. | none
+Brevity | noun | 2 | Concise and exact use of words in writing or speech | The coach admired her brevity -- she said exactly what was needed. | brev- (short)
+Callous | adj | 2 | Showing an insensitive disregard for others | The callous remark brought tears to her younger sister's eyes. | none
+Clamor | noun | 1 | A loud and confused noise; to make such a noise | The clamor of the cafeteria made it hard to think. | none
+Clemency | noun | 3 | Mercy and leniency shown toward an offender | The judge showed clemency and reduced the boy's punishment. | none
+Coerce | verb | 2 | To persuade someone to do something using force or threats | No one should coerce a student into changing their answer. | none
+Cogent | adj | 3 | Clear, logical, and convincing | Her cogent argument convinced even the most skeptical judges. | none
+Complacent | adj | 2 | Showing uncritical satisfaction with oneself | The complacent team stopped practicing and quickly lost the championship. | none
+Concise | adj | 1 | Giving a lot of information clearly in few words | A good essay title should be concise and descriptive. | none
+Condescending | adj | 2 | Acting as though others are inferior; patronizing | Her condescending tone made her teammates feel disrespected. | none
+Convoluted | adj | 3 | Extremely complex and difficult to follow | The convoluted instructions made the simple game impossible to start. | none
+Copious | adj | 2 | Abundant in supply; more than enough | She took copious notes and never missed a single detail. | none
+Credulous | adj | 3 | Too ready to believe things; easily fooled | The credulous child believed every tall tale his brother told. | none
+Cryptic | adj | 2 | Having a meaning that is mysterious or hard to understand | She left a cryptic note that none of her friends could decode. | crypt- (hidden)
+Cunning | adj | 1 | Having skill in achieving goals in clever or sly ways | The cunning fox tricked the other animals in every fable. | none
+Cynical | adj | 2 | Believing that people are motivated only by self-interest | A cynical reader doubts that any character acts from pure kindness. | none
+Decorum | noun | 3 | Behavior expected in polite society; proper conduct | The principal reminded students that decorum was expected at assembly. | none
+Deferential | adj | 3 | Showing great respect by submitting to others' wishes | The new student was deferential to the teacher's every instruction. | none
+Deliberate | adj | 1 | Done with intention; careful and unhurried | She made a deliberate choice to read ten pages every night. | none
+Desolate | adj | 2 | Feeling completely alone or abandoned; empty and bleak | The desolate playground looked especially sad in the winter rain. | none
+Diffident | adj | 3 | Modest or shy due to a lack of self-confidence | The diffident student spoke so softly the teacher had to lean in. | none
+Discern | verb | 2 | To recognize or find out something; to perceive clearly | Even in the fog, she could discern the outline of the lighthouse. | none
+Disdain | noun | 2 | Feeling that something is unworthy of consideration | He looked at the messy locker with obvious disdain. | none
+Disparage | verb | 3 | To regard or represent as being of little worth | Good sportsmanship means never disparaging your opponent. | none
+Docile | adj | 2 | Ready to accept control or instruction; quiet and easy to manage | The docile puppy followed every command on the first try. | none
+Dogmatic | adj | 3 | Inclined to lay down principles as undeniably true | The dogmatic professor refused to consider any other interpretation. | none
+Dormant | adj | 2 | Temporarily inactive; in a state of rest or sleep | The volcano had been dormant for three hundred years. | none
+Ebullient | adj | 3 | Cheerful and full of energy; enthusiastic | Her ebullient laugh filled the entire hallway with joy. | none
+Eccentric | adj | 1 | Unconventional and slightly strange in behavior | The eccentric inventor covered every wall of his house with blueprints. | none
+Egregious | adj | 3 | Outstandingly bad; shockingly terrible | Copying someone's entire essay was an egregious act of dishonesty. | greg- (flock)
+Empathy | noun | 1 | The ability to understand and share the feelings of another | Her empathy allowed her to comfort friends going through hard times. | path- (feeling)
+Enigmatic | adj | 3 | Difficult to interpret or understand; mysterious | The enigmatic smile on the portrait puzzled art historians for centuries. | none
+Ephemeral | adj | 3 | Lasting for a very short time | A rainbow is ephemeral -- beautiful but gone in minutes. | none
+Erratic | adj | 2 | Not regular or consistent; unpredictable | The erratic signal made it impossible to watch the game online. | none
+Erudite | adj | 3 | Having or showing deep, wide knowledge | The erudite professor had memorized passages from hundreds of books. | none
+Exasperate | verb | 2 | To irritate or frustrate someone intensely | The constant interruptions began to exasperate even the patient teacher. | none
+Exemplary | adj | 2 | Serving as a desirable model; representing the best | Her exemplary behavior earned her the school's character award. | none
+Exuberant | adj | 2 | Filled with lively energy and enthusiasm | The exuberant fans rushed onto the field after the final whistle. | none
+Fastidious | adj | 3 | Very attentive to accuracy and detail; difficult to please | The fastidious editor corrected every missing comma in the manuscript. | none
+Fervent | adj | 2 | Having or displaying a passionate intensity | She was a fervent believer in the power of public libraries. | none
+Fickle | adj | 2 | Changing frequently, especially regarding loyalties | The fickle fan cheered for whichever team was winning. | none
+Flourish | verb | 1 | To grow or develop in a healthy, vigorous way | Given water and sunlight, even a small plant will flourish. | none
+Forlorn | adj | 2 | Pitifully sad and abandoned; hopeless | The forlorn kitten sat alone at the back of the shelter. | none
+Formidable | adj | 2 | Inspiring fear or respect through impressive strength | The formidable chess champion had not lost a match in two years. | none
+Forthright | adj | 2 | Direct and outspoken; frank | Her forthright critique helped the team fix the project immediately. | none
+Frivolous | adj | 2 | Not having any serious purpose or value; silly | The judge dismissed the frivolous complaint in under a minute. | none
+Gullible | adj | 1 | Easily persuaded to believe something; naive | The gullible tourist believed every wild story the guide told. | none
+Hamper | verb | 2 | To hinder or impede the movement or progress of something | Knee pain began to hamper her progress in the race. | none
+Humility | noun | 1 | A modest view of one's own importance | Despite winning three trophies, she spoke with genuine humility. | none
+Impartial | adj | 2 | Treating all rivals or disputants equally; unbiased | The impartial judge considered both sides before making a decision. | none
+Impulsive | adj | 1 | Acting or done without forethought | His impulsive decision to skip practice cost the team the game. | none
+Indignant | adj | 2 | Feeling or showing anger about something unjust or wrong | She was indignant when her correct answer was marked wrong. | none
+Ingenious | adj | 2 | Clever, original, and inventive | Her ingenious solution used only materials already in the classroom. | none
+Innate | adj | 2 | Inborn; natural, not learned | Some musicians seem to have an innate sense of rhythm. | none
+Integrity | noun | 1 | The quality of being honest and having strong moral principles | A person of integrity does the right thing even when no one watches. | none
+Intricate | adj | 2 | Very complicated or detailed | The intricate pattern on the quilt took three years to sew. | none
+Irascible | adj | 3 | Having or showing a tendency to be easily angered | The irascible coach shouted at every small mistake. | none
+Laudable | adj | 2 | Deserving praise and commendation | Her laudable effort to recycle inspired the whole neighborhood. | laud- (praise)
+Lethargic | adj | 2 | Affected by lethargy; sluggish and apathetic | After the long flight, everyone felt lethargic and slow. | none
+Lucid | adj | 2 | Expressed clearly; easy to understand | Her lucid explanation made the confusing concept finally make sense. | luc- (light)
+Magnanimous | adj | 3 | Very generous or forgiving, especially toward a rival | The magnanimous winner shook every opponent's hand after the match. | magn- (great)
+Malleable | adj | 3 | Easily influenced; able to be shaped or changed | Young minds are malleable, which is why teaching matters so much. | none
+Mendacious | adj | 3 | Not telling the truth; lying | The mendacious student invented an excuse for every missing homework. | none
+Methodical | adj | 2 | Done according to a systematic plan; orderly | Her methodical approach to studying meant she rarely forgot anything. | none
+Mollify | verb | 3 | To appease the anger or anxiety of someone | The coach tried to mollify the disappointed players after the loss. | none
+Mundane | adj | 2 | Lacking interest or excitement; ordinary | She turned even the most mundane chore into something fun. | none
+Nefarious | adj | 3 | Wicked or criminal; extremely evil | The nefarious scheme was uncovered before anyone was harmed. | none
+Negligent | adj | 2 | Failing to take proper care in doing something | The negligent worker left safety equipment scattered on the floor. | none
+Nostalgic | adj | 1 | Feeling a sentimental longing for the past | The old photographs made her deeply nostalgic for childhood summers. | none
+Obstinate | adj | 2 | Stubbornly refusing to change one's opinion | The obstinate child refused to apologize no matter what. | none
+Ominous | adj | 1 | Giving the impression that something bad is going to happen | The ominous dark clouds made the hikers turn back immediately. | none
+Pacify | verb | 2 | To quell the anger or agitation of someone | She tried to pacify the crying baby with a soft song. | pac- (peace)
+Perceptive | adj | 2 | Having or showing a good ability to understand things | Her perceptive question impressed the entire panel of judges. | none
+Placid | adj | 2 | Calm and peaceful; not easily upset | The placid lake reflected the mountains without a single ripple. | none
+Plausible | adj | 2 | Seeming reasonable or probable | Her explanation was plausible -- it could easily have been true. | none
+Pompous | adj | 2 | Affectedly grand, solemn, or self-important | The pompous speaker used long words just to sound impressive. | none
+Pragmatic | adj | 2 | Dealing with things in a practical, realistic way | She was pragmatic about the setback and immediately made a new plan. | none
+Precarious | adj | 2 | Not securely held; dangerously uncertain | The precarious stack of books looked ready to fall at any moment. | none
+Profound | adj | 2 | Very great or intense; showing deep insight or understanding | Reading that novel had a profound effect on how she saw the world. | none
+Prudent | adj | 2 | Acting with care and thought for the future | It was prudent to study a little each night rather than all at once. | none
+Reticent | adj | 3 | Not revealing one's thoughts or feelings readily; reserved | Despite winning the prize, she was reticent during the interview. | none
+Sagacious | adj | 3 | Having or showing keen mental discernment; wise | The sagacious counselor gave advice that students remembered for years. | none
+Sanguine | adj | 3 | Optimistic, especially in difficult situations | Even after losing two games, the coach remained sanguine about the season. | none
+Skeptical | adj | 1 | Not easily convinced; having doubts or reservations | She was skeptical of claims that couldn't be backed up with evidence. | none
+Spontaneous | adj | 1 | Performed without planning; natural and unforced | The spontaneous dance party in the hallway lifted everyone's spirits. | none
+Subdued | adj | 2 | Quiet and restrained; not intense or strong | The crowd was subdued after the heartbreaking loss. | none
+Subtle | adj | 2 | So delicate as to be difficult to analyze | There was a subtle difference in the two paintings that few could spot. | none
+Succinct | adj | 2 | Briefly and clearly expressed | Her succinct summary covered every major point in just four sentences. | none
+Superfluous | adj | 3 | Unnecessary, especially through being more than enough | The editor removed all superfluous words to sharpen the writing. | none
+Tactful | adj | 1 | Having or showing skill in dealing with sensitive situations | A tactful person can disagree without hurting anyone's feelings. | none
+Tranquil | adj | 1 | Free from disturbance; calm | The tranquil garden made a perfect place to read on a Sunday morning. | none
+Transparent | adj | 1 | Easy to perceive or detect; open and honest | Her transparent excitement about the surprise ruined the secret. | none
+Turbulent | adj | 2 | Moving unsteadily; full of confusion and disorder | The turbulent flight had everyone gripping their armrests tightly. | none
+Unassuming | adj | 2 | Not pretentious or arrogant; modest | Despite her fame, she remained completely unassuming and warm. | none
+Vacillate | verb | 3 | To waver between different opinions or actions; be indecisive | He vacillated so long between the two choices that the deadline passed. | none
+Valiant | adj | 1 | Possessing or showing courage or determination | The valiant firefighter ran into the burning building without hesitation. | none
+Venerate | verb | 3 | To regard with great respect and reverence | The students venerated the founder whose portrait hung in the hall. | none
+Vigilant | adj | 2 | Keeping careful watch for possible danger or difficulties | A vigilant lifeguard watches the water at all times without distraction. | none
+Vindictive | adj | 3 | Having or showing a strong desire for revenge | A vindictive character wants others to suffer for wrongs done to them. | none
+Volatile | adj | 2 | Liable to change rapidly and unpredictably | The volatile weather changed from sunshine to hailstorm in minutes. | none
+Whimsical | adj | 2 | Playfully quaint or fanciful in an appealing way | The whimsical illustration showed a dragon reading a tiny book. | none
+Zeal | noun | 1 | Great energy or enthusiasm in pursuit of a cause | Her zeal for science led her to read every book in the library. | none
+Acute | adj | 2 | Present to a severe or intense degree; sharp | She had an acute sense of hearing and could detect the faintest sound. | none
+Brevity | noun | 2 | Concise expression; shortness of time | His answer impressed everyone with its brevity -- just two words. | brev- (short)
+Clemency | noun | 3 | Mercy and leniency shown toward an offender | The judge showed clemency by reducing the sentence. | none
+Divert | verb | 1 | To cause to change course; to distract from something | A funny story can divert attention from a difficult moment. | none
+Elusive | adj | 2 | Difficult to find, catch, or achieve | The solution to the puzzle remained elusive for days. | none
+Fallacy | noun | 3 | A mistaken belief; a failure in reasoning | It is a fallacy to think that memorizing facts equals understanding. | none
+Genial | adj | 2 | Friendly and cheerful; pleasantly warm | The genial host made every guest feel instantly welcome. | gen- (birth/kind)
+Hubris | noun | 3 | Excessive pride or self-confidence; arrogance | His hubris led him to challenge the champion without any training. | none
+Implicit | adj | 3 | Implied though not directly stated | Her silence carried an implicit message that she was unhappy. | none
+Jeopardize | verb | 2 | To put someone or something into a situation with risk of loss | One bad decision could jeopardize the entire season. | none
+Keen | adj | 1 | Having a sharp or penetrating mind; eager | She had a keen eye for small errors that others missed. | none
+Lurid | adj | 3 | Vivid in a disturbing way; shocking | The report painted a lurid picture of the damage from the storm. | none
+Marvel | verb | 1 | To be filled with wonder or astonishment | She could only marvel at the beauty of the ancient temple. | none
+Negate | verb | 2 | To nullify or make ineffective; to deny the existence of | One careless sentence can negate an otherwise excellent argument. | none
+Oblique | adj | 3 | Neither parallel nor at a right angle; not explicit | His oblique compliment was so indirect she almost missed it. | none
+Paramount | adj | 2 | More important than anything else; supreme | Safety is paramount when working with any kind of equipment. | none
+Quell | verb | 2 | To put an end to; to suppress or extinguish | The teacher quickly quelled the argument before it escalated. | none
+Ratify | verb | 3 | To sign or give formal consent to; to make officially valid | All members must ratify the agreement before it becomes binding. | none
+Scrutinize | verb | 2 | To examine or inspect closely and critically | The detective scrutinized every detail of the crime scene. | none
+Tenuous | adj | 3 | Very thin or weak; having little substance | His argument rested on a tenuous connection between two facts. | ten- (hold)
+Undermine | verb | 2 | To damage or weaken gradually from within | Constant criticism can undermine a person's confidence. | none
+Viable | adj | 2 | Capable of working successfully; feasible | The team presented two viable solutions to the problem. | none
+Wary | adj | 1 | Feeling or showing caution about possible dangers | She was wary of trusting someone she had just met. | none
+Xenophobia | noun | 3 | Intense dislike or fear of people from other countries | The history teacher explained how xenophobia leads to discrimination. | xeno- (foreign)
+Yearn | verb | 1 | To have an intense feeling of longing | After months away, she yearned to see her old friends again. | none
+Zenith | noun | 2 | The highest point reached; the peak of something | At the zenith of her career, she had won every major award. | none
+Absolve | verb | 3 | To formally declare that someone is free from blame | The investigation absolved her of any wrongdoing. | ab- (away)
+Bizarre | adj | 1 | Very strange or unusual | The plot of the story became more bizarre with every chapter. | none
+Chronicle | noun | 2 | A factual written account of important events in order of time | The book was a chronicle of the explorer's five-year journey. | chron- (time)
+Diligence | noun | 1 | Careful and persistent work or effort | Her diligence in practicing daily showed in her final performance. | none

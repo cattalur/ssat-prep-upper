@@ -1,0 +1,191 @@
+# analogies.txt
+# Format: stem | type | ans | choiceA | choiceB | choiceC | choiceD | choiceE | tip
+# Each choice is written as: word1~word2  (renders as "word1 is to word2")
+# ans is the index of the correct choice: 0=A, 1=B, 2=C, 3=D, 4=E
+# Lines starting with # are comments and are ignored by the app.
+#
+# Types: Habitat, Tool to User, Function, Part to Whole, Category, Characteristic,
+#        Action to Subject, Action to Object, Degree, Synonym, Antonym,
+#        Cause & Effect, Sequence, Creator to Creation, Material, Measurement, Word Form
+
+# ── Habitat ──────────────────────────────────────────────────────────────────
+Deer is to forest as | Habitat | 1 | apple~fruit | whale~ocean | lion~tiger | cage~bird | gazelle~Africa | A deer lives in a forest; a whale lives in the ocean. Both show animal to natural habitat.
+Rabbit is to burrow as | Habitat | 0 | bird~nest | fish~water | bear~fur | ant~picnic | snake~rattle | A rabbit lives in a burrow; a bird lives in a nest. Both are animal to home/dwelling.
+Bee is to hive as | Habitat | 3 | bear~claw | bear~fur | bear~honey | bear~den | fish~river | A bee lives in a hive; a bear lives in a den. Both are animal to home/dwelling.
+Ant is to anthill as | Habitat | 3 | bat~wing | bat~insect | bat~night | bat~cave | bat~echo | Ants live in an anthill; bats live in a cave.
+Camel is to desert as | Habitat | 2 | polar bear~snow | polar bear~fur | polar bear~Arctic | polar bear~cold | polar bear~seal | A camel lives in the desert; a polar bear lives in the Arctic.
+Frog is to pond as | Habitat | 1 | monkey~banana | monkey~jungle | monkey~tree | monkey~tail | monkey~grass | A frog lives in a pond; a monkey lives in the jungle.
+Eagle is to sky as | Habitat | 4 | shark~water | shark~fin | shark~teeth | shark~reef | shark~ocean | An eagle soars through the sky; a shark lives in the ocean.
+
+# ── Tool to User ──────────────────────────────────────────────────────────────
+Scalpel is to surgeon as | Tool to User | 0 | brush~painter | stage~actor | pen~student | wrench~car | lens~eye | A scalpel is the defining tool of a surgeon; a brush is the defining tool of a painter.
+Stethoscope is to doctor as | Tool to User | 1 | gavel~courtroom | gavel~judge | gavel~verdict | gavel~lawyer | gavel~law | A stethoscope is the defining tool of a doctor; a gavel is the defining tool of a judge.
+Baton is to conductor as | Tool to User | 0 | whistle~referee | whistle~sport | whistle~signal | whistle~player | whistle~game | A baton is the defining tool of a conductor; a whistle is the defining tool of a referee.
+Paintbrush is to painter as | Tool to User | 3 | chisel~stone | chisel~marble | chisel~artist | chisel~sculptor | chisel~carve | A paintbrush is the defining tool of a painter; a chisel is the defining tool of a sculptor.
+Plow is to farmer as | Tool to User | 2 | oar~boat | oar~water | oar~rower | oar~paddle | oar~river | A plow is the defining tool of a farmer; an oar is the defining tool of a rower.
+Needle is to tailor as | Tool to User | 2 | trowel~brick | trowel~wall | trowel~mason | trowel~cement | trowel~plumber | A needle is the defining tool of a tailor; a trowel is the defining tool of a mason.
+Microscope is to biologist as | Tool to User | 2 | telescope~space | telescope~lens | telescope~astronomer | telescope~universe | telescope~science | A microscope is the defining tool of a biologist; a telescope is the defining tool of an astronomer.
+Hypothesis is to scientist as | Tool to User | 2 | blueprint~engineer | blueprint~builder | blueprint~architect | blueprint~designer | blueprint~planner | A hypothesis is the starting plan of a scientist; a blueprint is the starting plan of an architect.
+Hypothesis is to scientist as | Tool to User | 2 | blueprint~engineer | blueprint~builder | blueprint~architect | blueprint~designer | blueprint~planner | A hypothesis is the starting plan of a scientist; a blueprint is the starting plan of an architect.
+
+# ── Function ──────────────────────────────────────────────────────────────────
+Pencil is to writing as | Function | 0 | mop~cleaning | sunlight~raining | apron~cooking | excitement~driving | chocolate~sweetness | A pencil is used for writing; a mop is used for cleaning.
+Faucet is to water as | Function | 1 | fridge~food | fan~air | dust~vacuum | broom~bristles | outlet~electricity | A faucet controls the flow of water; a fan controls the flow of air.
+Rudder is to boat as | Function | 1 | engine~car | steering wheel~car | sail~wind | anchor~dock | oar~paddle | A rudder steers a boat; a steering wheel steers a car.
+Telephone is to communication as | Function | 2 | travel~vacation | garage~car | stove~cooking | multiplication~division | tyrant~assimilation | A telephone is used for communication; a stove is used for cooking.
+Dam is to flood as | Function | 2 | helmet~head | helmet~sport | helmet~injury | helmet~protection | helmet~bicycle | A dam prevents flooding; a helmet prevents injury.
+Dictionary is to meaning as | Function | 2 | map~travel | map~geography | map~direction | map~location | map~distance | A dictionary provides meaning of words; a map provides direction for travel.
+Lighthouse is to ship as | Function | 2 | traffic light~road | traffic light~signal | traffic light~car | traffic light~pedestrian | traffic light~intersection | A lighthouse guides a ship safely; a traffic light guides a car safely through intersections.
+Navigate is to destination as | Function | 1 | cheat~success | strive~goal | contrive~improvise | concede~failure | maneuver~departure | You navigate toward a destination; you strive toward a goal. Both show effort toward an end point.
+Construe is to meaning as | Function | 2 | navigate~map | navigate~ship | navigate~destination | navigate~ocean | navigate~direction | To construe is to find and interpret meaning; to navigate is to find your way to a destination.
+
+# ── Part to Whole ─────────────────────────────────────────────────────────────
+Petal is to flower as | Part to Whole | 0 | branch~tree | seed~growth | leaf~green | thorn~rose | stem~root | A petal is one part of a flower; a branch is one part of a tree.
+Paragraph is to essay as | Part to Whole | 2 | chapter~library | chapter~sentence | chapter~novel | chapter~reading | chapter~author | A paragraph is one part of an essay; a chapter is one part of a novel.
+Soldier is to army as | Part to Whole | 0 | player~team | captain~ship | country~nation | medal~honor | weapon~battle | A soldier is one member of an army; a player is one member of a team.
+Spoke is to wheel as | Part to Whole | 3 | rung~rope | rung~step | rung~stair | rung~ladder | rung~climb | A spoke is one part of a wheel; a rung is one part of a ladder.
+Act is to play as | Part to Whole | 1 | inning~pitcher | inning~baseball game | inning~home run | inning~season | inning~score | An act is one part of a play; an inning is one part of a baseball game.
+Brick is to wall as | Part to Whole | 0 | plank~floor | wood~house | hammer~nail | tile~clay | stone~rock | Many bricks make up a wall; many planks make up a floor.
+Page is to book as | Part to Whole | 3 | panel~glass | panel~museum | panel~window | panel~comic strip | panel~cartoon | A page is one part of a book; a panel is one part of a comic strip.
+Novel is to chapter as | Part to Whole | 0 | play~scene | book~library | film~director | poem~stanza | song~chorus | A novel is divided into chapters; a play is divided into scenes.
+Summit is to mountain as | Part to Whole | 2 | crown~king | crown~jewel | crown~head | crown~throne | crown~glory | The summit is the very top of a mountain; the crown is the very top of the head.
+Verse is to song as | Part to Whole | 2 | frame~picture | frame~gallery | frame~film | frame~painting | frame~canvas | A verse is one part of a song; a frame is one still image in a film.
+Paragraph is to essay as | Part to Whole | 0 | act~drama | line~stanza | word~letter | sentence~word | title~chapter | A paragraph is one section of an essay; an act is one section of a drama.
+
+# ── Category ──────────────────────────────────────────────────────────────────
+Arboretum is to garden as | Category | 4 | park~mountain | orchard~farm | ranch~wildlife | flowerbed~daisies | aquarium~zoo | An arboretum is a specialized type of garden (for trees); an aquarium is a specialized type of zoo (for fish).
+Sculpture is to art as | Category | 2 | diving~ocean | subway~passenger | tango~dance | crayon~coloring | letter~envelope | A sculpture is a specific type of art; a tango is a specific type of dance.
+Sonnet is to poem as | Category | 2 | waltz~music | waltz~rhythm | waltz~dance | waltz~ballroom | waltz~movement | A sonnet is a specific type of poem; a waltz is a specific type of dance.
+Oak is to tree as | Category | 1 | rose~thorn | rose~flower | rose~garden | rose~petal | rose~red | An oak is a specific type of tree; a rose is a specific type of flower.
+Mammal is to human as | Category | 0 | apple~fruit | avarice~gluttony | philosopher~knowledge | goat~sheep | relationship~friendship | A human is a specific type of mammal; an apple is a specific type of fruit.
+Algebra is to mathematics as | Category | 1 | poetry~writing | poetry~literature | poetry~science | poetry~school | poetry~words | Algebra is a specific branch of mathematics; poetry is a specific branch of literature.
+Physics is to science as | Category | 3 | calculus~metaphysics | calculus~art | calculus~philosophy | calculus~mathematics | calculus~entertainment | Physics is a specific branch of science; calculus is a specific branch of mathematics.
+Comedy is to film as | Category | 2 | mystery~detective | mystery~clue | mystery~novel | mystery~suspense | mystery~secret | A comedy is a specific type of film; a mystery is a specific type of novel.
+Website is to internet as | Category | 1 | cookie~browser | book~library | newspaper~video | information~data | telephone~radio | A website is one item found on the internet; a book is one item found in a library.
+Granite is to rock as | Category | 1 | oxygen~air | oxygen~gas | oxygen~element | oxygen~molecule | oxygen~breath | Granite is a specific type of rock; oxygen is a specific type of gas.
+Waltz is to dance as | Category | 0 | haiku~poem | haiku~syllable | haiku~Japan | haiku~short | haiku~writing | A waltz is a specific type of dance; a haiku is a specific type of poem.
+
+# ── Characteristic ────────────────────────────────────────────────────────────
+Pianist is to hands as | Characteristic | 0 | ballerina~feet | scientist~laboratory | hospital~doctors | artist~face | head~body | A pianist's defining body part is their hands; a ballerina's defining body part is their feet.
+Solitary is to hermit as | Characteristic | 1 | busy~homework | greedy~miser | policeman~society | school~learning | hungry~stomach | A hermit is defined by being solitary; a miser is defined by being greedy.
+Trustworthy is to friend as | Characteristic | 3 | greedy~money | idiotic~stupidity | intelligent~studying | caring~parent | reptilian~horse | Trustworthiness is a defining quality of a good friend; caring is a defining quality of a good parent.
+Pious is to belief as | Characteristic | 4 | wise~rashness | disagreeable~personality | gold~color | hardship~persistence | athletic~strength | A pious person is defined by strong belief; an athletic person is defined by physical strength.
+Pessimist is to gloom as | Characteristic | 2 | optimist~happiness | optimist~surprise | optimist~hope | optimist~change | optimist~energy | A pessimist is defined by gloom; an optimist is defined by hope.
+Porous is to water as | Characteristic | 0 | transparent~light | rough~texture | hollow~air | dense~weight | elastic~shape | A porous material allows water to pass through it; a transparent material allows light to pass through it.
+Jousting is to lance as | Characteristic | 2 | jumping~trampoline | hunting~sport | fencing~sword | glamorizing~celebrities | caroling~song | Jousting is performed with a lance; fencing is performed with a sword.
+Eloquent is to speech as | Characteristic | 2 | graceful~ballet | graceful~beauty | graceful~movement | graceful~dancer | graceful~art | Eloquent describes beautiful precise speech; graceful describes beautiful precise movement.
+Bibliophile is to books as | Characteristic | 1 | audiophile~sound | audiophile~music | audiophile~radio | audiophile~hearing | audiophile~recording | A bibliophile loves books; an audiophile loves high-quality music and audio.
+Benefactor is to generosity as | Characteristic | 0 | tyrant~cruelty | soldier~bravery | teacher~patience | student~curiosity | villain~malice | A benefactor is defined by generosity; a tyrant is defined by cruelty.
+Vandal is to destruction as | Characteristic | 0 | philanthropist~generosity | criminal~jail | coward~fear | judge~verdict | volunteer~work | A vandal is defined by causing destruction; a philanthropist is defined by acts of generosity.
+Fastidious is to detail as | Characteristic | 1 | zealous~religion | zealous~cause | zealous~study | zealous~effort | zealous~belief | A fastidious person pays extreme attention to detail; a zealous person is extremely dedicated to a cause.
+Surgeon is to operating room as | Characteristic | 0 | teacher~classroom | chef~restaurant | pilot~airplane | actor~stage | athlete~field | A surgeon works in an operating room; a teacher works in a classroom.
+Persuasive is to argument as | Characteristic | 2 | tall~stack | long~conversation | compelling~evidence | unsupported~assertion | significant~relevant | A persuasive person makes a strong argument; compelling evidence makes a strong case.
+Strident is to sound as | Characteristic | 2 | pungent~taste | pungent~sight | pungent~smell | pungent~touch | pungent~hearing | Strident describes a harsh sound; pungent describes a sharp strong smell.
+Omnivore is to plants and meat as | Characteristic | 2 | herbivore~fish | herbivore~anything | herbivore~plants | herbivore~meat | herbivore~berries | An omnivore eats both plants and meat; an herbivore eats only plants.
+Latitude is to north-south as | Characteristic | 2 | longitude~geography | longitude~direction | longitude~east-west | longitude~coordinates | longitude~distance | Latitude measures position in the north-south direction; longitude measures in the east-west direction.
+Amnesia is to memory as | Characteristic | 2 | blindness~glasses | blindness~sight | blindness~vision | blindness~darkness | blindness~reading | Amnesia is the loss of memory; blindness is the loss of vision.
+
+# ── Action to Subject / Object ────────────────────────────────────────────────
+Abdicate is to monarch as | Action to Subject | 0 | resign~governor | impeach~president | abduct~hostage | elude~outlaw | abscond~runaway | To abdicate is how a monarch gives up power; to resign is how a governor steps down.
+Abdicate is to monarch as | Action to Subject | 0 | resign~governor | retire~employee | graduate~student | dismiss~worker | escape~prisoner | Abdicate means a monarch formally gives up their throne; resign means an official formally steps down.
+Mow is to lawn as | Action to Object | 2 | prune~plum | prune~raisin | prune~tree | prune~hair | prune~meadow | You mow a lawn; you prune a tree. Both are action and the specific object of that action.
+Sculpt is to clay as | Action to Object | 1 | carve~stone | carve~wood | carve~art | carve~tool | carve~chisel | You sculpt clay; you carve wood. Both describe a craft and its material.
+Knit is to yarn as | Action to Object | 1 | weave~fabric | weave~thread | weave~loom | weave~silk | weave~needle | You knit yarn to make fabric; you weave thread to make cloth.
+
+# ── Degree ────────────────────────────────────────────────────────────────────
+Novel is to poem as | Degree | 3 | letter~alphabet | toy~child | elephant~dinosaur | marathon~sprint | urban~rural | A novel is long; a poem is short. A marathon is long; a sprint is short. Both contrast in length.
+Chilly is to freezing as | Degree | 2 | warm~pleasant | warm~summer | warm~scorching | warm~comfortable | warm~mild | Freezing is an extreme form of chilly; scorching is an extreme form of warm.
+Tired is to exhausted as | Degree | 1 | hungry~thirsty | hungry~famished | hungry~empty | hungry~weak | hungry~eating | Exhausted is an extreme form of tired; famished is an extreme form of hungry.
+Dislike is to loathe as | Degree | 0 | fear~dread | enjoy~like | know~forget | see~hear | love~care | Loathe is an extreme form of dislike; dread is an extreme form of fear.
+Jog is to sprint as | Degree | 0 | walk~march | run~swim | skip~hop | move~stand | fall~trip | A sprint is more intense than a jog; a march is more purposeful and intense than a walk.
+Whisper is to shout as | Degree | 2 | trickle~water | trickle~river | trickle~flood | trickle~drop | trickle~quiet | A shout is extreme compared to a whisper; a flood is extreme compared to a trickle.
+Annoyed is to furious as | Degree | 3 | pleased~exasperated | pleased~calm | pleased~sad | pleased~overjoyed | pleased~awake | Furious is an extreme form of annoyed; overjoyed is an extreme form of pleased.
+Breeze is to hurricane as | Degree | 3 | drizzle~cloud | drizzle~weather | drizzle~umbrella | drizzle~downpour | drizzle~wet | A hurricane is an extreme form of a breeze; a downpour is an extreme form of a drizzle.
+Scratch is to wound as | Degree | 0 | mistake~disaster | cut~bleed | hurt~injury | pain~scar | bruise~fall | A wound is far more serious than a scratch; a disaster is far more serious than a mistake.
+Yawn is to sleepy as | Degree | 1 | fidget~bored | fidget~restless | fidget~nervous | fidget~active | fidget~distracted | A yawn is a physical sign of sleepiness; fidgeting is a physical sign of restlessness.
+Worried is to panicked as | Degree | 1 | sad~cheerful | annoyed~furious | happy~joyful | tired~weary | scared~nervous | Panicked is an extreme form of worried; furious is an extreme form of annoyed.
+Rain is to downpour as | Degree | 1 | wind~storm | wind~gale | wind~air | wind~breeze | wind~tornado | A downpour is an extreme form of rain; a gale is an extreme powerful form of wind.
+Tap is to pound as | Degree | 2 | suggest~advise | suggest~hint | suggest~demand | suggest~request | suggest~tell | Pounding is more forceful than tapping; demanding is more forceful than suggesting.
+Annoyed is to furious as | Degree | 2 | thin~skinny | thin~slender | thin~gaunt | thin~weak | thin~fragile | Furious is an extreme form of annoyed; gaunt (extremely thin) is an extreme form of thin.
+Fond is to devoted as | Degree | 2 | cool~warm | cool~temperature | cool~frigid | cool~refreshing | cool~cold | Devoted is an extreme form of fond; frigid is an extreme form of cool.
+
+# ── Synonym ───────────────────────────────────────────────────────────────────
+Brave is to courageous as | Synonym | 1 | sad~happy | smart~intelligent | tired~exhausted | fast~slow | calm~stormy | Brave and courageous are synonyms. Smart and intelligent are also synonyms.
+Candid is to honest as | Synonym | 2 | verbose~brief | diligent~lazy | vivacious~lively | stoic~emotional | bold~timid | Candid and honest are synonyms. Vivacious and lively are synonyms.
+Frugal is to thrifty as | Synonym | 2 | angry~joyful | brave~cowardly | meticulous~careful | famous~unknown | kind~cruel | Frugal and thrifty both mean careful with money. Meticulous and careful are synonyms.
+Tenacious is to persistent as | Synonym | 2 | loquacious~silent | loquacious~quiet | loquacious~talkative | loquacious~intelligent | loquacious~friendly | Tenacious and persistent both mean determined. Loquacious and talkative both mean talking a great deal.
+Serene is to tranquil as | Synonym | 2 | turbulent~peaceful | turbulent~stormy | turbulent~chaotic | turbulent~windy | turbulent~unsettled | Serene and tranquil are synonyms meaning calm. Turbulent and chaotic are synonyms meaning disordered.
+Bold is to audacious as | Synonym | 3 | timid~brave | timid~courageous | timid~shy | timid~diffident | timid~nervous | Bold and audacious are synonyms meaning daring. Timid and diffident are synonyms meaning lacking confidence.
+Remorseful is to regretful as | Synonym | 1 | jubilant~sorrowful | elated~overjoyed | angry~calm | tired~energized | kind~wicked | Remorseful and regretful both mean feeling sorry. Elated and overjoyed both mean extremely happy.
+Plausible is to credible as | Synonym | 1 | incredible~amazing | incredible~unbelievable | incredible~fantastic | incredible~wonderful | incredible~possible | Plausible and credible both mean believable. Incredible and unbelievable both mean hard to believe.
+Coerce is to force as | Synonym | 1 | appease~anger | persuade~convince | demand~request | threaten~warn | compel~suggest | Coerce and force are synonyms. Persuade and convince are synonyms.
+Apex is to peak as | Synonym | 2 | valley~hill | base~bottom | summit~crest | equator~pole | border~boundary | Apex and peak are synonyms meaning the very top. Summit and crest are also synonyms.
+Gloss is to luster as | Synonym | 2 | dullness~brightness | surface~texture | sheen~shine | smooth~rough | color~hue | Gloss and luster are synonyms meaning a shiny surface. Sheen and shine are also synonyms.
+Scour is to search as | Synonym | 0 | scrutinize~examine | leer~glance | absorb~release | invigorate~tire | grimace~smile | Scour means to search thoroughly; scrutinize means to examine very carefully.
+Bedevil is to torment as | Synonym | 1 | evoke~destroy | evoke~elicit | evoke~survey | evoke~antagonize | evoke~burn | Bedevil and torment are synonyms meaning to cause distress. Evoke and elicit both mean to draw out.
+Avarice is to greed as | Synonym | 2 | philanthropy~wealth | philanthropy~charity | philanthropy~generosity | philanthropy~kindness | philanthropy~giving | Avarice and greed both mean extreme desire for wealth. Philanthropy and generosity both mean giving to help others.
+Correlation is to association as | Synonym | 2 | integration~separation | disturbance~peace | connection~link | correction~error | election~vote | Correlation and association are synonyms. Connection and link are also synonyms.
+Palatable is to acceptable as | Synonym | 1 | invigorating~exhausting | tasty~delicious | bland~flavorless | edible~eatable | appealing~attractive | Palatable means acceptable. Tasty and delicious are synonyms showing a stronger degree.
+Subsidy is to financial aid as | Synonym | 0 | grant~scholarship | loan~debt | tax~burden | fee~cost | penalty~fine | A subsidy is a form of financial aid; a grant is a form of scholarship or financial support.
+
+# ── Antonym ───────────────────────────────────────────────────────────────────
+Brave is to cowardly as | Antonym | 1 | weak~strong | generous~miserly | bright~shiny | tired~sleepy | tall~large | Brave and cowardly are opposites. Generous and miserly are opposites.
+Diligent is to lazy as | Antonym | 0 | organized~chaotic | patient~quiet | helpful~kind | smart~clever | active~busy | Diligent and lazy are opposites. Organized and chaotic are opposites.
+Benevolent is to malevolent as | Antonym | 3 | serene~calm | serene~peaceful | serene~beautiful | serene~turbulent | serene~quiet | Benevolent (good) and malevolent (evil) are opposites. Serene (calm) and turbulent (chaotic) are opposites.
+Transparent is to opaque as | Antonym | 0 | rigid~flexible | bright~shiny | clear~clean | solid~hard | dark~gloomy | Transparent (see-through) and opaque (can't see through) are opposites. Rigid and flexible are opposites.
+Wane is to grow as | Antonym | 2 | kindle~spark | kindle~fire | kindle~extinguish | kindle~burn | kindle~ignite | Wane means to decrease; grow is its opposite. Kindle means to start a fire; extinguish means to put it out.
+Timid is to dauntless as | Antonym | 0 | frugal~opulent | pensive~sad | garrulous~loquacious | serene~calm | brave~bold | Timid (fearful) and dauntless (fearless) are opposites. Frugal (thrifty) and opulent (extravagant) are opposites.
+Wisdom is to fools as | Antonym | 1 | humor~clowns | folly~sages | jails~criminals | knowledge~teachers | joy~sorrow | Fools lack wisdom. Sages (wise people) lack folly -- both pairs are opposites.
+Dilate is to contract as | Antonym | 2 | expand~grow | expand~inflate | expand~narrow | expand~widen | expand~stretch | Dilate means to widen; contract means to shrink. Expand and narrow are opposites.
+Remorseful is to unrepentant as | Antonym | 0 | slender~stout | wily~sly | miserable~somber | aggravated~resentful | lithe~flexible | Remorseful (feeling regret) and unrepentant (no regret) are opposites. Slender and stout are opposites.
+Plausible is to incredible as | Antonym | 0 | possible~unlikely | critical~admonishing | ability~power | pleasant~amenable | potential~actual | Plausible (believable) and incredible (unbelievable) are opposites. Possible and unlikely are opposites.
+Collusion is to cooperation as | Antonym | 0 | smuggling~importing | character~cast | surfing~swimming | cooking~ordering out | enmity~friendship | Collusion is an illegal, secretive form of cooperation. Smuggling is an illegal form of importing.
+Placid is to turbulent as | Antonym | 0 | volatile~stable | calm~serene | quiet~silent | angry~furious | tired~exhausted | Placid (calm) and turbulent (chaotic) are opposites. Volatile (unpredictable) and stable (steady) are opposites.
+Stingy is to generous as | Antonym | 0 | reckless~cautious | clever~sly | happy~cheerful | quiet~soft | large~huge | Stingy and generous are opposites. Reckless (careless) and cautious (careful) are opposites.
+Castigate is to praise as | Antonym | 0 | berate~commend | scold~punish | critique~improve | judge~decide | correct~fix | Castigate means to harshly criticize -- the opposite of praise. Berate means to scold -- the opposite of commend.
+Obstinate is to yielding as | Antonym | 0 | verbose~brief | candid~frank | resilient~strong | diligent~busy | serene~peaceful | Obstinate (refusing to change) and yielding are opposites. Verbose (too many words) and brief are opposites.
+Credulous is to skeptical as | Antonym | 3 | naive~gullible | wise~foolish | curious~inquisitive | trusting~doubtful | quick~slow | Credulous (believing too easily) and skeptical (questioning) are opposites. Trusting and doubtful are opposites.
+Somber is to festive as | Antonym | 0 | gloomy~cheerful | dark~dim | serious~stern | quiet~silent | sad~unhappy | Somber and festive are opposites. Gloomy and cheerful are opposites.
+Laconic is to verbose as | Antonym | 0 | brief~wordy | quiet~loud | short~long | terse~rambling | concise~succinct | Laconic (very few words) and verbose (too many words) are opposites. Brief and wordy are also opposites.
+Impetuous is to cautious as | Antonym | 0 | rash~deliberate | bold~brave | quick~speedy | careful~thorough | smart~wise | Impetuous (acting without thinking) and cautious are opposites. Rash and deliberate are also opposites.
+Mitigate is to worsen as | Antonym | 0 | alleviate~intensify | remedy~cure | reduce~lessen | prevent~stop | hide~conceal | Mitigate (reduce harm) and worsen are opposites. Alleviate (ease suffering) and intensify are opposites.
+Stagnant is to flowing as | Antonym | 0 | dormant~active | still~calm | quiet~peaceful | slow~sluggish | weak~tired | Stagnant (not moving) and flowing are opposites. Dormant (inactive) and active are opposites.
+Shrewd is to naive as | Antonym | 0 | cunning~gullible | smart~foolish | wise~ignorant | clever~slow | alert~oblivious | Shrewd (sharp judgment) and naive (lacking judgment) are opposites. Cunning and gullible are opposites.
+Pacific is to war as | Antonym | 0 | abstemious~indulgence | abstemious~ocean | abstemious~peace | abstemious~fasting | abstemious~religion | Pacific means peaceful; war is its opposite. Abstemious means self-restrained -- indulgence is its opposite.
+
+# ── Cause & Effect ────────────────────────────────────────────────────────────
+Practice is to improvement as | Cause & Effect | 0 | study~knowledge | sleep~energy | eat~hunger | rest~fatigue | work~play | Practice causes improvement; study causes knowledge.
+Drought is to water as | Cause & Effect | 2 | famine~poverty | famine~hunger | famine~food | famine~crops | famine~rain | A drought is a shortage of water; a famine is a shortage of food.
+Insult is to offense as | Cause & Effect | 2 | compliment~praise | compliment~flattery | compliment~gratitude | compliment~kindness | compliment~happiness | An insult causes offense; a compliment causes gratitude.
+Mitigate is to harm as | Cause & Effect | 3 | irrigate~farm | instigate~violence | substantiate~claims | alleviate~suffering | celebrate~joy | To mitigate is to reduce harm; to alleviate is to reduce suffering.
+Curiosity is to discovery as | Cause & Effect | 2 | apathy~failure | apathy~boredom | apathy~stagnation | apathy~confusion | apathy~silence | Curiosity leads to discovery; apathy (lack of interest) leads to stagnation (no growth).
+Diligence is to success as | Cause & Effect | 0 | procrastination~failure | talent~practice | effort~reward | laziness~rest | ambition~goal | Diligence (hard work) causes success; procrastination (constant delay) causes failure.
+Insult is to offense as | Cause & Effect | 2 | atone~mistake | atone~guilt | atone~wrongdoing | atone~regret | atone~shame | You atone (make amends) for wrongdoing; an insult leads to offense. Both show cause and response.
+
+# ── Sequence ──────────────────────────────────────────────────────────────────
+High school is to college as | Sequence | 3 | kindergarten~pre-school | maturity~youth | teenager~school | apprenticeship~job | urbanite~city | High school prepares you for college; an apprenticeship prepares you for a job.
+Puppy is to dog as | Sequence | 2 | foal~colt | foal~pony | foal~horse | foal~mare | foal~stable | A puppy is a baby dog; a foal is a baby horse.
+Bud is to bloom as | Sequence | 0 | caterpillar~butterfly | egg~nest | plant~flower | seed~soil | leaf~tree | A bud grows into a bloom; a caterpillar transforms into a butterfly.
+Apprentice is to master as | Sequence | 0 | student~professor | child~adult | intern~employee | rookie~veteran | beginner~expert | An apprentice learns from and eventually becomes a master; a student learns from a professor.
+Dawn is to morning as | Sequence | 2 | dusk~night | dusk~sunset | dusk~evening | dusk~dark | dusk~twilight | Dawn is the start of morning; dusk is the start of evening.
+Germinate is to seed as | Sequence | 2 | hatch~chick | hatch~nest | hatch~egg | hatch~bird | hatch~shell | To germinate means a seed begins to develop; to hatch means an egg opens and develops.
+
+# ── Creator to Creation ───────────────────────────────────────────────────────
+Author is to novel as | Creator to Creation | 2 | composer~concert | composer~orchestra | composer~symphony | composer~stage | composer~musician | An author creates a novel; a composer creates a symphony.
+Playwright is to drama as | Creator to Creation | 2 | novelist~library | novelist~story | novelist~fiction | novelist~character | novelist~script | A playwright writes a drama; a novelist writes fiction.
+Choreographer is to ballet as | Creator to Creation | 2 | director~stage | director~audience | director~film | director~money | director~actor | A choreographer creates a ballet; a director creates a film.
+Architect is to building as | Creator to Creation | 1 | poet~stanza | poet~poem | poet~museum | poet~rhyme | poet~word | An architect creates a building; a poet creates a poem.
+Carpenter is to cabinet as | Creator to Creation | 2 | jeweler~gold | jeweler~ring | jeweler~necklace | jeweler~gem | jeweler~craft | A carpenter creates a cabinet; a jeweler creates a necklace.
+
+# ── Material ──────────────────────────────────────────────────────────────────
+Tallow is to fat as | Material | 3 | leather~wood | leather~tanning | leather~wallet | leather~skin | leather~cow | Tallow is a product made from animal fat; leather is a product made from animal skin.
+Cider is to apple as | Material | 2 | wine~bottle | wine~vineyard | wine~grape | wine~ferment | wine~vintage | Cider is a drink made from apples; wine is a drink made from grapes.
+Tallow is to fat as | Material | 0 | glass~sand | glass~window | glass~break | glass~clear | glass~bottle | Tallow is made from animal fat; glass is made from sand.
+
+# ── Measurement ───────────────────────────────────────────────────────────────
+Pound is to weight as | Measurement | 2 | mile~foot | mile~height | mile~distance | mile~money | mile~speed | A pound is a unit used to measure weight; a mile is a unit used to measure distance.
+Pound is to weight as | Measurement | 2 | inch~foot | tall~height | mile~distance | money~rich | arithmetic~school | A pound is a unit of weight; a mile is a unit of distance. Both measure specific physical quantities.
+
+# ── Word Form ─────────────────────────────────────────────────────────────────
+Computer is to computerize as | Word Form | 2 | motor~engine | motor~machine | motor~motorize | motor~drive | motor~electric | Computerize is the verb form of computer. Motorize is the verb form of motor.
+Wide is to width as | Word Form | 1 | long~longer | long~length | long~tall | long~distance | long~size | Width is the noun form of the adjective wide; length is the noun form of the adjective long.

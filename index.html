@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSAT Verbal Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#f0f4ff;min-height:100vh}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#f8faff;display:flex;flex-direction:column}
+.screen{flex:1;overflow-y:auto;padding:20px 18px 80px}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid #e5e7eb;display:flex;height:62px;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.07)}
+.nav-btn{flex:1;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#9ca3af;font-family:'Nunito',sans-serif;font-size:10px;font-weight:700;transition:color .15s}
+.nav-btn.active{color:#3b82f6}
+.nav-btn .ni{font-size:20px;line-height:1}
+.card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:14px}
+.btn{border:none;border-radius:12px;padding:13px 18px;font-family:'Nunito',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:transform .1s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:#1e3a8a;color:#fff;width:100%}
+.btn-secondary{background:#e5e7eb;color:#374151;width:100%}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:800}
+.progress-bar{height:8px;background:#e5e7eb;border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;border-radius:99px;transition:width .5s}
+h1{font-size:24px;font-weight:900;color:#0f2545;margin-bottom:4px}
+h2{font-size:18px;font-weight:800;color:#0f2545}
+.muted{color:#6b7280;font-size:13px}
+.chip{background:#dbeafe;color:#1d4ed8;border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700;display:inline-block;margin:2px}
+.answer-btn{width:100%;text-align:left;background:#fff;border:2px solid #e5e7eb;border-radius:13px;padding:11px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#374151;cursor:pointer;margin-bottom:7px;transition:border-color .15s,background .15s;display:flex;align-items:center;gap:10px}
+.answer-btn:hover:not(:disabled){border-color:#93c5fd;background:#eff6ff}
+.answer-btn.correct{background:#d1fae5;border-color:#6ee7b7;color:#065f46}
+.answer-btn.wrong{background:#fee2e2;border-color:#fca5a5;color:#991b1b}
+.choice-letter{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;background:#f3f4f6;color:#6b7280}
+.answer-btn.correct .choice-letter{background:#6ee7b7;color:#065f46}
+.answer-btn.wrong .choice-letter{background:#fca5a5;color:#991b1b}
+.answer-btn:hover:not(:disabled) .choice-letter{background:#bfdbfe;color:#1e40af}
+.flash-card{background:#fff;border-radius:22px;padding:30px 24px;min-height:200px;display:flex;flex-direction:column;justify-content:center;text-align:center;cursor:pointer;border:2px solid #e5e7eb;box-shadow:0 4px 18px rgba(0,0,0,.09);transition:box-shadow .2s;margin-bottom:16px}
+.flash-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.13)}
+.rate-row{display:flex;gap:8px;margin-top:8px}
+.rate-btn{flex:1;border:none;border-radius:11px;padding:12px 4px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stat-box{background:#fff;border-radius:14px;padding:14px 8px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.stat-val{font-size:22px;font-weight:900;color:#0f2545}
+.stat-lbl{font-size:11px;color:#9ca3af;margin-top:2px}
+.quick-btn{background:#fff;border:2px solid;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;width:100%;text-align:left;transition:transform .1s}
+.quick-btn:hover{transform:translateY(-1px)}
+.root-item{background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;transition:border-color .15s}
+.root-item:hover{border-color:#93c5fd}
+.done-screen{text-align:center;padding:40px 20px}
+.result-row{display:flex;justify-content:space-between;background:#f9fafb;border-radius:10px;padding:10px 14px;margin-bottom:6px}
+.analogy-stem{background:#0f2545;border-radius:18px;padding:20px 22px;margin:12px 0;color:#fff;line-height:1.6}
+.stem-text{font-size:18px;font-weight:800;line-height:1.5}
+.blank{color:#fbbf24;font-style:italic}
+.input-field{width:100%;border:2px solid #e5e7eb;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#374151;outline:none;margin-bottom:10px;transition:border-color .15s}
+.input-field:focus{border-color:#93c5fd}
+.word-list-item{background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.tab-row{display:flex;gap:6px;margin-bottom:16px}
+.tab{flex:1;border:2px solid #e5e7eb;border-radius:10px;padding:8px 6px;background:#fff;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;color:#6b7280;text-align:center}
+.tab.active{border-color:#3b82f6;background:#eff6ff;color:#1d4ed8}
+.type-chip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:800;background:#ede9fe;color:#6d28d9;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<script>
+// ── VOCAB (loaded from vocab.txt) ─────────────────────────────────────
+let BUILTIN_VOCAB=[];
+function parseVocab(text){
+  return text.split('\n').filter(l=>l.trim()&&!l.startsWith('#')).map((l,i)=>{
+    const p=l.split(' | ');
+    if(p.length<6)return null;
+    return{id:i+1,w:p[0].trim(),pos:p[1].trim(),lvl:parseInt(p[2].trim()),d:p[3].trim(),ex:p[4].trim(),root:p[5].trim()==='none'?null:p[5].trim()};
+  }).filter(Boolean);
+}
+
+// ── ROOTS (loaded from root-words.txt) ────────────────────────
+let ROOTS=[];
+function parseRoots(text){
+  return text.split('\n').filter(l=>l.trim()&&!l.startsWith('#')).map((l,i)=>{
+    const p=l.split(' | ');
+    if(p.length<5)return null;
+    return{id:i+1,root:p[0].trim(),origin:p[1].trim(),meaning:p[2].trim(),words:p[3].trim().split(',').map(w=>w.trim()),sentence:p[4].trim()};
+  }).filter(Boolean);
+}
+
+// ── ANALOGIES (loaded from analogies.txt) ─────────────────────
+let ANALOGIES=[];
+function parseAnalogies(text){
+  return text.split('\n').filter(l=>l.trim()&&!l.startsWith('#')).map((l,i)=>{
+    const p=l.split(' | ');
+    if(p.length<9)return null;
+    return{id:i+1,stem:p[0].trim(),type:p[1].trim(),ans:parseInt(p[2].trim()),ch:[p[3],p[4],p[5],p[6],p[7]].map(c=>c.trim().split('~')),tip:p[8].trim()};
+  }).filter(Boolean);
+}
+
+
+// ── PASSAGES ──────────────────────────────────────────────────
+const PASSAGES=[{id:1,title:"The Stubborn Seed",text:"In the middle of a concrete sidewalk, where no reasonable plant would dare to grow, a tiny oak sapling pushed its way toward the sun. Pedestrians stepped around it, mystified. City workers debated removing it. Yet week after week, it remained.\n\nDr. Nina Patel, a botanist who had studied urban plant resilience for twenty years, noticed the sapling on her morning walk. She crouched down and examined it carefully. The crack in the sidewalk was no wider than her thumb, yet somehow the young oak had found enough soil, enough moisture, enough light to survive.\n\n\"Tenacity,\" she murmured, almost to herself. She had observed this quality in plants across three continents — a mangrove that colonized a saltwater shoreline, a wildflower that bloomed on the rim of a volcano. Life, she had concluded, was far more resilient than people imagined.\n\nThe city eventually decided to replace the cracked sidewalk. But at Dr. Patel's insistence, workers carefully transplanted the small oak to a nearby park, where it stands today — a symbol, she says, of stubborn, quiet persistence.",qs:[{q:"As used in the passage, 'tenacity' most nearly means:",ch:["flexibility","stubbornness and persistence","great intelligence","physical strength"],ans:1},{q:"Why did Dr. Patel most likely say 'Tenacity' to herself?",ch:["She was unhappy with the city's plans","She admired the plant's determination to survive","She was identifying the plant's species","She was rehearsing a speech"],ans:1},{q:"The main purpose of this passage is to:",ch:["explain how to transplant trees","describe a scientist's daily routine","illustrate the remarkable persistence of living things","argue that cities should protect sidewalk plants"],ans:2},{q:"Which word best describes Dr. Patel's attitude toward the sapling?",ch:["Indifferent","Amused","Admiring","Concerned"],ans:2}]},{id:2,title:"The Price of Words",text:"In ancient times, before the printing press made books affordable, knowledge was extraordinarily rare and precious. Manuscripts were copied by hand — a task that might take a single monk an entire year for one volume. Libraries were not open to the public; they were guarded rooms in castles and monasteries.\n\nTo own even one book was a sign of great wealth. A single Bible could cost as much as a house. Scholars who wanted to learn often had to travel vast distances, sometimes across continents, just to read a specific text for a few hours.\n\nWhen Johannes Gutenberg invented the movable-type printing press around 1440, he changed civilization. Within fifty years, millions of books existed where once there had been thousands. Ideas that had lived in only a handful of manuscripts could suddenly cross borders and oceans.\n\nSome feared this spread of knowledge. Religious leaders worried that people would read the Bible themselves and form their own interpretations. Rulers worried that political ideas would spread beyond their control. In many cases, these fears proved correct — the printing press played a central role in the Protestant Reformation and helped ignite the Scientific Revolution.\n\nThe written word, it turned out, was more powerful than any sword.",qs:[{q:"The word 'spread' in paragraph 4 most nearly means in context:",ch:["confusion","the sharing of something widely","government control","a printing technique"],ans:1},{q:"Which best states the main idea of this passage?",ch:["Gutenberg was the most important inventor ever","Books were once only for monks and priests","The printing press transformed the spread of knowledge and power","Religious leaders opposed all forms of learning"],ans:2},{q:"According to the passage, what was one reason rulers feared the printing press?",ch:["It was too expensive for common people","Political ideas could spread beyond their control","Books could be used to criticize Gutenberg","Paper was dangerously flammable"],ans:1},{q:"The statement 'The written word was more powerful than any sword' suggests:",ch:["Writers were physically stronger than soldiers","Ideas can change the world more than violence can","Swords were useless in ancient times","Gutenberg was a military leader"],ans:1}]},{id:3,title:"Echo",text:"Maya had always been quiet. Not shy, exactly — she simply preferred to listen. In class, while others competed to speak first, Maya sat back and absorbed everything: the way her teacher's voice slowed near important facts, the moment a classmate's question revealed a misunderstanding, the pause before someone said something they actually meant.\n\nHer mother called it her \"superpower.\" Her teachers wrote words like \"reserved\" and \"thoughtful\" on her report cards. A few classmates mistook her silence for indifference — or worse, for a lack of intelligence.\n\nWhat none of them understood was that Maya was composing. In her mind, she was arranging words, testing them, discarding the ones that weren't quite right. By the time she spoke — which she did, eventually, when she had something worth saying — her sentences were careful and exact.\n\nOn the day of the school debate competition, Maya's opponent was Jordan, who was quick and clever and filled every available silence with confident words. Maya let him speak. She listened. She waited.\n\nThen, in one quiet and precise response, she took apart every single one of his arguments.\n\nThe room went still. Even Jordan was silent. Maya nodded once and sat back down.",qs:[{q:"As used in paragraph 3, 'composing' most nearly means:",ch:["calming herself down","carefully preparing and organizing her thoughts","writing music","responding to emails"],ans:1},{q:"The author suggests that Maya's quietness is primarily:",ch:["a sign that she is unhappy","a misunderstood strength","a strategy she learned from her mother","a problem she is trying to fix"],ans:1},{q:"What does 'Maya let him speak' suggest about her approach?",ch:["She was too nervous to respond","She didn't care about winning","She used listening as a strategic advantage","She had forgotten her arguments"],ans:2},{q:"Which word best describes the tone of the final two paragraphs?",ch:["Melancholy","Triumphant","Frantic","Humorous"],ans:1}]}];
+
+// ── STORAGE ───────────────────────────────────────────────────
+const SK="ssat_prep_v4";
+const mkP=()=>({vh:{},ah:{},rh:{},streak:0,lastDate:null,xp:0});
+const loadP=()=>{try{return{...mkP(),...JSON.parse(localStorage.getItem(SK)||"{}")}}catch{return mkP()}};
+const loadC=()=>{try{return JSON.parse(localStorage.getItem(SK+"_c")||"[]")}catch{return[]}};
+const saveP=p=>localStorage.setItem(SK,JSON.stringify(p));
+const saveC=w=>localStorage.setItem(SK+"_c",JSON.stringify(w));
+let progress=loadP(), customWords=loadC();
+const allVocab=()=>[...BUILTIN_VOCAB,...customWords];
+const getDailyWords=()=>allVocab().map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(Date.now()-(h.t||0))/1e7}}).sort((a,b)=>b.score-a.score).slice(0,5);
+const today=()=>new Date().toISOString().slice(0,10);
+const addXP=xp=>{const t=today(),prev=progress.lastDate,yest=new Date();yest.setDate(yest.getDate()-1);const ys=yest.toISOString().slice(0,10);let s=progress.streak;if(prev!==t)s=prev===ys?s+1:1;progress={...progress,xp:progress.xp+xp,streak:s,lastDate:t};saveP(progress)};
+
+// ── STATE ─────────────────────────────────────────────────────
+let view="home";
+const go=v=>{view=v;render()};
+let dailyWords=[],vIdx=0,vInput='',vChecked=false,vMatchResult=null,vDone=false,vResults=[];
+let rSel=null,rQuiz=null;
+let aQueue=[...ANALOGIES].sort(()=>Math.random()-.5),aIdx=0,aChosen=null,aScore={c:0,t:0};
+let pIdx=0,qMode=false,qIdx=0,qChosen=null,pDone=false;
+let addTab="form",addForm={w:"",d:"",ex:"",pos:"adj",root:""},addErr="";
+
+const LETTERS="ABCDE";
+
+// ── HOME ──────────────────────────────────────────────────────
+function renderHome(){
+  const vh=Object.values(progress.vh),total=vh.reduce((s,h)=>s+h.c+h.i,0),correct=vh.reduce((s,h)=>s+h.c,0);
+  const acc=total>0?Math.round(correct/total*100):0,studied=Object.keys(progress.vh).length;
+  const daysLeft=Math.max(0,Math.round((new Date("2026-10-01")-new Date())/864e5));
+  const totalWords=allVocab().length;
+  return`<h1 style="text-align:center;font-size:26px;margin-bottom:2px">📚 SSAT Prep</h1>
+<p class="muted" style="text-align:center;margin-bottom:18px">${daysLeft} days until October 2026 · 5th Grade Verbal</p>
+<div style="display:flex;gap:10px;margin-bottom:18px">
+  <div style="flex:1;background:linear-gradient(135deg,#f97316,#ea580c);border-radius:16px;padding:14px;text-align:center;color:#fff"><div style="font-size:28px;font-weight:900">🔥 ${progress.streak}</div><div style="font-size:11px;opacity:.85;margin-top:2px">Day Streak</div></div>
+  <div style="flex:1;background:linear-gradient(135deg,#059669,#10b981);border-radius:16px;padding:14px;text-align:center;color:#fff"><div style="font-size:28px;font-weight:900">⭐ ${progress.xp}</div><div style="font-size:11px;opacity:.85;margin-top:2px">Total XP</div></div>
+</div>
+<div class="stat-grid">
+  <div class="stat-box"><div style="font-size:20px">📖</div><div class="stat-val">${studied}</div><div class="stat-lbl">Words Seen</div></div>
+  <div class="stat-box"><div style="font-size:20px">🎯</div><div class="stat-val">${acc}%</div><div class="stat-lbl">Accuracy</div></div>
+  <div class="stat-box"><div style="font-size:20px">📝</div><div class="stat-val">${totalWords}</div><div class="stat-lbl">Word Bank</div></div>
+</div>
+<h2 style="font-size:15px;margin-bottom:10px">Start Practicing</h2>
+<button class="quick-btn" style="border-color:#bfdbfe;background:#eff6ff" onclick="startVocab()"><div><div style="font-weight:800;font-size:14px;color:#1e3a8a">📖 Daily Vocabulary</div><div class="muted" style="font-size:12px;margin-top:2px">5 smart-picked words · ${totalWords} word bank · spaced repetition</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#bbf7d0;background:#f0fdf4" onclick="go('roots')"><div><div style="font-weight:800;font-size:14px;color:#14532d">🌿 Root Words</div><div class="muted" style="font-size:12px;margin-top:2px">20 Latin &amp; Greek roots · unlock hundreds of words</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#fde68a;background:#fffbeb" onclick="startAnalogies()"><div><div style="font-weight:800;font-size:14px;color:#78350f">🔗 Analogies</div><div class="muted" style="font-size:12px;margin-top:2px">150 questions · real SSAT A–E format · 10 types</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#ddd6fe;background:#faf5ff" onclick="go('reading')"><div><div style="font-weight:800;font-size:14px;color:#4c1d95">📜 Reading Comprehension</div><div class="muted" style="font-size:12px;margin-top:2px">3 passages · vocabulary in context</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#fbcfe8;background:#fdf2f8" onclick="go('addword')"><div><div style="font-weight:800;font-size:14px;color:#9d174d">✏️ Add My Own Words</div><div class="muted" style="font-size:12px;margin-top:2px">${customWords.length} custom word${customWords.length!==1?'s':''} added · from school, books, or tests</div></div><span style="font-size:18px">→</span></button>`;
+}
+
+// ── VOCAB ─────────────────────────────────────────────────────
+const VSTOP=new Set(['a','an','the','is','to','of','and','or','that','it','as','in','by','for','with','its','be','are','was','were','has','have','had','not','at','on','from','about','s','do','does','their','them','they','one','this','which','very','so','such','more','most','also','into','than']);
+function scoreMatch(inp,def){
+  const tok=s=>s.toLowerCase().replace(/[^a-z\s]/g,'').split(/\s+/).filter(w=>w.length>2&&!VSTOP.has(w));
+  const dt=tok(def);if(!dt.length)return 0;
+  const it=tok(inp);let m=0;
+  dt.forEach(d=>{if(it.some(i=>i===d||(d.length>=4&&i.length>=4&&(d.startsWith(i.slice(0,4))||i.startsWith(d.slice(0,4)))))) m++;});
+  return m/dt.length;
+}
+function checkVocab(){
+  const score=scoreMatch(vInput,dailyWords[vIdx].d);
+  vMatchResult=score>=0.65?'great':score>=0.35?'close':'missed';
+  vChecked=true;render();
+}
+function advanceVocab(override){
+  const r=override||vMatchResult;
+  const w=dailyWords[vIdx];
+  const h=progress.vh[w.id]||{c:0,i:0,t:0};
+  progress.vh[w.id]={c:h.c+(r!=='missed'?1:0),i:h.i+(r==='missed'?1:0),t:Date.now()};
+  addXP(r==='great'?10:r==='close'?5:2);
+  vResults.push({w:w.w,r});
+  if(vIdx+1>=dailyWords.length)vDone=true;
+  else{vIdx++;vInput='';vChecked=false;vMatchResult=null;}
+  render();
+}
+function startVocab(){dailyWords=getDailyWords();vIdx=0;vInput='';vChecked=false;vMatchResult=null;vDone=false;vResults=[];go('vocab')}
+function renderVocab(){
+  if(vDone){
+    return `<div class="done-screen"><div style="font-size:60px">🎉</div><h1 style="margin:12px 0 6px">Session Complete!</h1><p class="muted" style="margin-bottom:24px">You reviewed ${dailyWords.length} words today.</p>${vResults.map(r=>`<div class="result-row"><span style="font-weight:700">${r.w}</span><span style="font-size:13px;color:${r.r==='great'?'#16a34a':r.r==='close'?'#d97706':'#dc2626'}">${r.r==='great'?'✓ Great!':r.r==='close'?'~ Close':'✗ Missed'}</span></div>`).join('')}<button class="btn btn-primary" style="margin-top:16px" onclick="go('home')">Back to Home</button></div>`;
+  }
+  const w=dailyWords[vIdx],isC=w.id&&String(w.id).startsWith('c'),pct=vIdx/dailyWords.length*100;
+  const bannerColor=vMatchResult==='great'?'#dcfce7':vMatchResult==='close'?'#fef9c3':'#fee2e2';
+  const bannerText=vMatchResult==='great'?'#166534':vMatchResult==='close'?'#854d0e':'#991b1b';
+  const bannerMsg=vMatchResult==='great'?'🎊 Great match! +10 XP':vMatchResult==='close'?'💡 Close! +5 XP':'📖 Keep studying. +2 XP';
+  return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:${pct}%;background:#3b82f6"></div></div><span class="muted">${vIdx+1}/${dailyWords.length}</span></div>
+  <div style="margin-bottom:10px;display:flex;gap:6px;align-items:center"><span class="badge" style="background:${w.lvl===1?'#dcfce7':w.lvl===2?'#fef9c3':'#fee2e2'};color:${w.lvl===1?'#166534':w.lvl===2?'#854d0e':'#991b1b'}">${w.lvl===1?'EASIER':'HARDER'} · ${(w.pos||'adj').toUpperCase()}</span>${isC?'<span class="badge" style="background:#fce7f3;color:#9d174d">✏️ MY WORD</span>':''}</div>
+  <div style="background:#0f2545;border-radius:22px;padding:24px;text-align:center;margin-bottom:16px"><h2 style="font-size:32px;color:#fff;margin-bottom:0">${w.w}</h2></div>
+  ${!vChecked?`<div style="margin-bottom:10px"><label style="font-size:13px;font-weight:700;color:#374151;display:block;margin-bottom:6px">What does this word mean?</label><textarea class="input-field" rows="3" placeholder="Type your definition here..." oninput="vInput=this.value" style="resize:none">${vInput}</textarea></div>
+  <button class="btn btn-primary" onclick="checkVocab()">Check My Answer →</button>`:`<div style="background:${bannerColor};border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-weight:800;color:${bannerText};margin-bottom:6px">${bannerMsg}</p><p style="font-size:13px;color:${bannerText};opacity:.8;margin-bottom:6px"><em>You wrote:</em> &ldquo;${vInput||'(nothing)'}&rdquo;</p></div>
+  <div style="background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-size:11px;font-weight:800;color:#9ca3af;margin-bottom:4px">CORRECT DEFINITION</p><p style="font-size:15px;font-weight:700;color:#0f2545;margin-bottom:8px">${w.d}</p><p style="font-size:13px;color:#6b7280;font-style:italic;margin-bottom:${w.root?'8px':'0'}">&ldquo;${w.ex}&rdquo;</p>${w.root?`<span class="chip">🌿 Root: ${w.root}</span>`:''}</div>
+  <button class="btn btn-primary" style="margin-bottom:8px" onclick="advanceVocab()">Next Word →</button>
+  <div style="display:flex;gap:8px"><button class="btn" style="flex:1;background:#dcfce7;color:#166534" onclick="advanceVocab('great')">✓ I knew it</button><button class="btn" style="flex:1;background:#fee2e2;color:#991b1b" onclick="advanceVocab('missed')">✗ Mark missed</button></div>`}
+  `;
+}
+// ── ROOTS ─────────────────────────────────────────────────────
+function startRootQuiz(root){const others=ROOTS.filter(r=>r.id!==root.id).sort(()=>Math.random()-.5).slice(0,4);const choices=[...others.map(r=>r.meaning),root.meaning].sort(()=>Math.random()-.5).slice(0,5);rQuiz={rid:root.id,choices,answer:root.meaning,chosen:null};render();}
+function renderRoots(){
+  if(rQuiz){const root=ROOTS.find(r=>r.id===rQuiz.rid),answered=rQuiz.chosen!==null,correct=rQuiz.chosen===rQuiz.answer;
+    return`<button style="background:none;border:none;color:#6b7280;cursor:pointer;margin-bottom:12px;font-family:'Nunito',sans-serif;font-size:14px" onclick="rQuiz=null;render()">← Back</button>
+    <h2 style="margin-bottom:4px">Quick Quiz!</h2><p class="muted" style="margin-bottom:16px">What does <strong>${root.root}</strong> mean?</p>
+    ${rQuiz.choices.map((c,i)=>{let cls='answer-btn';if(answered){if(c===rQuiz.answer)cls+=' correct';else if(c===rQuiz.chosen)cls+=' wrong';}return`<button class="${cls}" ${answered?'disabled':''} onclick="answerRootQuiz('${c.replace(/'/g,"\\'")}')" ><span class="choice-letter">${LETTERS[i]}</span>${c}</button>`;}).join('')}
+    ${answered?`<div style="background:${correct?'#dcfce7':'#fee2e2'};border-radius:14px;padding:14px;margin-top:8px"><p style="font-weight:800;color:${correct?'#166534':'#991b1b'};margin-bottom:6px">${correct?'🎉 Correct! +10 XP':'❌ Not quite!'}</p>${!correct?`<p style="font-size:13px;color:#374151;margin-bottom:8px">Answer: <strong>${rQuiz.answer}</strong></p>`:''}<p style="font-size:13px;color:#374151;margin-bottom:10px">${root.sentence}</p><button class="btn btn-primary" onclick="rQuiz=null;render()">← All roots</button></div>`:''}`;
+  }
+  if(rSel){const root=ROOTS.find(r=>r.id===rSel);
+    return`<button style="background:none;border:none;color:#6b7280;cursor:pointer;margin-bottom:12px;font-family:'Nunito',sans-serif;font-size:14px" onclick="rSel=null;render()">← All Roots</button>
+    <div style="background:#0f2545;border-radius:18px;padding:22px;color:#fff;margin-bottom:16px"><div style="font-size:30px;font-weight:900">${root.root}</div><div style="font-size:17px;color:#93c5fd;margin-top:4px">"${root.meaning}"</div><div style="font-size:12px;color:#6b7280;margin-top:4px">from ${root.origin}</div></div>
+    <p style="font-size:14px;color:#6b7280;font-style:italic;margin-bottom:14px">${root.sentence}</p>
+    <h2 style="font-size:14px;margin-bottom:10px">Words using this root:</h2><div style="margin-bottom:20px">${root.words.map(w=>`<span class="chip">${w}</span>`).join('')}</div>
+    <button class="btn btn-primary" onclick="startRootQuiz(ROOTS.find(r=>r.id===${rSel}))">🧠 Quiz Me on This Root (A–E)</button>`;
+  }
+  const categories=[
+    {label:"✨ Good & Bad",ids:[1,2]},
+    {label:"🔢 Numbers & Size",ids:[21,22,23,24,25,26,27,28,75,76]},
+    {label:"🏃 Movement & Direction",ids:[29,30,31,32,33,34,35,36,37,38]},
+    {label:"⏰ Time & Order",ids:[3,39,40,41,42,43]},
+    {label:"💭 Mind & Feeling",ids:[12,44,45,46,47,48,49,50]},
+    {label:"🌍 Nature & Science",ids:[51,52,53,54,55,56,57,58,59]},
+    {label:"↔️ Prefixes (Not/Against/Over/Under)",ids:[60,61,62,63,64,65,66,67,68,69]},
+    {label:"📝 Writing & Speaking",ids:[5,8,14,79,80]},
+    {label:"👁️ Seeing & Hearing",ids:[6,7,9]},
+    {label:"📦 Carry, Make & Build",ids:[4,30,72,73,74]},
+    {label:"👥 People & Society",ids:[16,70,71]},
+    {label:"⚖️ Law & Truth",ids:[71,78]},
+    {label:"🔤 Latin Prefixes (Before/After/Again)",ids:[39,40,41]},
+    {label:"🔑 Essential Roots",ids:[10,11,13,15,17,18,19,20,77]}
+  ];
+  // Deduplicate and show all roots grouped — fallback to flat list
+  const shown=new Set();
+  const grouped=categories.map(cat=>{
+    const catRoots=cat.ids.map(id=>ROOTS.find(r=>r.id===id)).filter(r=>r&&!shown.has(r.id));
+    catRoots.forEach(r=>shown.add(r.id));
+    return catRoots.length>0?`<div style="margin-bottom:6px;margin-top:14px;font-size:11px;font-weight:800;color:#6b7280;letter-spacing:.8px;text-transform:uppercase">${cat.label}</div>${catRoots.map(r=>`<div class="root-item" onclick="rSel=${r.id};render()"><div><div style="font-weight:900;font-size:16px;color:#0f2545">${r.root}</div><div class="muted" style="font-size:12px">"${r.meaning}" · ${r.origin}</div></div><span style="font-size:16px;color:#9ca3af">→</span></div>`).join('')}`:'';
+  }).join('');
+  const remaining=ROOTS.filter(r=>!shown.has(r.id));
+  const extra=remaining.length>0?`<div style="margin-bottom:6px;margin-top:14px;font-size:11px;font-weight:800;color:#6b7280;letter-spacing:.8px;text-transform:uppercase">📚 More Roots</div>${remaining.map(r=>`<div class="root-item" onclick="rSel=${r.id};render()"><div><div style="font-weight:900;font-size:16px;color:#0f2545">${r.root}</div><div class="muted" style="font-size:12px">"${r.meaning}" · ${r.origin}</div></div><span style="font-size:16px;color:#9ca3af">→</span></div>`).join('')}`:'';
+  return`<h1 style="margin-bottom:4px">Root Words</h1>
+  <p class="muted" style="margin-bottom:4px">80 Latin &amp; Greek roots · each unlocks 5–10+ SSAT words</p>
+  <p style="font-size:12px;color:#9ca3af;margin-bottom:16px">Tap any root to learn it, then take a 5-choice quiz</p>
+  ${grouped}${extra}`;
+}
+function answerRootQuiz(c){rQuiz.chosen=c;if(c===rQuiz.answer)addXP(10);render();}
+
+// ── ANALOGIES ─────────────────────────────────────────────────
+function startAnalogies(){aQueue=[...ANALOGIES].sort(()=>Math.random()-.5);aIdx=0;aChosen=null;aScore={c:0,t:0};go('analogies')}
+
+function renderAnalogy_choice(c, i, ans, chosen){
+  const answered = chosen!==null;
+  let cls='answer-btn';
+  if(answered){if(i===ans)cls+=' correct';else if(i===chosen)cls+=' wrong';}
+  const label = c[0]+' is to '+c[1];
+  return `<button class="${cls}" ${answered?'disabled':''} onclick="answerAnalogy(${i})"><span class="choice-letter">${LETTERS[i]}</span>${label}</button>`;
+}
+
+function renderAnalogies(){
+  const q=aQueue[aIdx%aQueue.length],answered=aChosen!==null,correct=aChosen===q.ans;
+  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+    <h1 style="margin:0;font-size:20px">Analogies</h1>
+    <span style="font-size:12px;color:#9ca3af">${aIdx+1} / ${ANALOGIES.length}</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <span class="type-chip">${q.type.toUpperCase()}</span>
+    <span class="badge" style="background:#fef9c3;color:#854d0e">${aScore.c}/${aScore.t} correct</span>
+  </div>
+  <div class="analogy-stem">
+    <p style="font-size:11px;color:#93c5fd;margin-bottom:8px;font-weight:700;letter-spacing:.5px">SELECT THE BEST ANSWER</p>
+    <p class="stem-text">${q.stem} <span class="blank">_____ is to _____</span></p>
+  </div>
+  ${q.ch.map((c,i)=>renderAnalogy_choice(c,i,q.ans,aChosen)).join('')}
+  ${answered?`<div style="background:${correct?'#dcfce7':'#fef9c3'};border-radius:14px;padding:14px;margin-top:6px">
+    <p style="font-weight:800;color:${correct?'#166534':'#92400e'};margin-bottom:6px">${correct?'🎉 Correct! +15 XP':'💡 Not quite — here\'s why:'}</p>
+    <p style="font-size:13px;color:#374151;margin-bottom:10px">${q.tip}</p>
+    <button class="btn btn-primary" onclick="nextAnalogy()">Next Question →</button>
+  </div>`:''}`;
+}
+
+function answerAnalogy(i){
+  if(aChosen!==null)return;aChosen=i;
+  const q=aQueue[aIdx%aQueue.length],correct=i===q.ans;
+  aScore={c:aScore.c+(correct?1:0),t:aScore.t+1};
+  const h=progress.ah[q.id]||{c:0,i:0};
+  progress.ah[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1)};
+  addXP(correct?15:2);render();
+}
+function nextAnalogy(){aIdx++;aChosen=null;render();}
+
+// ── READING ───────────────────────────────────────────────────
+function renderReading(){
+  if(pDone)return`<div class="done-screen"><div style="font-size:60px">📜</div><h1 style="margin:12px 0 6px">Passage Complete!</h1><p class="muted" style="margin-bottom:24px">Great reading work!</p>${pIdx+1<PASSAGES.length?`<button class="btn btn-primary" style="margin-bottom:10px" onclick="nextPassage()">Next Passage →</button>`:''}<button class="btn btn-secondary" onclick="pIdx=0;qMode=false;qIdx=0;qChosen=null;pDone=false;render()">Start Over</button></div>`;
+  if(qMode){const p=PASSAGES[pIdx],q=p.qs[qIdx],answered=qChosen!==null,correct=qChosen===q.ans;
+    return`<div style="display:flex;justify-content:space-between;margin-bottom:14px"><span class="muted">${p.title}</span><span class="muted">Q ${qIdx+1}/${p.qs.length}</span></div>
+    <p style="font-weight:700;font-size:15px;color:#0f2545;line-height:1.5;margin-bottom:18px">${q.q}</p>
+    ${q.ch.map((c,i)=>{let cls='answer-btn';if(answered){if(i===q.ans)cls+=' correct';else if(i===qChosen)cls+=' wrong';}return`<button class="${cls}" ${answered?'disabled':''} onclick="answerRC(${i})"><span class="choice-letter">${LETTERS[i]}</span>${c}</button>`;}).join('')}
+    ${answered?`<div style="background:${correct?'#dcfce7':'#fee2e2'};border-radius:14px;padding:14px;margin-top:4px"><p style="font-weight:800;color:${correct?'#166534':'#991b1b'};margin-bottom:6px">${correct?'✓ Correct! +12 XP':'✗ Not quite'}</p>${!correct?`<p style="font-size:13px;color:#374151;margin-bottom:8px">Correct: ${q.ch[q.ans]}</p>`:''}<button class="btn btn-primary" onclick="nextRCQ()">${qIdx+1<PASSAGES[pIdx].qs.length?'Next Question →':'Finish Passage ✓'}</button></div>`:''}`;
+  }
+  const p=PASSAGES[pIdx];
+  return`<div style="display:flex;gap:8px;margin-bottom:14px">${PASSAGES.map((pp,i)=>`<button onclick="pIdx=${i};qMode=false;qIdx=0;qChosen=null;pDone=false;render()" style="padding:5px 12px;border-radius:99px;border:2px solid;border-color:${pIdx===i?'#3b82f6':'#e5e7eb'};background:${pIdx===i?'#dbeafe':'#fff'};font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;color:${pIdx===i?'#1d4ed8':'#6b7280'}">${i+1}</button>`).join('')}</div>
+  <h2 style="margin-bottom:16px">${p.title}</h2>
+  <div class="card" style="line-height:1.8;font-size:14.5px;color:#374151">${p.text.split('\n\n').filter(Boolean).map(pp=>`<p style="margin-bottom:12px">${pp}</p>`).join('')}</div>
+  <button class="btn btn-primary" onclick="qMode=true;render()">Answer Questions →</button>`;
+}
+function answerRC(i){if(qChosen!==null)return;qChosen=i;const q=PASSAGES[pIdx].qs[qIdx],correct=i===q.ans;const h=progress.rh[`${pIdx}-${qIdx}`]||{c:0,i:0};progress.rh[`${pIdx}-${qIdx}`]={c:h.c+(correct?1:0),i:h.i+(correct?0:1)};addXP(correct?12:2);render();}
+function nextRCQ(){if(qIdx+1>=PASSAGES[pIdx].qs.length)pDone=true;else{qIdx++;qChosen=null;}render();}
+function nextPassage(){pIdx++;qMode=false;qIdx=0;qChosen=null;pDone=false;render();}
+
+// ── ADD WORD ──────────────────────────────────────────────────
+function renderAddWord(){const f=addForm;
+  return`<h1 style="margin-bottom:4px">✏️ Add My Own Words</h1>
+  <p class="muted" style="margin-bottom:16px">Words from school, books, or practice tests go right into your daily sessions.</p>
+  <div class="tab-row"><button class="tab${addTab==='form'?' active':''}" onclick="addTab='form';render()">+ Add New Word</button><button class="tab${addTab==='list'?' active':''}" onclick="addTab='list';render()">My Words (${customWords.length})</button></div>
+  ${addTab==='form'?`${addErr?`<div style="background:#fee2e2;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#991b1b;font-weight:700">${addErr}</div>`:''}
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Word <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. Ephemeral" value="${f.w}" oninput="addForm.w=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Definition <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. Lasting only a short time" value="${f.d}" oninput="addForm.d=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Example sentence <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. The ephemeral beauty of cherry blossoms made them special." value="${f.ex}" oninput="addForm.ex=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Part of speech</div>
+  <div style="display:flex;gap:6px;margin-bottom:12px">${['adj','noun','verb','adv'].map(p=>`<button onclick="addForm.pos='${p}';render()" style="flex:1;border:2px solid;border-color:${f.pos===p?'#3b82f6':'#e5e7eb'};background:${f.pos===p?'#eff6ff':'#fff'};border-radius:10px;padding:9px 4px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;color:${f.pos===p?'#1d4ed8':'#6b7280'}">${p}</button>`).join('')}</div>
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Root (optional)</div><input class="input-field" placeholder="e.g. epher- (lasting a day)" value="${f.root}" oninput="addForm.root=this.value">
+  <button class="btn btn-primary" onclick="submitWord()" style="margin-top:4px">Add to My Word Bank ✓</button>`
+  :customWords.length===0?`<div style="text-align:center;padding:40px 20px"><div style="font-size:48px">📝</div><p class="muted" style="margin-top:12px">No custom words yet. Add words from school, books, or practice tests!</p></div>`
+  :`${customWords.map((w,i)=>`<div class="word-list-item"><div style="flex:1;min-width:0"><div style="font-weight:800;color:#0f2545">${w.w}</div><div class="muted" style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${w.d}</div></div><button onclick="deleteWord(${i})" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:16px;margin-left:10px;flex-shrink:0">🗑️</button></div>`).join('')}
+  <button class="btn btn-secondary" style="margin-top:8px" onclick="if(confirm('Delete all custom words?')){customWords=[];saveC(customWords);render()}">Delete All Custom Words</button>`}`;
+}
+function submitWord(){addErr="";const{w,d,ex,pos,root}=addForm;if(!w.trim()){addErr="Please enter a word.";render();return;}if(!d.trim()){addErr="Please enter a definition.";render();return;}if(!ex.trim()){addErr="Please enter an example sentence.";render();return;}if(allVocab().find(v=>v.w.toLowerCase()===w.trim().toLowerCase())){addErr=`"${w.trim()}" is already in your word bank!`;render();return;}customWords.push({id:`c_${Date.now()}`,w:w.trim(),d:d.trim(),ex:ex.trim(),pos:pos||'adj',root:root.trim()||null,lvl:2,custom:true});saveC(customWords);addForm={w:"",d:"",ex:"",pos:"adj",root:""};addErr="";addTab="list";render();}
+function deleteWord(i){if(!confirm(`Delete "${customWords[i].w}"?`))return;const id=customWords[i].id;customWords.splice(i,1);saveC(customWords);if(progress.vh[id])delete progress.vh[id];saveP(progress);render();}
+
+// ── PROGRESS ──────────────────────────────────────────────────
+function renderProgress(){
+  const vh=Object.values(progress.vh),tV=vh.reduce((s,h)=>s+h.c+h.i,0),cV=vh.reduce((s,h)=>s+h.c,0),aV=tV>0?Math.round(cV/tV*100):0;
+  const ah=Object.values(progress.ah),tA=ah.reduce((s,h)=>s+h.c+h.i,0),cA=ah.reduce((s,h)=>s+h.c,0),aA=tA>0?Math.round(cA/tA*100):0;
+  const rh=Object.values(progress.rh),tR=rh.reduce((s,h)=>s+h.c+h.i,0),cR=rh.reduce((s,h)=>s+h.c,0),aR=tR>0?Math.round(cR/tR*100):0;
+  const bar=(label,c,t)=>{const pct=t>0?Math.round(c/t*100):0,col=pct>=80?'#16a34a':pct>=60?'#d97706':'#dc2626';return`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:13px;font-weight:700;color:#374151">${label}</span><span class="muted">${c}/${t} (${pct}%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${col}"></div></div></div>`;};
+  const all=allVocab();
+  const hardest=all.filter(w=>progress.vh[w.id]&&progress.vh[w.id].i>0).map(w=>({...w,...progress.vh[w.id]})).sort((a,b)=>(b.i/(b.c+b.i))-(a.i/(a.c+a.i))).slice(0,5);
+  const typeStats={};ANALOGIES.forEach(q=>{const h=progress.ah[q.id];if(!h)return;if(!typeStats[q.type])typeStats[q.type]={c:0,t:0};typeStats[q.type].c+=h.c;typeStats[q.type].t+=h.c+h.i;});
+  const empty=tV===0&&tA===0&&tR===0;
+  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><h1 style="margin:0">My Progress</h1><button onclick="go('parentdash')" style="background:#0f2545;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer">Parent View</button></div>
+  <div class="stat-grid"><div class="stat-box"><div style="font-size:18px">📖</div><div class="stat-val" style="font-size:20px;color:#3b82f6">${aV}%</div><div class="stat-lbl">Vocab</div></div><div class="stat-box"><div style="font-size:18px">🔗</div><div class="stat-val" style="font-size:20px;color:#8b5cf6">${aA}%</div><div class="stat-lbl">Analogies</div></div><div class="stat-box"><div style="font-size:18px">📜</div><div class="stat-val" style="font-size:20px;color:#10b981">${aR}%</div><div class="stat-lbl">Reading</div></div></div>
+  ${empty?`<div style="text-align:center;padding:40px"><div style="font-size:48px">🌱</div><p class="muted" style="margin-top:12px">Start practicing to see your progress here!</p></div>`:`
+  <div class="card"><h2 style="font-size:14px;margin-bottom:14px">Section Performance</h2>${bar('Vocabulary',cV,tV)}${bar('Analogies',cA,tA)}${bar('Reading Comprehension',cR,tR)}</div>
+  ${Object.keys(typeStats).length>0?`<div class="card"><h2 style="font-size:14px;margin-bottom:14px">Analogy Types — Where to Focus</h2>${Object.entries(typeStats).sort((a,b)=>(b[1].t>0?b[1].c/b[1].t:0)-(a[1].t>0?a[1].c/a[1].t:0)).map(([t,s])=>bar(t,s.c,s.t)).join('')}</div>`:''}
+  ${hardest.length>0?`<div class="card" style="border:2px solid #fed7aa;background:#fff8f0"><h2 style="font-size:14px;color:#c2410c;margin-bottom:12px">⚠️ Focus Words — Needs More Practice</h2>${hardest.map(w=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #fed7aa"><div><span style="font-weight:700;color:#374151">${w.w}</span>${w.custom?'<span class="badge" style="background:#fce7f3;color:#9d174d;margin-left:6px;font-size:10px">MY WORD</span>':''}<span class="muted" style="font-size:12px;margin-left:8px;display:block">${w.d.substring(0,40)}...</span></div><span style="font-size:12px;color:#dc2626;font-weight:800;flex-shrink:0">${Math.round(w.i/(w.c+w.i)*100)}% miss</span></div>`).join('')}</div>`:''}
+  <button class="btn btn-secondary" style="margin-top:8px" onclick="if(confirm('Reset all progress? This cannot be undone.')){progress=mkP();saveP(progress);render()}">Reset Progress</button>`}`;
+}
+
+// ── PARENT DASHBOARD ─────────────────────────────────────────
+function renderParentDash(){
+  const all=allVocab();
+
+  // Analogy type stats
+  const typeStats={};
+  ANALOGIES.forEach(q=>{
+    const h=progress.ah[q.id];
+    if(!h||(h.c+h.i===0)) return;
+    if(!typeStats[q.type]) typeStats[q.type]={c:0,t:0,examples:[]};
+    typeStats[q.type].c+=h.c;
+    typeStats[q.type].t+=h.c+h.i;
+    if(h.i>0) typeStats[q.type].examples.push(q.stem);
+  });
+  const typeArr=Object.entries(typeStats)
+    .map(([t,s])=>({type:t,c:s.c,t:s.t,acc:Math.round(s.c/s.t*100),examples:s.examples}))
+    .sort((a,b)=>a.acc-b.acc);
+  const weakTypes=typeArr.filter(x=>x.acc<70);
+
+  // Vocab stats by level and root
+  const lvlStats={1:{c:0,i:0},2:{c:0,i:0},3:{c:0,i:0}};
+  const rootMiss={};
+  const missedWords=[];
+  all.forEach(w=>{
+    const h=progress.vh[w.id];
+    if(!h||(h.c+h.i===0)) return;
+    const lv=w.lvl||2;
+    lvlStats[lv].c+=h.c; lvlStats[lv].i+=h.i;
+    if(h.i>0){
+      missedWords.push({...w,...h,rate:Math.round(h.i/(h.c+h.i)*100)});
+      if(w.root){
+        const rk=w.root.split('(')[0].trim();
+        if(!rootMiss[rk]) rootMiss[rk]={words:[],i:0};
+        rootMiss[rk].words.push(w.w); rootMiss[rk].i+=h.i;
+      }
+    }
+  });
+  missedWords.sort((a,b)=>b.rate-a.rate);
+  const topMiss=missedWords.slice(0,8);
+  const rootArr=Object.entries(rootMiss).sort((a,b)=>b[1].i-a[1].i).slice(0,5);
+
+  // Reading stats
+  const rhVals=Object.values(progress.rh);
+  const rTotal=rhVals.reduce((s,h)=>s+h.c+h.i,0);
+  const rCorr=rhVals.reduce((s,h)=>s+h.c,0);
+  const rAcc=rTotal>0?Math.round(rCorr/rTotal*100):null;
+
+  // Analogy + vocab overall
+  const ahVals=Object.values(progress.ah);
+  const aTotal=ahVals.reduce((s,h)=>s+h.c+h.i,0);
+  const aCorr=ahVals.reduce((s,h)=>s+h.c,0);
+  const aAcc=aTotal>0?Math.round(aCorr/aTotal*100):null;
+  const vhVals=Object.values(progress.vh);
+  const vTotal=vhVals.reduce((s,h)=>s+h.c+h.i,0);
+  const vCorr=vhVals.reduce((s,h)=>s+h.c,0);
+  const vAcc=vTotal>0?Math.round(vCorr/vTotal*100):null;
+
+  const noData=vTotal===0&&aTotal===0&&rTotal===0;
+  if(noData) return `<button style="background:none;border:none;color:#6b7280;cursor:pointer;margin-bottom:12px;font-family:'Nunito',sans-serif;font-size:14px" onclick="go('progress')">← Back</button>
+    <h1 style="margin-bottom:6px">Parent Dashboard</h1>
+    <div style="text-align:center;padding:40px 0"><div style="font-size:52px">🌱</div>
+    <p style="font-weight:700;color:#374151;margin-top:14px">No data yet!</p>
+    <p class="muted" style="margin-top:6px">Have her complete some practice sessions first, then come back here.</p></div>`;
+
+  // Build focus recommendations
+  const recs=[];
+  if(weakTypes.length>0){
+    const worst=weakTypes[0];
+    recs.push({icon:"🔗",color:"#fef9c3",border:"#fde68a",text:"#78350f",
+      title:`Weakest analogy type: "${worst.type}" (${worst.acc}%)`,
+      detail:`She's getting ${100-worst.acc}% wrong on ${worst.type} analogies after ${worst.t} attempts. Strategy: before choosing, say the relationship out loud — e.g. "A is a type of B." Example she missed: "${worst.examples[0]||''}"`});
+  }
+  if(weakTypes.length>1){
+    const second=weakTypes[1];
+    recs.push({icon:"🔗",color:"#fff7ed",border:"#fed7aa",text:"#92400e",
+      title:`Second weakest: "${second.type}" (${second.acc}%)`,
+      detail:`${second.type} analogies are also a problem area. Practice identifying this relationship type specifically.`});
+  }
+  if(topMiss.length>0){
+    recs.push({icon:"📖",color:"#fee2e2",border:"#fca5a5",text:"#991b1b",
+      title:"High-miss vocabulary words",
+      detail:`These words keep coming up wrong: ${topMiss.slice(0,4).map(w=>w.w+' ('+w.rate+'% miss rate)').join(', ')}. Try: say the definition, then use the word in a new sentence out loud.`});
+  }
+  if(rootArr.length>0){
+    recs.push({icon:"🌿",color:"#dcfce7",border:"#6ee7b7",text:"#065f46",
+      title:`Root word gap: "${rootArr[0][0]}"`,
+      detail:`Words sharing the "${rootArr[0][0]}" root keep getting missed: ${rootArr[0][1].words.join(', ')}. Spend 10 minutes on that root in the Root Words section — one root unlocks many words at once.`});
+  }
+  const l3=lvlStats[3], l3total=l3.c+l3.i;
+  if(l3total>3 && l3.i/l3total>0.4){
+    recs.push({icon:"🎯",color:"#ede9fe",border:"#c4b5fd",text:"#5b21b6",
+      title:"Level 3 (hardest) words need more time",
+      detail:`She's missing ${Math.round(l3.i/l3total*100)}% of the hardest vocabulary. Try reviewing Level 3 words in separate short sessions rather than mixed with easier ones.`});
+  }
+  if(rAcc!==null&&rAcc<65){
+    recs.push({icon:"📜",color:"#dbeafe",border:"#93c5fd",text:"#1e40af",
+      title:`Reading comprehension at ${rAcc}% — needs attention`,
+      detail:"Tip: On the real SSAT, passages are open-book — train her to go back to the passage and find the exact line before answering, rather than answering from memory."});
+  }
+  if(recs.length===0){
+    recs.push({icon:"⭐",color:"#dcfce7",border:"#6ee7b7",text:"#065f46",
+      title:"Great all-round performance!",
+      detail:"No major weak spots detected. Keep up the daily practice — consistency is the key to SSAT success."});
+  }
+
+  const bar=(label,c,t)=>{const pct=t>0?Math.round(c/t*100):0;const col=pct>=80?'#16a34a':pct>=60?'#d97706':'#dc2626';
+    return '<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:13px;font-weight:700;color:#374151">'+label+'</span><span style="font-size:12px;color:#6b7280">'+c+'/'+t+' correct &nbsp;·&nbsp; '+pct+'%</span></div><div class="progress-bar"><div class="progress-fill" style="width:'+pct+'%;background:'+col+'"></div></div></div>';};
+
+  const daysLeft=Math.max(0,Math.round((new Date('2026-10-01')-new Date())/864e5));
+  const weeksLeft=Math.max(0,Math.round(daysLeft/7));
+
+  return `<button style="background:none;border:none;color:#6b7280;cursor:pointer;margin-bottom:12px;font-family:'Nunito',sans-serif;font-size:14px" onclick="go('progress')">← Back to Progress</button>
+  <h1 style="margin-bottom:2px">👩‍👧 Parent Dashboard</h1>
+  <p class="muted" style="margin-bottom:18px">${daysLeft} days · ${weeksLeft} weeks until October 2026</p>
+
+  <div style="display:flex;gap:8px;margin-bottom:18px">
+    <div style="flex:1;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)"><div style="font-size:20px;font-weight:900;color:#3b82f6">${vAcc!==null?vAcc+'%':'—'}</div><div style="font-size:10px;color:#9ca3af;margin-top:2px">Vocab</div></div>
+    <div style="flex:1;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)"><div style="font-size:20px;font-weight:900;color:#8b5cf6">${aAcc!==null?aAcc+'%':'—'}</div><div style="font-size:10px;color:#9ca3af;margin-top:2px">Analogies</div></div>
+    <div style="flex:1;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)"><div style="font-size:20px;font-weight:900;color:#10b981">${rAcc!==null?rAcc+'%':'—'}</div><div style="font-size:10px;color:#9ca3af;margin-top:2px">Reading</div></div>
+    <div style="flex:1;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)"><div style="font-size:20px;font-weight:900;color:#f59e0b">${progress.streak}</div><div style="font-size:10px;color:#9ca3af;margin-top:2px">Streak 🔥</div></div>
+  </div>
+
+  <div class="card" style="border:2px solid #fde68a;background:#fffbeb;margin-bottom:14px">
+    <h2 style="font-size:14px;color:#78350f;margin-bottom:12px">🎯 Where to Focus This Week</h2>
+    ${recs.map((r,i)=>`<div style="background:${r.color};border:1.5px solid ${r.border};border-radius:12px;padding:13px;margin-bottom:${i<recs.length-1?'8px':'0'}"><div style="font-weight:800;font-size:13px;color:${r.text};margin-bottom:5px">${r.icon} ${r.title}</div><div style="font-size:12px;color:${r.text};opacity:.85;line-height:1.6">${r.detail}</div></div>`).join('')}
+  </div>
+
+  ${aTotal>0?`<div class="card" style="margin-bottom:14px">
+    <h2 style="font-size:14px;margin-bottom:14px">🔗 Analogy Accuracy by Type</h2>
+    ${typeArr.map(x=>bar(x.type+' <span style="font-size:10px;font-weight:400;color:#9ca3af">('+x.t+' answered)</span>',x.c,x.t)).join('')}
+    ${weakTypes.length>0?`<div style="background:#fff7ed;border-radius:10px;padding:10px 12px;margin-top:4px"><p style="font-size:11px;font-weight:800;color:#c2410c;margin-bottom:5px">Questions she missed in weak types:</p>${weakTypes.slice(0,3).map(x=>`<p style="font-size:11px;color:#92400e;margin-bottom:3px">• <strong>${x.type}:</strong> "${x.examples.slice(0,2).join('" · "')}"</p>`).join('')}</div>`:''}
+  </div>`:''}
+
+  ${vTotal>0?`<div class="card" style="margin-bottom:14px">
+    <h2 style="font-size:14px;margin-bottom:14px">📖 Vocabulary — Accuracy by Difficulty</h2>
+    ${[1,2,3].map(l=>{const s=lvlStats[l],t=s.c+s.i;return t>0?bar(['Level 1 — Easier','Level 2 — Medium','Level 3 — Hardest'][l-1],s.c,t):'';}).join('')}
+    ${topMiss.length>0?`<div style="margin-top:14px"><p style="font-size:12px;font-weight:800;color:#374151;margin-bottom:8px">Most-missed words (highest miss rate first):</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+      ${topMiss.map(w=>`<div style="background:#f9fafb;border-radius:8px;padding:8px 10px"><div style="font-weight:800;font-size:13px;color:#0f2545">${w.w}</div><div style="font-size:10px;color:#9ca3af">${w.d.substring(0,30)}...</div><div style="font-size:12px;font-weight:800;color:${w.rate>=60?'#dc2626':'#d97706'};margin-top:2px">${w.rate}% miss rate</div></div>`).join('')}
+      </div></div>`:''}
+    ${rootArr.length>0?`<div style="background:#f0fdf4;border-radius:10px;padding:10px 12px;margin-top:12px">
+      <p style="font-size:12px;font-weight:800;color:#166534;margin-bottom:6px">🌿 Root word patterns in missed words:</p>
+      ${rootArr.map(([root,data])=>`<p style="font-size:12px;color:#15803d;margin-bottom:3px">• <strong>${root}</strong> — missed in: ${data.words.join(', ')}</p>`).join('')}
+      <p style="font-size:11px;color:#6b7280;margin-top:6px">Reviewing one root in the Root Words section unlocks multiple words at once.</p>
+    </div>`:''}
+  </div>`:''}
+
+  ${rTotal>0?`<div class="card" style="margin-bottom:14px">
+    <h2 style="font-size:14px;margin-bottom:14px">📜 Reading — Accuracy by Passage</h2>
+    ${[0,1,2].map(pi=>{
+      const pqs=Object.entries(progress.rh).filter(([k])=>k.startsWith(pi+'-'));
+      if(!pqs.length) return '';
+      const pc=pqs.reduce((s,[,h])=>s+h.c,0),pt=pqs.reduce((s,[,h])=>s+h.c+h.i,0);
+      return bar(['The Stubborn Seed','The Price of Words','Echo'][pi],pc,pt);
+    }).join('')}
+    ${rAcc!==null&&rAcc<70?`<div style="background:#eff6ff;border-radius:10px;padding:10px 12px;margin-top:6px"><p style="font-size:12px;color:#1e40af;line-height:1.5">💡 <strong>SSAT tip:</strong> Reading passages are open-book on the real test. Train her to find the exact sentence in the passage before choosing an answer — never answer from memory alone.</p></div>`:''}
+  </div>`:''}
+
+  <div class="card" style="background:#0f2545;color:#fff;margin-bottom:14px">
+    <h2 style="font-size:14px;color:#93c5fd;margin-bottom:12px">📅 Suggested Weekly Schedule</h2>
+    ${[{day:"Mon & Thu",task:"Daily Vocabulary (5 words)",color:"#3b82f6"},{day:"Tue & Fri",task:"Analogies (10–15 questions)",color:"#8b5cf6"},{day:"Wednesday",task:"Root Words (2 roots + quiz)",color:"#10b981"},{day:"Saturday",task:"Full reading passage + questions",color:"#f59e0b"},{day:"Sunday",task:"Review missed words from the week",color:"#ef4444"}].map(d=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)"><span style="width:80px;font-size:11px;font-weight:800;color:${d.color};flex-shrink:0">${d.day}</span><span style="font-size:13px;color:#e5e7eb">${d.task}</span></div>`).join('')}
+    <p style="font-size:11px;color:#6b7280;margin-top:10px">${weeksLeft} weeks of practice remaining before October 2026</p>
+  </div>`;
+}
+
+// ── RENDER ────────────────────────────────────────────────────
+const NAV=[{id:'home',e:'🏠',l:'Home'},{id:'vocab',e:'📖',l:'Vocab'},{id:'roots',e:'🌿',l:'Roots'},{id:'analogies',e:'🔗',l:'Analogy'},{id:'reading',e:'📜',l:'Reading'},{id:'progress',e:'📊',l:'Progress'}];
+const screens={home:renderHome,vocab:renderVocab,roots:renderRoots,analogies:renderAnalogies,reading:renderReading,addword:renderAddWord,progress:renderProgress,parentdash:renderParentDash};
+function render(){const html=screens[view]?screens[view]():'';document.getElementById('app').innerHTML=`<div class="screen">${html}</div><nav class="nav">${NAV.map(n=>`<button class="nav-btn${view===n.id?' active':''}" onclick="go('${n.id}')"><span class="ni">${n.e}</span><span>${n.l}</span></button>`).join('')}</nav>`}
+Promise.all([
+  fetch('root-words.txt').then(r=>r.text()),
+  fetch('analogies.txt').then(r=>r.text()),
+  fetch('vocab.txt').then(r=>r.text())
+]).then(([rt,at,vt])=>{
+  ROOTS=parseRoots(rt);
+  ANALOGIES=parseAnalogies(at);
+  BUILTIN_VOCAB=parseVocab(vt);
+  aQueue=[...ANALOGIES].sort(()=>Math.random()-.5);
+  render();
+}).catch(()=>render());
+</script>
+</body>
+</html>
