@@ -148,7 +148,7 @@ const PASSAGES=[
 
 // ── STORAGE ───────────────────────────────────────────────────
 const SK="ssat_prep_upper_v1";
-const mkP=()=>({vh:{},ah:{},rh:{},streak:0,lastDate:null,xp:0});
+const mkP=()=>({vh:{},ah:{},rh:{},streak:0,lastDate:null,xp:0,learned:{vocabIds:[],rootIds:[]}});
 const loadP=()=>{try{return{...mkP(),...JSON.parse(localStorage.getItem(SK)||"{}")}}catch{return mkP()}};
 const loadC=()=>{try{return JSON.parse(localStorage.getItem(SK+"_c")||"[]")}catch{return[]}};
 const saveP=p=>localStorage.setItem(SK,JSON.stringify(p));
@@ -167,6 +167,9 @@ let rSel=null,rQuiz=null;
 let aQueue=[...ANALOGIES].sort(()=>Math.random()-.5),aIdx=0,aChosen=null,aScore={c:0,t:0};
 let pIdx=0,qMode=false,qIdx=0,qChosen=null,pDone=false;
 let addTab="form",addForm={w:"",d:"",ex:"",pos:"adj",root:""},addErr="";
+// Learned / My Quiz state
+let mwTab="vocab",mwSearch="";
+let mqQuestions=[],mqIdx=0,mqChosen=null,mqScore={c:0,t:0},mqDone=false,mqResults=[];
 
 const LETTERS="ABCDE";
 
@@ -188,6 +191,8 @@ function renderHome(){
   <div class="stat-box"><div style="font-size:20px">📝</div><div class="stat-val">${totalWords}</div><div class="stat-lbl">Word Bank</div></div>
 </div>
 <h2 style="font-size:15px;margin-bottom:10px">Start Practicing</h2>
+<button class="quick-btn" style="border-color:#a78bfa;background:#f5f3ff" onclick="mqQuestions=[];mqDone=false;go('myquiz')"><div><div style="font-weight:800;font-size:14px;color:#5b21b6">🧠 My Quiz</div><div class="muted" style="font-size:12px;margin-top:2px">${(progress.learned?progress.learned.vocabIds.length:0)+(progress.learned?progress.learned.rootIds.length:0)} learned items · SSAT-style multiple choice</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#6ee7b7;background:#ecfdf5" onclick="go('mywords')"><div><div style="font-weight:800;font-size:14px;color:#065f46">✅ My Words</div><div class="muted" style="font-size:12px;margin-top:2px">Mark words you know · build your quiz pool</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#bfdbfe;background:#eff6ff" onclick="startVocab()"><div><div style="font-weight:800;font-size:14px;color:#1e3a8a">📖 Daily Vocabulary</div><div class="muted" style="font-size:12px;margin-top:2px">5 smart-picked words · ${totalWords} word bank · spaced repetition</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#bbf7d0;background:#f0fdf4" onclick="go('roots')"><div><div style="font-weight:800;font-size:14px;color:#14532d">🌿 Root Words</div><div class="muted" style="font-size:12px;margin-top:2px">80 Latin &amp; Greek roots · unlock hundreds of SSAT words</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#fde68a;background:#fffbeb" onclick="startAnalogies()"><div><div style="font-weight:800;font-size:14px;color:#78350f">🔗 Analogies</div><div class="muted" style="font-size:12px;margin-top:2px">160 questions · real SSAT A–E format · 12 types</div></div><span style="font-size:18px">→</span></button>
@@ -236,7 +241,8 @@ function renderVocab(){
   <button class="btn btn-primary" onclick="checkVocab()">Check My Answer →</button>`:`<div style="background:${bannerColor};border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-weight:800;color:${bannerText};margin-bottom:6px">${bannerMsg}</p><p style="font-size:13px;color:${bannerText};opacity:.8;margin-bottom:6px"><em>You wrote:</em> &ldquo;${vInput||'(nothing)'}&rdquo;</p></div>
   <div style="background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-size:11px;font-weight:800;color:#9ca3af;margin-bottom:4px">CORRECT DEFINITION</p><p style="font-size:15px;font-weight:700;color:#0f2545;margin-bottom:8px">${w.d}</p><p style="font-size:13px;color:#6b7280;font-style:italic;margin-bottom:${w.root?'8px':'0'}">&ldquo;${w.ex}&rdquo;</p>${w.root?`<span class="chip">🌿 Root: ${w.root}</span>`:''}</div>
   <button class="btn btn-primary" style="margin-bottom:8px" onclick="advanceVocab()">Next Word →</button>
-  <div style="display:flex;gap:8px"><button class="btn" style="flex:1;background:#dcfce7;color:#166534" onclick="advanceVocab('great')">✓ I knew it</button><button class="btn" style="flex:1;background:#fee2e2;color:#991b1b" onclick="advanceVocab('missed')">✗ Mark missed</button></div>`}
+  <div style="display:flex;gap:8px"><button class="btn" style="flex:1;background:#dcfce7;color:#166534" onclick="advanceVocab('great')">✓ I knew it</button><button class="btn" style="flex:1;background:#fee2e2;color:#991b1b" onclick="advanceVocab('missed')">✗ Mark missed</button></div>
+  ${!isVocabLearned(w.id)?`<button class="btn" style="margin-top:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe" onclick="markVocabLearned(${typeof w.id==='string'?("'"+w.id+"'"):w.id})">✅ I know this word — add to quiz</button>`:`<div style="text-align:center;margin-top:8px;font-size:12px;color:#16a34a;font-weight:700">✅ In your learned words</div>`}`}
   `;
 }
 // ── ROOTS ─────────────────────────────────────────────────────
@@ -253,7 +259,8 @@ function renderRoots(){
     <div style="background:#0f2545;border-radius:18px;padding:22px;color:#fff;margin-bottom:16px"><div style="font-size:30px;font-weight:900">${root.root}</div><div style="font-size:17px;color:#93c5fd;margin-top:4px">"${root.meaning}"</div><div style="font-size:12px;color:#6b7280;margin-top:4px">from ${root.origin}</div></div>
     <p style="font-size:14px;color:#6b7280;font-style:italic;margin-bottom:14px">${root.sentence}</p>
     <h2 style="font-size:14px;margin-bottom:10px">Words using this root:</h2><div style="margin-bottom:20px">${root.words.map(w=>`<span class="chip">${w}</span>`).join('')}</div>
-    <button class="btn btn-primary" onclick="startRootQuiz(ROOTS.find(r=>r.id===${rSel}))">🧠 Quiz Me on This Root (A–E)</button>`;
+    <button class="btn btn-primary" onclick="startRootQuiz(ROOTS.find(r=>r.id===${rSel}))">🧠 Quiz Me on This Root (A–E)</button>
+    ${!isRootLearned(rSel)?`<button class="btn" style="margin-top:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;width:100%" onclick="markRootLearned(${rSel})">✅ I know this root — add to quiz</button>`:`<div style="text-align:center;margin-top:8px;font-size:12px;color:#16a34a;font-weight:700">✅ In your learned roots</div>`}`;
   }
   const categories=[
     {label:"✨ Good & Bad",ids:[1,2]},
@@ -368,6 +375,207 @@ function renderAddWord(){const f=addForm;
 }
 function submitWord(){addErr="";const{w,d,ex,pos,root}=addForm;if(!w.trim()){addErr="Please enter a word.";render();return;}if(!d.trim()){addErr="Please enter a definition.";render();return;}if(!ex.trim()){addErr="Please enter an example sentence.";render();return;}if(allVocab().find(v=>v.w.toLowerCase()===w.trim().toLowerCase())){addErr=`"${w.trim()}" is already in your word bank!`;render();return;}customWords.push({id:`c_${Date.now()}`,w:w.trim(),d:d.trim(),ex:ex.trim(),pos:pos||'adj',root:root.trim()||null,lvl:2,custom:true});saveC(customWords);addForm={w:"",d:"",ex:"",pos:"adj",root:""};addErr="";addTab="list";render();}
 function deleteWord(i){if(!confirm(`Delete "${customWords[i].w}"?`))return;const id=customWords[i].id;customWords.splice(i,1);saveC(customWords);if(progress.vh[id])delete progress.vh[id];saveP(progress);render();}
+
+// ── LEARNED HELPERS ──────────────────────────────────────────
+function ensureLearned(){if(!progress.learned)progress.learned={vocabIds:[],rootIds:[]};}
+function isVocabLearned(id){ensureLearned();return progress.learned.vocabIds.includes(id);}
+function isRootLearned(id){ensureLearned();return progress.learned.rootIds.includes(id);}
+function toggleVocabLearned(id){ensureLearned();const a=progress.learned.vocabIds;const i=a.indexOf(id);if(i===-1)a.push(id);else a.splice(i,1);saveP(progress);render();}
+function toggleRootLearned(id){ensureLearned();const a=progress.learned.rootIds;const i=a.indexOf(id);if(i===-1)a.push(id);else a.splice(i,1);saveP(progress);render();}
+function markVocabLearned(id){ensureLearned();if(!progress.learned.vocabIds.includes(id))progress.learned.vocabIds.push(id);saveP(progress);render();}
+function markRootLearned(id){ensureLearned();if(!progress.learned.rootIds.includes(id))progress.learned.rootIds.push(id);saveP(progress);render();}
+
+// ── MY WORDS (browsable learned list) ────────────────────────
+let pasteMode=false,pasteText="",pasteErr="",pasteSuccess="";
+function renderMyWords(){
+  ensureLearned();
+  const vCount=progress.learned.vocabIds.length,rCount=progress.learned.rootIds.length;
+  const totalLearned=vCount+rCount;
+  const all=allVocab(),totalV=all.length,totalR=ROOTS.length;
+  const filtered=mwSearch.trim()?all.filter(w=>w.w.toLowerCase().includes(mwSearch.trim().toLowerCase())):all;
+  const filteredR=mwSearch.trim()?ROOTS.filter(r=>r.root.toLowerCase().includes(mwSearch.trim().toLowerCase())||r.meaning.toLowerCase().includes(mwSearch.trim().toLowerCase())):ROOTS;
+
+  if(pasteMode){
+    return`<button style="background:none;border:none;color:#6b7280;cursor:pointer;margin-bottom:12px;font-family:'Nunito',sans-serif;font-size:14px" onclick="pasteMode=false;render()">← Back to My Words</button>
+    <h1 style="margin-bottom:4px">📋 Paste Words</h1>
+    <p class="muted" style="margin-bottom:14px">Paste words from any website. Format: one word per line, optionally with a definition separated by — , - , or :</p>
+    ${pasteErr?`<div style="background:#fee2e2;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#991b1b;font-weight:700">${pasteErr}</div>`:''}
+    ${pasteSuccess?`<div style="background:#dcfce7;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#166534;font-weight:700">${pasteSuccess}</div>`:''}
+    <textarea class="input-field" rows="10" placeholder="Example:\nzeal — great enthusiasm\nadequate — enough, sufficient\nbenevolent\nresilient - able to recover" oninput="pasteText=this.value" style="resize:vertical;font-size:13px">${pasteText}</textarea>
+    <button class="btn btn-primary" style="margin-top:8px" onclick="importPastedWords()">Import Words</button>
+    <p class="muted" style="margin-top:8px;font-size:11px">Words without definitions will be imported but won't appear in quizzes until you add a definition.</p>`;
+  }
+
+  return`<h1 style="margin-bottom:4px">✅ My Words</h1>
+  <p class="muted" style="margin-bottom:6px">Mark words and roots you know. They'll appear in your quiz!</p>
+  <div style="display:flex;gap:8px;margin-bottom:12px">
+    <div style="flex:1;background:linear-gradient(135deg,#3b82f6,#1d4ed8);border-radius:12px;padding:10px;text-align:center;color:#fff"><div style="font-size:22px;font-weight:900">${totalLearned}</div><div style="font-size:10px;opacity:.85">Learned</div></div>
+    <div style="flex:1;background:linear-gradient(135deg,#8b5cf6,#6d28d9);border-radius:12px;padding:10px;text-align:center;color:#fff"><div style="font-size:22px;font-weight:900">${vCount}</div><div style="font-size:10px;opacity:.85">Words</div></div>
+    <div style="flex:1;background:linear-gradient(135deg,#10b981,#059669);border-radius:12px;padding:10px;text-align:center;color:#fff"><div style="font-size:22px;font-weight:900">${rCount}</div><div style="font-size:10px;opacity:.85">Roots</div></div>
+  </div>
+  <div class="tab-row">
+    <button class="tab${mwTab==='vocab'?' active':''}" onclick="mwTab='vocab';render()">Words (${vCount}/${totalV})</button>
+    <button class="tab${mwTab==='roots'?' active':''}" onclick="mwTab='roots';render()">Roots (${rCount}/${totalR})</button>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <input class="input-field" placeholder="Search..." value="${mwSearch}" oninput="mwSearch=this.value;render()" style="flex:1;margin-bottom:0">
+    <button onclick="pasteMode=true;pasteText='';pasteErr='';pasteSuccess='';render()" style="background:#1e3a8a;color:#fff;border:none;border-radius:12px;padding:10px 14px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap">📋 Paste</button>
+  </div>
+  ${mwTab==='vocab'?filtered.map(w=>{
+    const known=isVocabLearned(w.id);
+    return`<div style="display:flex;align-items:center;gap:10px;background:#fff;border:2px solid ${known?'#6ee7b7':'#e5e7eb'};border-radius:12px;padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:border-color .15s" onclick="toggleVocabLearned(${typeof w.id==='string'?("'"+w.id+"'"):w.id})">
+      <div style="width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:${known?'#dcfce7':'#f3f4f6'};color:${known?'#16a34a':'#d1d5db'};border:2px solid ${known?'#6ee7b7':'#e5e7eb'}">${known?'✓':'○'}</div>
+      <div style="flex:1;min-width:0"><div style="font-weight:800;font-size:14px;color:#0f2545">${w.w}</div><div class="muted" style="font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${w.d}</div></div>
+      ${w.root?'<span class="chip" style="font-size:10px">'+w.root+'</span>':''}
+    </div>`;
+  }).join('')||'<p class="muted" style="text-align:center;padding:20px">No words match your search.</p>'
+  :filteredR.map(r=>{
+    const known=isRootLearned(r.id);
+    return`<div style="display:flex;align-items:center;gap:10px;background:#fff;border:2px solid ${known?'#6ee7b7':'#e5e7eb'};border-radius:12px;padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:border-color .15s" onclick="toggleRootLearned(${r.id})">
+      <div style="width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:${known?'#dcfce7':'#f3f4f6'};color:${known?'#16a34a':'#d1d5db'};border:2px solid ${known?'#6ee7b7':'#e5e7eb'}">${known?'✓':'○'}</div>
+      <div style="flex:1;min-width:0"><div style="font-weight:800;font-size:14px;color:#0f2545">${r.root}</div><div class="muted" style="font-size:11px">"${r.meaning}" · ${r.origin}</div></div>
+      <div style="font-size:10px;color:#9ca3af">${r.words.length} words</div>
+    </div>`;
+  }).join('')||'<p class="muted" style="text-align:center;padding:20px">No roots match your search.</p>'}`;
+}
+
+// ── PASTE IMPORT ─────────────────────────────────────────────
+function importPastedWords(){
+  pasteErr="";pasteSuccess="";
+  if(!pasteText.trim()){pasteErr="Please paste some words first.";render();return;}
+  const lines=pasteText.split('\n').map(l=>l.trim()).filter(Boolean);
+  let added=0,skipped=0;
+  lines.forEach(line=>{
+    let word="",def="";
+    const sep=line.match(/^(.+?)\s*(?:—|--|–|-|:)\s*(.+)$/);
+    if(sep){word=sep[1].trim();def=sep[2].trim();}
+    else{word=line.trim();def="";}
+    if(!word)return;
+    if(allVocab().find(v=>v.w.toLowerCase()===word.toLowerCase())){skipped++;return;}
+    const newWord={id:'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),w:word,d:def,ex:def?word+' — '+def:'',pos:'adj',root:null,lvl:2,custom:true};
+    customWords.push(newWord);
+    if(def){ensureLearned();progress.learned.vocabIds.push(newWord.id);}
+    added++;
+  });
+  saveC(customWords);saveP(progress);
+  if(added>0)pasteSuccess=added+' word'+(added!==1?'s':'')+' imported!'+(skipped>0?' ('+skipped+' already existed)':'');
+  else if(skipped>0)pasteErr='All '+skipped+' words already exist in your word bank.';
+  else pasteErr='Could not parse any words from the text.';
+  pasteText="";render();
+}
+
+// ── MY QUIZ ──────────────────────────────────────────────────
+function shortDef(def){
+  if(!def)return'';
+  let s=def.split(';')[0].trim();
+  s=s.replace(/^To\s+/i,'');
+  if(s.split(' ').length>4){const c=s.split(',')[0].trim();if(c.split(' ').length<=4)s=c;}
+  const words=s.split(' ');
+  if(words.length>4)s=words.slice(0,4).join(' ');
+  return s.charAt(0).toLowerCase()+s.slice(1);
+}
+
+function generateLearnedQuiz(){
+  ensureLearned();
+  const items=[];
+  const learnedVocab=allVocab().filter(w=>isVocabLearned(w.id)&&w.d);
+  const allDefs=allVocab().filter(w=>w.d);
+  learnedVocab.forEach(w=>{
+    const ans=shortDef(w.d);
+    const pool=allDefs.filter(v=>v.id!==w.id&&shortDef(v.d)!==ans);
+    const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(v=>shortDef(v.d));
+    const choices=[ans,...distractors].sort(()=>Math.random()-.5);
+    items.push({type:'vocab',word:w.w.toUpperCase(),answer:ans,choices,fullDef:w.d,tip:w.ex,root:w.root,id:w.id});
+  });
+  const learnedRoots=ROOTS.filter(r=>isRootLearned(r.id));
+  learnedRoots.forEach(r=>{
+    const pool=ROOTS.filter(x=>x.id!==r.id);
+    const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(x=>x.meaning);
+    const choices=[r.meaning,...distractors].sort(()=>Math.random()-.5);
+    items.push({type:'root',word:r.root.toUpperCase(),answer:r.meaning,choices,fullDef:r.meaning,tip:r.sentence,words:r.words,id:r.id});
+  });
+  return items.sort(()=>Math.random()-.5).slice(0,10);
+}
+
+function startMyQuiz(){
+  mqQuestions=generateLearnedQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];go('myquiz');
+}
+
+function answerMyQuiz(i){
+  if(mqChosen!==null)return;
+  const q=mqQuestions[mqIdx];
+  mqChosen=i;
+  const correct=q.choices[i]===q.answer;
+  mqScore={c:mqScore.c+(correct?1:0),t:mqScore.t+1};
+  if(q.type==='vocab'){
+    const h=progress.vh[q.id]||{c:0,i:0,t:0};
+    progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now()};
+  }
+  addXP(correct?10:2);
+  mqResults.push({word:q.word,type:q.type,correct});
+  render();
+}
+
+function nextMyQuiz(){
+  if(mqIdx+1>=mqQuestions.length)mqDone=true;
+  else{mqIdx++;mqChosen=null;}
+  render();
+}
+
+function renderMyQuiz(){
+  ensureLearned();
+  const vCount=progress.learned.vocabIds.length,rCount=progress.learned.rootIds.length;
+  const totalLearned=vCount+rCount;
+
+  if(mqQuestions.length===0&&!mqDone){
+    const canQuiz=totalLearned>=4;
+    return`<h1 style="margin-bottom:4px">🧠 My Quiz</h1>
+    <p class="muted" style="margin-bottom:18px">Test yourself on words and roots you've marked as learned!</p>
+    <div class="card" style="text-align:center;padding:24px">
+      <div style="font-size:48px;margin-bottom:12px">${canQuiz?'🚀':'📝'}</div>
+      <div style="font-size:20px;font-weight:900;color:#0f2545;margin-bottom:4px">${totalLearned} items learned</div>
+      <div class="muted" style="margin-bottom:16px">${vCount} vocab word${vCount!==1?'s':''} · ${rCount} root${rCount!==1?'s':''}</div>
+      ${canQuiz?`<button class="btn btn-primary" onclick="startMyQuiz()">Start Quiz (10 questions) →</button>`
+      :`<p style="color:#d97706;font-size:13px;font-weight:700;margin-bottom:10px">Mark at least 4 words or roots as learned to start a quiz.</p>
+        <button class="btn btn-secondary" onclick="go('mywords')">Go Mark Words →</button>`}
+    </div>
+    <button class="btn btn-secondary" style="margin-top:10px" onclick="go('mywords')">Manage Learned Words</button>`;
+  }
+
+  if(mqDone){
+    const pct=mqScore.t>0?Math.round(mqScore.c/mqScore.t*100):0;
+    return`<div class="done-screen">
+      <div style="font-size:60px">${pct>=80?'🎉':pct>=60?'👍':'💪'}</div>
+      <h1 style="margin:12px 0 6px">Quiz Complete!</h1>
+      <p style="font-size:28px;font-weight:900;color:${pct>=80?'#16a34a':pct>=60?'#d97706':'#dc2626'};margin-bottom:4px">${mqScore.c}/${mqScore.t}</p>
+      <p class="muted" style="margin-bottom:20px">${pct}% correct</p>
+      ${mqResults.map(r=>`<div class="result-row"><span style="font-weight:700">${r.type==='root'?'🌿 ':'📖 '}${r.word}</span><span style="font-size:13px;color:${r.correct?'#16a34a':'#dc2626'}">${r.correct?'✓ Correct':'✗ Missed'}</span></div>`).join('')}
+      <button class="btn btn-primary" style="margin-top:16px" onclick="startMyQuiz()">Quiz Again →</button>
+      <button class="btn btn-secondary" style="margin-top:8px" onclick="mqQuestions=[];mqDone=false;go('home')">Back to Home</button>
+    </div>`;
+  }
+
+  // Quiz in progress — SSAT synonym format
+  const q=mqQuestions[mqIdx],answered=mqChosen!==null;
+  const correct=answered&&q.choices[mqChosen]===q.answer;
+  const pct=mqIdx/mqQuestions.length*100;
+  const ansIdx=q.choices.indexOf(q.answer);
+  return`<div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:${pct}%;background:#3b82f6"></div></div><span class="muted">${mqIdx+1}/${mqQuestions.length}</span><span class="badge" style="background:#fef9c3;color:#854d0e">${mqScore.c}/${mqScore.t}</span></div>
+  <div style="margin:18px 0 14px">
+    <span style="font-size:11px;color:#9ca3af;font-weight:700;letter-spacing:.5px">${q.type==='root'?'ROOT WORD':'SYNONYM'}</span>
+    <h2 style="font-size:24px;font-weight:900;color:#0f2545;margin-top:4px">${q.word}:</h2>
+  </div>
+  ${q.choices.map((c,i)=>{let cls='answer-btn';if(answered){if(i===ansIdx)cls+=' correct';else if(i===mqChosen)cls+=' wrong';}return`<button class="${cls}" ${answered?'disabled':''} onclick="answerMyQuiz(${i})"><span class="choice-letter">${LETTERS[i]}</span>${c}</button>`;}).join('')}
+  ${answered?`<div style="background:${correct?'#dcfce7':'#fee2e2'};border-radius:14px;padding:14px;margin-top:10px">
+    <p style="font-weight:800;color:${correct?'#166534':'#991b1b'};margin-bottom:6px">${correct?'Correct! +10 XP':'Not quite. +2 XP'}</p>
+    ${!correct?`<p style="font-size:13px;color:#374151;margin-bottom:6px">Answer: <strong>(${LETTERS[ansIdx]}) ${q.answer}</strong></p>`:''}
+    <p style="font-size:13px;color:#6b7280;margin-bottom:6px">${q.fullDef}</p>
+    <p style="font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:6px">"${q.tip}"</p>
+    ${q.type==='root'&&q.words?`<div style="margin-top:6px">${q.words.map(w=>'<span class="chip">'+w+'</span>').join('')}</div>`:''}
+    ${q.type==='vocab'&&q.root?`<span class="chip" style="margin-top:6px">🌿 ${q.root}</span>`:''}
+    <button class="btn btn-primary" style="margin-top:10px" onclick="nextMyQuiz()">${mqIdx+1<mqQuestions.length?'Next →':'See Results →'}</button>
+  </div>`:''}`;
+}
 
 // ── PROGRESS ──────────────────────────────────────────────────
 function renderProgress(){
@@ -554,8 +762,8 @@ function renderParentDash(){
 }
 
 // ── RENDER ────────────────────────────────────────────────────
-const NAV=[{id:'home',e:'🏠',l:'Home'},{id:'vocab',e:'📖',l:'Vocab'},{id:'roots',e:'🌿',l:'Roots'},{id:'analogies',e:'🔗',l:'Analogy'},{id:'reading',e:'📜',l:'Reading'},{id:'progress',e:'📊',l:'Progress'}];
-const screens={home:renderHome,vocab:renderVocab,roots:renderRoots,analogies:renderAnalogies,reading:renderReading,addword:renderAddWord,progress:renderProgress,parentdash:renderParentDash};
+const NAV=[{id:'home',e:'🏠',l:'Home'},{id:'mywords',e:'✅',l:'My Words'},{id:'myquiz',e:'🧠',l:'My Quiz'},{id:'vocab',e:'📖',l:'Vocab'},{id:'roots',e:'🌿',l:'Roots'},{id:'progress',e:'📊',l:'Progress'}];
+const screens={home:renderHome,vocab:renderVocab,roots:renderRoots,analogies:renderAnalogies,reading:renderReading,addword:renderAddWord,progress:renderProgress,parentdash:renderParentDash,mywords:renderMyWords,myquiz:renderMyQuiz};
 function render(){const html=screens[view]?screens[view]():'';document.getElementById('app').innerHTML=`<div class="screen">${html}</div><nav class="nav">${NAV.map(n=>`<button class="nav-btn${view===n.id?' active':''}" onclick="go('${n.id}')"><span class="ni">${n.e}</span><span>${n.l}</span></button>`).join('')}</nav>`}
 Promise.all([
   fetch('root-words.txt').then(r=>r.text()),
