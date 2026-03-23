@@ -59,6 +59,8 @@ h2{font-size:18px;font-weight:800;color:#0f2545}
 .tab.active{border-color:#3b82f6;background:#eff6ff;color:#1d4ed8}
 .type-chip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:800;background:#ede9fe;color:#6d28d9;margin-bottom:10px}
 </style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 </head>
 <body>
 <div class="app" id="app"></div>
@@ -146,13 +148,44 @@ const PASSAGES=[
   }
 ];
 
+// ── FIREBASE SETUP ──────────────────────────────────────────
+firebase.initializeApp({
+  apiKey: "AIzaSyAQc8wIIiL0nwUrAqRs4_6isst9K-g-Pm0",
+  authDomain: "ssat-prep-k.firebaseapp.com",
+  databaseURL: "https://ssat-prep-k-default-rtdb.firebaseio.com",
+  projectId: "ssat-prep-k",
+  storageBucket: "ssat-prep-k.firebasestorage.app",
+  messagingSenderId: "431527692256",
+  appId: "1:431527692256:web:5905673a7a425636c14d85"
+});
+const fbDb = firebase.database();
+const FC_KEY = "ssat_family_code";
+let familyCode = localStorage.getItem(FC_KEY);
+if (!familyCode) {
+  familyCode = prompt("Enter your family code (e.g. your last name) to sync across devices:");
+  if (familyCode) {
+    familyCode = familyCode.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    localStorage.setItem(FC_KEY, familyCode);
+  }
+}
+const fbRefP = familyCode ? fbDb.ref('families/' + familyCode + '/upper/progress') : null;
+const fbRefC = familyCode ? fbDb.ref('families/' + familyCode + '/upper/customWords') : null;
+
 // ── STORAGE ───────────────────────────────────────────────────
 const SK="ssat_prep_upper_v1";
 const mkP=()=>({vh:{},ah:{},rh:{},streak:0,lastDate:null,xp:0,learned:{vocabIds:[],rootIds:[]}});
 const loadP=()=>{try{return{...mkP(),...JSON.parse(localStorage.getItem(SK)||"{}")}}catch{return mkP()}};
 const loadC=()=>{try{return JSON.parse(localStorage.getItem(SK+"_c")||"[]")}catch{return[]}};
-const saveP=p=>localStorage.setItem(SK,JSON.stringify(p));
-const saveC=w=>localStorage.setItem(SK+"_c",JSON.stringify(w));
+const saveP=p=>{
+  localStorage.setItem(SK,JSON.stringify(p));
+  if(fbRefP) fbRefP.set({...p,_ts:Date.now()});
+};
+const saveC=w=>{
+  const ts=Date.now();
+  localStorage.setItem(SK+"_c",JSON.stringify(w));
+  localStorage.setItem(SK+"_c_ts",String(ts));
+  if(fbRefC) fbRefC.set({data:w,_ts:ts});
+};
 let progress=loadP(), customWords=loadC();
 const allVocab=()=>[...BUILTIN_VOCAB,...customWords];
 const getDailyWords=()=>allVocab().map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(Date.now()-(h.t||0))/1e7}}).sort((a,b)=>b.score-a.score).slice(0,5);
@@ -774,7 +807,37 @@ Promise.all([
   ANALOGIES=parseAnalogies(at);
   BUILTIN_VOCAB=parseVocab(vt);
   aQueue=[...ANALOGIES].sort(()=>Math.random()-.5);
-  render();
+
+  // Sync from Firebase then render
+  if(!fbRefP){render();return;}
+  Promise.all([
+    fbRefP.once('value').then(s=>s.val()),
+    fbRefC.once('value').then(s=>s.val())
+  ]).then(([fbP,fbC])=>{
+    // Merge progress — Firebase wins if newer, otherwise push local up
+    if(fbP&&fbP._ts){
+      const localP=loadP();
+      const localTs=localP.lastDate?new Date(localP.lastDate).getTime():0;
+      if(fbP._ts>localTs){
+        const merged={...mkP(),...fbP};delete merged._ts;
+        progress=merged;
+        localStorage.setItem(SK,JSON.stringify(progress));
+      }
+    } else if(progress.lastDate){
+      fbRefP.set({...progress,_ts:Date.now()});
+    }
+    // Merge custom words — Firebase wins if newer, otherwise push local up
+    if(fbC&&fbC._ts&&fbC.data){
+      const localCTs=parseInt(localStorage.getItem(SK+"_c_ts")||"0");
+      if(fbC._ts>localCTs){
+        customWords=Array.isArray(fbC.data)?fbC.data:Object.values(fbC.data);
+        localStorage.setItem(SK+"_c",JSON.stringify(customWords));
+      }
+    } else if(customWords.length>0){
+      fbRefC.set({data:customWords,_ts:Date.now()});
+    }
+    render();
+  }).catch(()=>render());
 }).catch(()=>render());
 </script>
 </body>
