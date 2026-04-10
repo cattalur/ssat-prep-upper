@@ -543,10 +543,11 @@ function shortDef(def){
 
 function generateLearnedQuiz(){
   ensureLearned();
-  const items=[];
+  const items=[];const seen=new Set();
   const learnedVocab=allVocab().filter(w=>isVocabLearned(w.id)&&w.d);
   const allDefs=allVocab().filter(w=>w.d);
   learnedVocab.forEach(w=>{
+    const key=w.w.toLowerCase();if(seen.has(key))return;seen.add(key);
     const ans=shortDef(w.d);
     const pool=allDefs.filter(v=>v.id!==w.id&&shortDef(v.d)!==ans);
     const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(v=>shortDef(v.d));
@@ -555,17 +556,39 @@ function generateLearnedQuiz(){
   });
   const learnedRoots=ROOTS.filter(r=>isRootLearned(r.id));
   learnedRoots.forEach(r=>{
+    const key=r.root.toLowerCase();if(seen.has(key))return;seen.add(key);
     const pool=ROOTS.filter(x=>x.id!==r.id);
     const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(x=>x.meaning);
     const choices=[r.meaning,...distractors].sort(()=>Math.random()-.5);
     items.push({type:'root',word:r.root.toUpperCase(),answer:r.meaning,choices,fullDef:r.meaning,tip:r.sentence,words:r.words,id:r.id});
   });
-  // Shuffle and pick up to 30 — no repeat words
   return items.sort(()=>Math.random()-.5).slice(0,30);
 }
 
+function generateWrongWordsQuiz(){
+  const missed=getMissedWords();
+  const allDefs=allVocab().filter(w=>w.d);
+  const items=[];const seen=new Set();
+  missed.forEach(w=>{
+    if(!w.d)return;
+    const key=w.w.toLowerCase();if(seen.has(key))return;seen.add(key);
+    const ans=shortDef(w.d);
+    const pool=allDefs.filter(v=>v.id!==w.id&&shortDef(v.d)!==ans);
+    const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(v=>shortDef(v.d));
+    const choices=[ans,...distractors].sort(()=>Math.random()-.5);
+    items.push({type:'vocab',word:w.w.toUpperCase(),answer:ans,choices,fullDef:w.d,tip:w.ex,root:w.root,id:w.id,missRate:w.missRate,misses:w.i,attempts:w.c+w.i});
+  });
+  return items.slice(0,30);
+}
+
+function startWrongWordsQuiz(){
+  mqQuestions=generateWrongWordsQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='wrong';go('myquiz');
+}
+
+
+let mqMode='learned';
 function startMyQuiz(){
-  mqQuestions=generateLearnedQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];go('myquiz');
+  mqQuestions=generateLearnedQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='learned';go('myquiz');
 }
 
 function answerMyQuiz(i){
@@ -600,8 +623,10 @@ function getMissedWords(){
 function startWeeklyReview(){
   const missed=getMissedWords();
   const allDefs=allVocab().filter(w=>w.d);
-  const items=[];
+  const items=[];const seen=new Set();
   missed.forEach(w=>{
+    if(!w.d)return;
+    const key=w.w.toLowerCase();if(seen.has(key))return;seen.add(key);
     const ans=shortDef(w.d);
     const pool=allDefs.filter(v=>v.id!==w.id&&shortDef(v.d)!==ans);
     const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(v=>shortDef(v.d));
@@ -671,6 +696,7 @@ function renderMyQuiz(){
   const vCount=progress.learned.vocabIds.length,rCount=progress.learned.rootIds.length;
   const totalLearned=vCount+rCount;
 
+  const wrongCount=getMissedWords().length;
   if(mqQuestions.length===0&&!mqDone){
     const canQuiz=totalLearned>=4;
     return`<h1 style="margin-bottom:4px">🧠 My Quiz</h1>
@@ -679,22 +705,30 @@ function renderMyQuiz(){
       <div style="font-size:48px;margin-bottom:12px">${canQuiz?'🚀':'📝'}</div>
       <div style="font-size:20px;font-weight:900;color:#0f2545;margin-bottom:4px">${totalLearned} items learned</div>
       <div class="muted" style="margin-bottom:16px">${vCount} vocab word${vCount!==1?'s':''} · ${rCount} root${rCount!==1?'s':''}</div>
-      ${canQuiz?`<button class="btn btn-primary" onclick="startMyQuiz()">Start Quiz (10 questions) →</button>`
+      ${canQuiz?`<button class="btn btn-primary" onclick="startMyQuiz()">Start Quiz (up to 30 questions) →</button>`
       :`<p style="color:#d97706;font-size:13px;font-weight:700;margin-bottom:10px">Mark at least 4 words or roots as learned to start a quiz.</p>
         <button class="btn btn-secondary" onclick="go('mywords')">Go Mark Words →</button>`}
     </div>
+    ${wrongCount>=1?`<div class="card" style="text-align:center;padding:24px;border:2px solid #fca5a5;background:#fef2f2;margin-top:10px">
+      <div style="font-size:48px;margin-bottom:12px">🔴</div>
+      <div style="font-size:20px;font-weight:900;color:#991b1b;margin-bottom:4px">${wrongCount} wrong word${wrongCount!==1?'s':''}</div>
+      <div class="muted" style="margin-bottom:16px">Practice the words you've gotten wrong</div>
+      <button class="btn btn-primary" style="background:#dc2626" onclick="startWrongWordsQuiz()">Quiz Wrong Words →</button>
+    </div>`:''}
     <button class="btn btn-secondary" style="margin-top:10px" onclick="go('mywords')">Manage Learned Words</button>`;
   }
 
   if(mqDone){
     const pct=mqScore.t>0?Math.round(mqScore.c/mqScore.t*100):0;
+    const wrongInQuiz=mqResults.filter(r=>!r.correct);
     return`<div class="done-screen">
       <div style="font-size:60px">${pct>=80?'🎉':pct>=60?'👍':'💪'}</div>
-      <h1 style="margin:12px 0 6px">Quiz Complete!</h1>
+      <h1 style="margin:12px 0 6px">${mqMode==='wrong'?'Wrong Words Review':'Quiz'} Complete!</h1>
       <p style="font-size:28px;font-weight:900;color:${pct>=80?'#16a34a':pct>=60?'#d97706':'#dc2626'};margin-bottom:4px">${mqScore.c}/${mqScore.t}</p>
       <p class="muted" style="margin-bottom:20px">${pct}% correct</p>
       ${mqResults.map(r=>`<div class="result-row"><span style="font-weight:700">${r.type==='root'?'🌿 ':'📖 '}${r.word}</span><span style="font-size:13px;color:${r.correct?'#16a34a':'#dc2626'}">${r.correct?'✓ Correct':'✗ Missed'}</span></div>`).join('')}
-      <button class="btn btn-primary" style="margin-top:16px" onclick="startMyQuiz()">Quiz Again →</button>
+      ${wrongInQuiz.length>0?`<button class="btn btn-primary" style="margin-top:16px;background:#dc2626" onclick="startWrongWordsQuiz()">Quiz Wrong Words (${getMissedWords().length}) →</button>`:''}
+      <button class="btn btn-primary" style="margin-top:8px" onclick="startMyQuiz()">Quiz Again →</button>
       <button class="btn btn-secondary" style="margin-top:8px" onclick="mqQuestions=[];mqDone=false;go('home')">Back to Home</button>
     </div>`;
   }
