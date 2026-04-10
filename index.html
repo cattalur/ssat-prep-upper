@@ -26,7 +26,7 @@ h1{font-size:24px;font-weight:900;color:#0f2545;margin-bottom:4px}
 h2{font-size:18px;font-weight:800;color:#0f2545}
 .muted{color:#6b7280;font-size:13px}
 .chip{background:#dbeafe;color:#1d4ed8;border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700;display:inline-block;margin:2px}
-.answer-btn{width:100%;text-align:left;background:#fff;border:2px solid #e5e7eb;border-radius:13px;padding:11px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#374151;cursor:pointer;margin-bottom:7px;transition:border-color .15s,background .15s;display:flex;align-items:center;gap:10px}
+.answer-btn{width:100%;text-align:left;background:#fff;border:2px solid #e5e7eb;border-radius:13px;padding:11px 14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#374151;cursor:pointer;margin-bottom:7px;transition:border-color .15s,background .15s;display:flex;align-items:flex-start;gap:10px;word-break:break-word;overflow-wrap:break-word}
 .answer-btn:hover:not(:disabled){border-color:#93c5fd;background:#eff6ff}
 .answer-btn.correct{background:#d1fae5;border-color:#6ee7b7;color:#065f46}
 .answer-btn.wrong{background:#fee2e2;border-color:#fca5a5;color:#991b1b}
@@ -176,6 +176,7 @@ const SK="ssat_prep_upper_v1";
 const mkP=()=>({vh:{},ah:{},rh:{},streak:0,lastDate:null,xp:0,learned:{vocabIds:[],rootIds:[]}});
 const loadP=()=>{try{return{...mkP(),...JSON.parse(localStorage.getItem(SK)||"{}")}}catch{return mkP()}};
 const loadC=()=>{try{return JSON.parse(localStorage.getItem(SK+"_c")||"[]")}catch{return[]}};
+const loadCR=()=>{try{return JSON.parse(localStorage.getItem(SK+"_cr")||"[]")}catch{return[]}};
 const saveP=p=>{
   localStorage.setItem(SK,JSON.stringify(p));
   if(fbRefP) fbRefP.set({...p,_ts:Date.now()});
@@ -186,9 +187,15 @@ const saveC=w=>{
   localStorage.setItem(SK+"_c_ts",String(ts));
   if(fbRefC) fbRefC.set({data:w,_ts:ts});
 };
-let progress=loadP(), customWords=loadC();
+const saveCR=r=>{
+  const ts=Date.now();
+  localStorage.setItem(SK+"_cr",JSON.stringify(r));
+  localStorage.setItem(SK+"_cr_ts",String(ts));
+  if(familyCode) fbDb.ref('families/'+familyCode+'/customRoots').set({data:r,_ts:ts});
+};
+let progress=loadP(), customWords=loadC(), customRoots=loadCR();
 const allVocab=()=>[...BUILTIN_VOCAB,...customWords];
-const getDailyWords=()=>allVocab().map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(Date.now()-(h.t||0))/1e7}}).sort((a,b)=>b.score-a.score).slice(0,5);
+const getDailyWords=()=>allVocab().map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(Date.now()-(h.t||0))/1e7}}).sort((a,b)=>b.score-a.score).slice(0,30);
 const today=()=>new Date().toISOString().slice(0,10);
 const addXP=xp=>{const t=today(),prev=progress.lastDate,yest=new Date();yest.setDate(yest.getDate()-1);const ys=yest.toISOString().slice(0,10);let s=progress.streak;if(prev!==t)s=prev===ys?s+1:1;progress={...progress,xp:progress.xp+xp,streak:s,lastDate:t};saveP(progress)};
 
@@ -200,6 +207,7 @@ let rSel=null,rQuiz=null;
 let aQueue=[...ANALOGIES].sort(()=>Math.random()-.5),aIdx=0,aChosen=null,aScore={c:0,t:0};
 let pIdx=0,qMode=false,qIdx=0,qChosen=null,pDone=false;
 let addTab="form",addForm={w:"",d:"",ex:"",pos:"adj",root:""},addErr="";
+let addRootForm={root:"",origin:"Latin",meaning:"",words:"",sentence:""},addRootErr="";
 // Learned / My Quiz state
 let mwTab="vocab",mwSearch="";
 let mqQuestions=[],mqIdx=0,mqChosen=null,mqScore={c:0,t:0},mqDone=false,mqResults=[];
@@ -226,7 +234,8 @@ function renderHome(){
 <h2 style="font-size:15px;margin-bottom:10px">Start Practicing</h2>
 <button class="quick-btn" style="border-color:#a78bfa;background:#f5f3ff" onclick="mqQuestions=[];mqDone=false;go('myquiz')"><div><div style="font-weight:800;font-size:14px;color:#5b21b6">🧠 My Quiz</div><div class="muted" style="font-size:12px;margin-top:2px">${(progress.learned?progress.learned.vocabIds.length:0)+(progress.learned?progress.learned.rootIds.length:0)} learned items · SSAT-style multiple choice</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#6ee7b7;background:#ecfdf5" onclick="go('mywords')"><div><div style="font-weight:800;font-size:14px;color:#065f46">✅ My Words</div><div class="muted" style="font-size:12px;margin-top:2px">Mark words you know · build your quiz pool</div></div><span style="font-size:18px">→</span></button>
-<button class="quick-btn" style="border-color:#bfdbfe;background:#eff6ff" onclick="startVocab()"><div><div style="font-weight:800;font-size:14px;color:#1e3a8a">📖 Daily Vocabulary</div><div class="muted" style="font-size:12px;margin-top:2px">5 smart-picked words · ${totalWords} word bank · spaced repetition</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#bfdbfe;background:#eff6ff" onclick="startVocab()"><div><div style="font-weight:800;font-size:14px;color:#1e3a8a">📖 Daily Vocabulary</div><div class="muted" style="font-size:12px;margin-top:2px">30 smart-picked words · ${totalWords} word bank · spaced repetition</div></div><span style="font-size:18px">→</span></button>
+${getMissedWords().length>=4?`<button class="quick-btn" style="border-color:#fca5a5;background:#fef2f2" onclick="startWeeklyReview()"><div><div style="font-weight:800;font-size:14px;color:#991b1b">🔄 Weekly Review</div><div class="muted" style="font-size:12px;margin-top:2px">${getMissedWords().length} missed words · quiz yourself on trouble spots</div></div><span style="font-size:18px">→</span></button>`:''}
 <button class="quick-btn" style="border-color:#bbf7d0;background:#f0fdf4" onclick="go('roots')"><div><div style="font-weight:800;font-size:14px;color:#14532d">🌿 Root Words</div><div class="muted" style="font-size:12px;margin-top:2px">80 Latin &amp; Greek roots · unlock hundreds of SSAT words</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#fde68a;background:#fffbeb" onclick="startAnalogies()"><div><div style="font-weight:800;font-size:14px;color:#78350f">🔗 Analogies</div><div class="muted" style="font-size:12px;margin-top:2px">160 questions · real SSAT A–E format · 12 types</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#ddd6fe;background:#faf5ff" onclick="go('reading')"><div><div style="font-weight:800;font-size:14px;color:#4c1d95">📜 Reading Comprehension</div><div class="muted" style="font-size:12px;margin-top:2px">4 passages · vocabulary in context · advanced reasoning</div></div><span style="font-size:18px">→</span></button>
@@ -272,7 +281,7 @@ function renderVocab(){
   <div style="background:#0f2545;border-radius:22px;padding:24px;text-align:center;margin-bottom:16px"><h2 style="font-size:32px;color:#fff;margin-bottom:0">${w.w}</h2></div>
   ${!vChecked?`<div style="margin-bottom:10px"><label style="font-size:13px;font-weight:700;color:#374151;display:block;margin-bottom:6px">What does this word mean?</label><textarea class="input-field" rows="3" placeholder="Type your definition here..." oninput="vInput=this.value" style="resize:none">${vInput}</textarea></div>
   <button class="btn btn-primary" onclick="checkVocab()">Check My Answer →</button>`:`<div style="background:${bannerColor};border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-weight:800;color:${bannerText};margin-bottom:6px">${bannerMsg}</p><p style="font-size:13px;color:${bannerText};opacity:.8;margin-bottom:6px"><em>You wrote:</em> &ldquo;${vInput||'(nothing)'}&rdquo;</p></div>
-  <div style="background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-size:11px;font-weight:800;color:#9ca3af;margin-bottom:4px">CORRECT DEFINITION</p><p style="font-size:15px;font-weight:700;color:#0f2545;margin-bottom:8px">${w.d}</p><p style="font-size:13px;color:#6b7280;font-style:italic;margin-bottom:${w.root?'8px':'0'}">&ldquo;${w.ex}&rdquo;</p>${w.root?`<span class="chip">🌿 Root: ${w.root}</span>`:''}</div>
+  <div style="background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:14px;margin-bottom:14px"><p style="font-size:11px;font-weight:800;color:#9ca3af;margin-bottom:4px">CORRECT DEFINITION</p><p style="font-size:15px;font-weight:700;color:#0f2545;margin-bottom:8px">${w.d}</p><p style="font-size:13px;color:#6b7280;font-style:italic;margin-bottom:8px">&ldquo;${w.ex}&rdquo;</p>${w.root?`<span class="chip">🌿 Root: ${w.root}</span>`:''}<a href="https://www.dictionary.com/browse/${encodeURIComponent(w.w.toLowerCase())}" target="_blank" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#3b82f6;text-decoration:none">📖 Look up on Dictionary.com →</a></div>
   <button class="btn btn-primary" style="margin-bottom:8px" onclick="advanceVocab()">Next Word →</button>
   <div style="display:flex;gap:8px"><button class="btn" style="flex:1;background:#dcfce7;color:#166534" onclick="advanceVocab('great')">✓ I knew it</button><button class="btn" style="flex:1;background:#fee2e2;color:#991b1b" onclick="advanceVocab('missed')">✗ Mark missed</button></div>
   ${!isVocabLearned(w.id)?`<button class="btn" style="margin-top:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe" onclick="markVocabLearned(${typeof w.id==='string'?("'"+w.id+"'"):w.id})">✅ I know this word — add to quiz</button>`:`<div style="text-align:center;margin-top:8px;font-size:12px;color:#16a34a;font-weight:700">✅ In your learned words</div>`}`}
@@ -390,10 +399,10 @@ function nextRCQ(){if(qIdx+1>=PASSAGES[pIdx].qs.length)pDone=true;else{qIdx++;qC
 function nextPassage(){pIdx++;qMode=false;qIdx=0;qChosen=null;pDone=false;render();}
 
 // ── ADD WORD ──────────────────────────────────────────────────
-function renderAddWord(){const f=addForm;
+function renderAddWord(){const f=addForm,rf=addRootForm;
   return`<h1 style="margin-bottom:4px">✏️ Add My Own Words</h1>
   <p class="muted" style="margin-bottom:16px">Words from school, books, or practice tests go right into your daily sessions.</p>
-  <div class="tab-row"><button class="tab${addTab==='form'?' active':''}" onclick="addTab='form';render()">+ Add New Word</button><button class="tab${addTab==='list'?' active':''}" onclick="addTab='list';render()">My Words (${customWords.length})</button></div>
+  <div class="tab-row"><button class="tab${addTab==='form'?' active':''}" onclick="addTab='form';render()">+ Add Word</button><button class="tab${addTab==='rootform'?' active':''}" onclick="addTab='rootform';render()">+ Add Root</button><button class="tab${addTab==='list'?' active':''}" onclick="addTab='list';render()">My Words (${customWords.length})</button></div>
   ${addTab==='form'?`${addErr?`<div style="background:#fee2e2;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#991b1b;font-weight:700">${addErr}</div>`:''}
   <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Word <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. Ephemeral" value="${f.w}" oninput="addForm.w=this.value">
   <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Definition <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. Lasting only a short time" value="${f.d}" oninput="addForm.d=this.value">
@@ -402,12 +411,36 @@ function renderAddWord(){const f=addForm;
   <div style="display:flex;gap:6px;margin-bottom:12px">${['adj','noun','verb','adv'].map(p=>`<button onclick="addForm.pos='${p}';render()" style="flex:1;border:2px solid;border-color:${f.pos===p?'#3b82f6':'#e5e7eb'};background:${f.pos===p?'#eff6ff':'#fff'};border-radius:10px;padding:9px 4px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;color:${f.pos===p?'#1d4ed8':'#6b7280'}">${p}</button>`).join('')}</div>
   <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Root (optional)</div><input class="input-field" placeholder="e.g. epher- (lasting a day)" value="${f.root}" oninput="addForm.root=this.value">
   <button class="btn btn-primary" onclick="submitWord()" style="margin-top:4px">Add to My Word Bank ✓</button>`
+  :addTab==='rootform'?`${addRootErr?`<div style="background:#fee2e2;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#991b1b;font-weight:700">${addRootErr}</div>`:''}
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Root <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. bene-" value="${rf.root}" oninput="addRootForm.root=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Meaning <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. good, well" value="${rf.meaning}" oninput="addRootForm.meaning=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Origin</div>
+  <div style="display:flex;gap:6px;margin-bottom:12px">${['Latin','Greek','Old English','French'].map(o=>`<button onclick="addRootForm.origin='${o}';render()" style="flex:1;border:2px solid;border-color:${rf.origin===o?'#8b5cf6':'#e5e7eb'};background:${rf.origin===o?'#f5f3ff':'#fff'};border-radius:10px;padding:9px 4px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;cursor:pointer;color:${rf.origin===o?'#5b21b6':'#6b7280'}">${o}</button>`).join('')}</div>
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Example words <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. benefit, benevolent, benediction" value="${rf.words}" oninput="addRootForm.words=this.value">
+  <div style="margin-bottom:6px;font-size:13px;font-weight:700;color:#374151">Example sentence <span style="color:#dc2626">*</span></div><input class="input-field" placeholder="e.g. The root bene- means good, as in benefit." value="${rf.sentence}" oninput="addRootForm.sentence=this.value">
+  <button class="btn btn-primary" style="margin-top:4px;background:#5b21b6" onclick="submitRoot()">Add to Root Words 🌿</button>
+  ${customRoots.length>0?`<div style="margin-top:16px;border-top:1px solid #e5e7eb;padding-top:14px"><div style="font-size:13px;font-weight:800;color:#374151;margin-bottom:10px">My Custom Roots (${customRoots.length})</div>${customRoots.map((r,i)=>`<div class="word-list-item"><div style="flex:1;min-width:0"><div style="font-weight:800;color:#5b21b6">${r.root}</div><div class="muted" style="font-size:12px">"${r.meaning}" · ${r.words.join(', ')}</div></div><button onclick="deleteRoot(${i})" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:16px;margin-left:10px;flex-shrink:0">🗑️</button></div>`).join('')}</div>`:''}`
   :customWords.length===0?`<div style="text-align:center;padding:40px 20px"><div style="font-size:48px">📝</div><p class="muted" style="margin-top:12px">No custom words yet. Add words from school, books, or practice tests!</p></div>`
   :`${customWords.map((w,i)=>`<div class="word-list-item"><div style="flex:1;min-width:0"><div style="font-weight:800;color:#0f2545">${w.w}</div><div class="muted" style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${w.d}</div></div><button onclick="deleteWord(${i})" style="background:#fee2e2;border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:16px;margin-left:10px;flex-shrink:0">🗑️</button></div>`).join('')}
   <button class="btn btn-secondary" style="margin-top:8px" onclick="if(confirm('Delete all custom words?')){customWords=[];saveC(customWords);render()}">Delete All Custom Words</button>`}`;
 }
 function submitWord(){addErr="";const{w,d,ex,pos,root}=addForm;if(!w.trim()){addErr="Please enter a word.";render();return;}if(!d.trim()){addErr="Please enter a definition.";render();return;}if(!ex.trim()){addErr="Please enter an example sentence.";render();return;}if(allVocab().find(v=>v.w.toLowerCase()===w.trim().toLowerCase())){addErr=`"${w.trim()}" is already in your word bank!`;render();return;}customWords.push({id:`c_${Date.now()}`,w:w.trim(),d:d.trim(),ex:ex.trim(),pos:pos||'adj',root:root.trim()||null,lvl:2,custom:true});saveC(customWords);addForm={w:"",d:"",ex:"",pos:"adj",root:""};addErr="";addTab="list";render();}
 function deleteWord(i){if(!confirm(`Delete "${customWords[i].w}"?`))return;const id=customWords[i].id;customWords.splice(i,1);saveC(customWords);if(progress.vh[id])delete progress.vh[id];saveP(progress);render();}
+
+function submitRoot(){
+  addRootErr="";const{root,origin,meaning,words,sentence}=addRootForm;
+  if(!root.trim()){addRootErr="Please enter the root.";render();return;}
+  if(!meaning.trim()){addRootErr="Please enter the meaning.";render();return;}
+  if(!words.trim()){addRootErr="Please enter example words.";render();return;}
+  if(!sentence.trim()){addRootErr="Please enter an example sentence.";render();return;}
+  if(ROOTS.find(r=>r.root.toLowerCase()===root.trim().toLowerCase())){addRootErr=`"${root.trim()}" is already in the root list!`;render();return;}
+  const newRoot={id:1000+customRoots.length+Date.now()%1000,root:root.trim(),origin:origin||'Latin',meaning:meaning.trim(),words:words.split(',').map(w=>w.trim()).filter(Boolean),sentence:sentence.trim(),custom:true};
+  customRoots.push(newRoot);
+  ROOTS.push(newRoot);
+  saveCR(customRoots);
+  addRootForm={root:"",origin:"Latin",meaning:"",words:"",sentence:""};addRootErr="";render();
+}
+function deleteRoot(i){if(!confirm(`Delete root "${customRoots[i].root}"?`))return;const id=customRoots[i].id;ROOTS=ROOTS.filter(r=>r.id!==id);customRoots.splice(i,1);saveCR(customRoots);if(progress.rh[id])delete progress.rh[id];saveP(progress);render();}
 
 // ── LEARNED HELPERS ──────────────────────────────────────────
 function ensureLearned(){if(!progress.learned)progress.learned={vocabIds:[],rootIds:[]};}
@@ -502,9 +535,9 @@ function shortDef(def){
   if(!def)return'';
   let s=def.split(';')[0].trim();
   s=s.replace(/^To\s+/i,'');
-  if(s.split(' ').length>4){const c=s.split(',')[0].trim();if(c.split(' ').length<=4)s=c;}
+  if(s.split(' ').length>6){const c=s.split(',')[0].trim();if(c.split(' ').length>=2)s=c;}
   const words=s.split(' ');
-  if(words.length>4)s=words.slice(0,4).join(' ');
+  if(words.length>6)s=words.slice(0,6).join(' ')+'…';
   return s.charAt(0).toLowerCase()+s.slice(1);
 }
 
@@ -527,7 +560,8 @@ function generateLearnedQuiz(){
     const choices=[r.meaning,...distractors].sort(()=>Math.random()-.5);
     items.push({type:'root',word:r.root.toUpperCase(),answer:r.meaning,choices,fullDef:r.meaning,tip:r.sentence,words:r.words,id:r.id});
   });
-  return items.sort(()=>Math.random()-.5).slice(0,10);
+  // Shuffle and pick up to 30 — no repeat words
+  return items.sort(()=>Math.random()-.5).slice(0,30);
 }
 
 function startMyQuiz(){
@@ -553,6 +587,83 @@ function nextMyQuiz(){
   if(mqIdx+1>=mqQuestions.length)mqDone=true;
   else{mqIdx++;mqChosen=null;}
   render();
+}
+
+// ── WEEKLY REVIEW (missed words) ────────────────────────────
+let wrQuestions=[],wrIdx=0,wrChosen=null,wrScore={c:0,t:0},wrDone=false,wrResults=[];
+
+function getMissedWords(){
+  const all=allVocab();
+  return all.filter(w=>{const h=progress.vh[w.id];return h&&h.i>0;}).map(w=>({...w,...progress.vh[w.id],missRate:progress.vh[w.id].i/(progress.vh[w.id].c+progress.vh[w.id].i)})).sort((a,b)=>b.missRate-a.missRate);
+}
+
+function startWeeklyReview(){
+  const missed=getMissedWords();
+  const allDefs=allVocab().filter(w=>w.d);
+  const items=[];
+  missed.forEach(w=>{
+    const ans=shortDef(w.d);
+    const pool=allDefs.filter(v=>v.id!==w.id&&shortDef(v.d)!==ans);
+    const distractors=pool.sort(()=>Math.random()-.5).slice(0,4).map(v=>shortDef(v.d));
+    const choices=[ans,...distractors].sort(()=>Math.random()-.5);
+    items.push({type:'vocab',word:w.w.toUpperCase(),answer:ans,choices,fullDef:w.d,tip:w.ex,root:w.root,id:w.id,missRate:w.missRate,misses:w.i,attempts:w.c+w.i});
+  });
+  wrQuestions=items.slice(0,30);wrIdx=0;wrChosen=null;wrScore={c:0,t:0};wrDone=false;wrResults=[];go('weeklyreview');
+}
+
+function answerWeeklyReview(i){
+  if(wrChosen!==null)return;
+  const q=wrQuestions[wrIdx];
+  wrChosen=i;
+  const correct=q.choices[i]===q.answer;
+  wrScore={c:wrScore.c+(correct?1:0),t:wrScore.t+1};
+  const h=progress.vh[q.id]||{c:0,i:0,t:0};
+  progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now()};
+  addXP(correct?10:2);
+  wrResults.push({word:q.word,correct,missRate:q.missRate});
+  render();
+}
+
+function nextWeeklyReview(){
+  if(wrIdx+1>=wrQuestions.length)wrDone=true;
+  else{wrIdx++;wrChosen=null;}
+  render();
+}
+
+function renderWeeklyReview(){
+  if(wrQuestions.length===0&&!wrDone){
+    return`<h1 style="margin-bottom:4px">🔄 Weekly Review</h1>
+    <p class="muted" style="margin-bottom:18px">Not enough missed words yet. Keep practicing!</p>
+    <button class="btn btn-primary" onclick="go('home')">Back to Home</button>`;
+  }
+  if(wrDone){
+    const pct=wrScore.t>0?Math.round(wrScore.c/wrScore.t*100):0;
+    const stillMissed=wrResults.filter(r=>!r.correct);
+    return`<div class="done-screen"><div style="font-size:60px">${pct>=80?'🌟':pct>=50?'💪':'📚'}</div><h1 style="margin:12px 0 6px">Weekly Review Done!</h1><p class="muted" style="margin-bottom:4px">${wrScore.c}/${wrScore.t} correct (${pct}%)</p>
+    ${stillMissed.length>0?`<p style="font-size:13px;color:#991b1b;font-weight:700;margin-bottom:12px">${stillMissed.length} word${stillMissed.length!==1?'s':''} still need work:</p>`:'<p style="font-size:13px;color:#16a34a;font-weight:700;margin-bottom:12px">Great job reviewing your trouble words!</p>'}
+    ${wrResults.map(r=>`<div class="result-row"><span style="font-weight:700">${r.word}</span><span style="font-size:13px;color:${r.correct?'#16a34a':'#dc2626'}">${r.correct?'✓ Got it':'✗ Still missed'}</span></div>`).join('')}
+    <button class="btn btn-primary" style="margin-top:16px" onclick="go('home')">Back to Home</button></div>`;
+  }
+  const q=wrQuestions[wrIdx],answered=wrChosen!==null;
+  const correct=answered&&q.choices[wrChosen]===q.answer;
+  const ansIdx=q.choices.indexOf(q.answer);
+  const pct=wrIdx/wrQuestions.length*100;
+  return`<div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:${pct}%;background:#ef4444"></div></div><span class="muted">${wrIdx+1}/${wrQuestions.length}</span><span class="badge" style="background:#fee2e2;color:#991b1b">${wrScore.c}/${wrScore.t}</span></div>
+  <div style="background:#fef2f2;border:2px solid #fca5a5;border-radius:12px;padding:8px 12px;margin-bottom:12px;font-size:12px;color:#991b1b;font-weight:700">🔄 Review Word · missed ${q.misses} of ${q.attempts} times (${Math.round(q.missRate*100)}%)</div>
+  <div style="margin:12px 0 14px">
+    <span style="font-size:11px;color:#9ca3af;font-weight:700;letter-spacing:.5px">SYNONYM</span>
+    <h2 style="font-size:24px;font-weight:900;color:#0f2545;margin-top:4px">${q.word}:</h2>
+  </div>
+  ${q.choices.map((c,i)=>{let cls='answer-btn';if(answered){if(i===ansIdx)cls+=' correct';else if(i===wrChosen)cls+=' wrong';}return`<button class="${cls}" ${answered?'disabled':''} onclick="answerWeeklyReview(${i})"><span class="choice-letter">${LETTERS[i]}</span>${c}</button>`;}).join('')}
+  ${answered?`<div style="background:${correct?'#dcfce7':'#fee2e2'};border-radius:14px;padding:14px;margin-top:10px">
+    <p style="font-weight:800;color:${correct?'#166534':'#991b1b'};margin-bottom:6px">${correct?'Correct! +10 XP':'Not quite. +2 XP'}</p>
+    ${!correct?`<p style="font-size:13px;color:#374151;margin-bottom:6px">Answer: <strong>(${LETTERS[ansIdx]}) ${q.answer}</strong></p>`:''}
+    <p style="font-size:13px;color:#6b7280;margin-bottom:6px">${q.fullDef}</p>
+    <p style="font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:6px">"${q.tip}"</p>
+    ${q.root?`<span class="chip" style="margin-top:6px">🌿 ${q.root}</span>`:''}
+    <a href="https://www.dictionary.com/browse/${encodeURIComponent(q.word.toLowerCase())}" target="_blank" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#3b82f6;text-decoration:none">📖 Look up "${q.word}" on Dictionary.com →</a>
+    <button class="btn btn-primary" style="margin-top:10px" onclick="nextWeeklyReview()">${wrIdx+1<wrQuestions.length?'Next →':'See Results →'}</button>
+  </div>`:''}`;
 }
 
 function renderMyQuiz(){
@@ -606,6 +717,7 @@ function renderMyQuiz(){
     <p style="font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:6px">"${q.tip}"</p>
     ${q.type==='root'&&q.words?`<div style="margin-top:6px">${q.words.map(w=>'<span class="chip">'+w+'</span>').join('')}</div>`:''}
     ${q.type==='vocab'&&q.root?`<span class="chip" style="margin-top:6px">🌿 ${q.root}</span>`:''}
+    <a href="https://www.dictionary.com/browse/${encodeURIComponent(q.word.toLowerCase())}" target="_blank" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#3b82f6;text-decoration:none">📖 Look up "${q.word}" on Dictionary.com →</a>
     <button class="btn btn-primary" style="margin-top:10px" onclick="nextMyQuiz()">${mqIdx+1<mqQuestions.length?'Next →':'See Results →'}</button>
   </div>`:''}`;
 }
@@ -796,14 +908,14 @@ function renderParentDash(){
 
 // ── RENDER ────────────────────────────────────────────────────
 const NAV=[{id:'home',e:'🏠',l:'Home'},{id:'mywords',e:'✅',l:'My Words'},{id:'myquiz',e:'🧠',l:'My Quiz'},{id:'vocab',e:'📖',l:'Vocab'},{id:'roots',e:'🌿',l:'Roots'},{id:'progress',e:'📊',l:'Progress'}];
-const screens={home:renderHome,vocab:renderVocab,roots:renderRoots,analogies:renderAnalogies,reading:renderReading,addword:renderAddWord,progress:renderProgress,parentdash:renderParentDash,mywords:renderMyWords,myquiz:renderMyQuiz};
+const screens={home:renderHome,vocab:renderVocab,roots:renderRoots,analogies:renderAnalogies,reading:renderReading,addword:renderAddWord,progress:renderProgress,parentdash:renderParentDash,mywords:renderMyWords,myquiz:renderMyQuiz,weeklyreview:renderWeeklyReview};
 function render(){const html=screens[view]?screens[view]():'';document.getElementById('app').innerHTML=`<div class="screen">${html}</div><nav class="nav">${NAV.map(n=>`<button class="nav-btn${view===n.id?' active':''}" onclick="go('${n.id}')"><span class="ni">${n.e}</span><span>${n.l}</span></button>`).join('')}</nav>`}
 Promise.all([
   fetch('root-words.txt').then(r=>r.text()),
   fetch('analogies.txt').then(r=>r.text()),
   fetch('vocab.txt').then(r=>r.text())
 ]).then(([rt,at,vt])=>{
-  ROOTS=parseRoots(rt);
+  ROOTS=[...parseRoots(rt),...customRoots];
   ANALOGIES=parseAnalogies(at);
   BUILTIN_VOCAB=parseVocab(vt);
   aQueue=[...ANALOGIES].sort(()=>Math.random()-.5);
@@ -836,7 +948,24 @@ Promise.all([
     } else if(customWords.length>0){
       fbRefC.set({data:customWords,_ts:Date.now()});
     }
-    render();
+    // Merge custom roots from Firebase
+    const fbCRRef=familyCode?fbDb.ref('families/'+familyCode+'/customRoots'):null;
+    if(fbCRRef){
+      fbCRRef.once('value').then(s=>{
+        const fbCR=s.val();
+        if(fbCR&&fbCR._ts&&fbCR.data){
+          const localCRTs=parseInt(localStorage.getItem(SK+"_cr_ts")||"0");
+          if(fbCR._ts>localCRTs){
+            customRoots=Array.isArray(fbCR.data)?fbCR.data:Object.values(fbCR.data);
+            localStorage.setItem(SK+"_cr",JSON.stringify(customRoots));
+            ROOTS=[...parseRoots(rt),...customRoots];
+          }
+        } else if(customRoots.length>0){
+          fbCRRef.set({data:customRoots,_ts:Date.now()});
+        }
+        render();
+      }).catch(()=>render());
+    } else { render(); }
   }).catch(()=>render());
 }).catch(()=>render());
 </script>
