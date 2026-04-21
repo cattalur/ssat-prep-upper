@@ -535,9 +535,6 @@ function shortDef(def){
   if(!def)return'';
   let s=def.split(';')[0].trim();
   s=s.replace(/^To\s+/i,'');
-  if(s.split(' ').length>6){const c=s.split(',')[0].trim();if(c.split(' ').length>=2)s=c;}
-  const words=s.split(' ');
-  if(words.length>6)s=words.slice(0,6).join(' ')+'…';
   return s.charAt(0).toLowerCase()+s.slice(1);
 }
 
@@ -771,7 +768,7 @@ function renderProgress(){
   ${empty?`<div style="text-align:center;padding:40px"><div style="font-size:48px">🌱</div><p class="muted" style="margin-top:12px">Start practicing to see your progress here!</p></div>`:`
   <div class="card"><h2 style="font-size:14px;margin-bottom:14px">Section Performance</h2>${bar('Vocabulary',cV,tV)}${bar('Analogies',cA,tA)}${bar('Reading Comprehension',cR,tR)}</div>
   ${Object.keys(typeStats).length>0?`<div class="card"><h2 style="font-size:14px;margin-bottom:14px">Analogy Types — Where to Focus</h2>${Object.entries(typeStats).sort((a,b)=>(b[1].t>0?b[1].c/b[1].t:0)-(a[1].t>0?a[1].c/a[1].t:0)).map(([t,s])=>bar(t,s.c,s.t)).join('')}</div>`:''}
-  ${hardest.length>0?`<div class="card" style="border:2px solid #fed7aa;background:#fff8f0"><h2 style="font-size:14px;color:#c2410c;margin-bottom:12px">⚠️ Focus Words — Needs More Practice</h2>${hardest.map(w=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #fed7aa"><div><span style="font-weight:700;color:#374151">${w.w}</span>${w.custom?'<span class="badge" style="background:#fce7f3;color:#9d174d;margin-left:6px;font-size:10px">MY WORD</span>':''}<span class="muted" style="font-size:12px;margin-left:8px;display:block">${w.d.substring(0,40)}...</span></div><span style="font-size:12px;color:#dc2626;font-weight:800;flex-shrink:0">${Math.round(w.i/(w.c+w.i)*100)}% miss</span></div>`).join('')}</div>`:''}
+  ${hardest.length>0?`<div class="card" style="border:2px solid #fed7aa;background:#fff8f0"><h2 style="font-size:14px;color:#c2410c;margin-bottom:12px">⚠️ Focus Words — Needs More Practice</h2>${hardest.map(w=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #fed7aa"><div><span style="font-weight:700;color:#374151">${w.w}</span>${w.custom?'<span class="badge" style="background:#fce7f3;color:#9d174d;margin-left:6px;font-size:10px">MY WORD</span>':''}<span class="muted" style="font-size:12px;margin-left:8px;display:block">${w.d.split(';')[0]}</span></div><span style="font-size:12px;color:#dc2626;font-weight:800;flex-shrink:0">${Math.round(w.i/(w.c+w.i)*100)}% miss</span></div>`).join('')}</div>`:''}
   <button class="btn btn-secondary" style="margin-top:8px" onclick="if(confirm('Reset all progress? This cannot be undone.')){progress=mkP();saveP(progress);render()}">Reset Progress</button>`}`;
 }
 
@@ -913,7 +910,7 @@ function renderParentDash(){
     ${[1,2,3].map(l=>{const s=lvlStats[l],t=s.c+s.i;return t>0?bar(['Level 1 — Easier','Level 2 — Medium','Level 3 — Hardest'][l-1],s.c,t):'';}).join('')}
     ${topMiss.length>0?`<div style="margin-top:14px"><p style="font-size:12px;font-weight:800;color:#374151;margin-bottom:8px">Most-missed words (highest miss rate first):</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-      ${topMiss.map(w=>`<div style="background:#f9fafb;border-radius:8px;padding:8px 10px"><div style="font-weight:800;font-size:13px;color:#0f2545">${w.w}</div><div style="font-size:10px;color:#9ca3af">${w.d.substring(0,30)}...</div><div style="font-size:12px;font-weight:800;color:${w.rate>=60?'#dc2626':'#d97706'};margin-top:2px">${w.rate}% miss rate</div></div>`).join('')}
+      ${topMiss.map(w=>`<div style="background:#f9fafb;border-radius:8px;padding:8px 10px"><div style="font-weight:800;font-size:13px;color:#0f2545">${w.w}</div><div style="font-size:10px;color:#9ca3af">${w.d.split(';')[0]}</div><div style="font-size:12px;font-weight:800;color:${w.rate>=60?'#dc2626':'#d97706'};margin-top:2px">${w.rate}% miss rate</div></div>`).join('')}
       </div></div>`:''}
     ${rootArr.length>0?`<div style="background:#f0fdf4;border-radius:10px;padding:10px 12px;margin-top:12px">
       <p style="font-size:12px;font-weight:800;color:#166534;margin-bottom:6px">🌿 Root word patterns in missed words:</p>
