@@ -559,7 +559,14 @@ function generateLearnedQuiz(){
     const choices=[r.meaning,...distractors].sort(()=>Math.random()-.5);
     items.push({type:'root',word:r.root.toUpperCase(),answer:r.meaning,choices,fullDef:r.meaning,tip:r.sentence,words:r.words,id:r.id});
   });
-  return items.sort(()=>Math.random()-.5).slice(0,30);
+  // Deprioritize words quizzed in the last 7 days
+  const WEEK=7*24*60*60*1000;const now=Date.now();
+  items.forEach(it=>{const h=progress.vh[it.id]||progress.rh[it.id];it._lastT=h&&h.t?h.t:0;});
+  const fresh=items.filter(it=>now-it._lastT>=WEEK);
+  const recent=items.filter(it=>now-it._lastT<WEEK);
+  fresh.sort(()=>Math.random()-.5);
+  recent.sort(()=>Math.random()-.5);
+  return[...fresh,...recent].slice(0,30);
 }
 
 function generateWrongWordsQuiz(){
