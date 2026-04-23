@@ -98,3 +98,160 @@ ject- | Latin | throw | project,reject,inject,trajectory,conjecture | The rocket
 lingu- | Latin | language, tongue | bilingual,linguistics,lingual,multilingual,linguist | The linguistics professor argued that language shapes the way its speakers perceive reality.
 micro- | Greek | small | microscope,microcosm,microbe,microphone,microscopic | The microcosm of village politics mirrored the tensions playing out on the national stage.
 mono- | Greek | one, single | monotone,monologue,monopoly,monochrome,monotonous | The tech giant's monopoly on the market stifled competition and drove up prices.
+a/an | Greek | not, without | amoral,atrophy,asymmetrical,anarchy,anesthetic | The country fell into anarchy after the government collapsed.
+ab/a | Latin | from, away, apart | abnegate,abortive,abrogate,abscond,absolve | The thief tried to abscond with the jewels before the police arrived.
+ad/a | Latin | to, toward | adhere,adjacent,adjunct,admonish,adroit | The teacher had to admonish the student for talking during the exam.
+ali/altr | Latin | another | alias,alienate,inalienable,altruism | Her altruism inspired the whole school to volunteer at the shelter.
+am/ami | Latin | love | amorous,amicable,amiable,amity | The two rival teams maintained an amity that surprised everyone.
+ambl/ambul | Latin | walk | amble,ambulatory,perambulator,somnambulist | The old man would amble through the park every morning at dawn.
+ante/ant | Latin | before | antecedent,antediluvian,antebellum,anterior,antiquated | The professor's antediluvian teaching methods frustrated the students.
+anti/ant | Greek | against, opposite | antidote,antipathy,antithesis,antacid,antagonist | Her cheerful attitude was the antithesis of his gloomy outlook.
+auto | Greek | self | autobiography,autocrat,autonomous | The small nation fought to become autonomous and govern itself.
+belli/bell | Latin | war | belligerent,bellicose,antebellum,rebellion | The bellicose leader seemed eager to start a conflict with every neighbor.
+bi | Latin | two | bicycle,bisect,bilateral,bilingual,biped | The two countries signed a bilateral agreement to reduce pollution.
+biblio | Greek | book | bible,bibliography,bibliophile | As a devoted bibliophile, she spent every weekend browsing used bookstores.
+burs | Latin | money, purse | reimburse,disburse,bursar | The company agreed to reimburse her for all travel expenses.
+cad/cas/cid | Latin | happen, fall | accident,cadence,cascade,deciduous | The cascade of water tumbled down the cliff into the pool below.
+cap/cip | Latin | head | captain,decapitate,capitulate,precipitous,recapitulate | Let me recapitulate the main points before we end the meeting.
+carn | Latin | flesh | carnal,carnage,carnival,carnivorous,incarnate | The carnivorous dinosaur exhibit was the most popular at the museum.
+ced/cess | Latin | yield, go | cede,precede,accede,recede,cessation | After months of fighting, both sides agreed to a cessation of hostilities.
+chrom | Greek | color | chrome,chromatic,monochrome | The photographer preferred monochrome images for their dramatic effect.
+cide | Latin | murder | suicide,homicide,regicide,patricide | The history book described the regicide that toppled the ancient dynasty.
+circum | Latin | around | circumference,circumlocution,circumnavigate,circumscribe,circumspect | The cautious diplomat was circumspect in every statement she made.
+clin/cliv | Latin | slope | incline,declivity,proclivity | His proclivity for procrastination made it hard to finish assignments on time.
+clud/clus/claus | Latin | shut, close | conclude,reclusive,claustrophobia,cloister,preclude | Her poor attendance could preclude her from graduating on time.
+co/com/con | Latin | with, together | coalesce,coerce,cogent,commensurate,conciliatory | The salary offered was not commensurate with the level of experience required.
+contra | Latin | against | controversy,incontrovertible,contravene,contradict | The evidence against the suspect was incontrovertible.
+cosmo/cosm | Greek | world | cosmopolitan,cosmos,microcosm,macrocosm | New York City is often described as a cosmopolitan hub of culture.
+crac/crat | Greek | rule, power | democracy,bureaucracy,theocracy,autocrat,aristocrat | The autocrat ruled the nation without tolerating any dissent.
+cresc/cret | Latin | grow | crescent,crescendo,accretion | The music built to a powerful crescendo that filled the entire auditorium.
+culp | Latin | blame, fault | culprit,culpable,inculpate,exculpate | New evidence helped exculpate the wrongly accused student.
+de | Latin | down, out, apart | debase,debilitate,declivity,decry,defamatory | The harsh winter debilitated the crops and left farmers struggling.
+dec | Latin | ten, tenth | decade,decimal,decathlon,decimate | The invasion threatened to decimate the population of the small village.
+di/diurn | Latin | day | diary,diurnal,quotidian | Owls are nocturnal, while hawks are diurnal hunters.
+dia | Greek | across | diagonal,diatribe,diaphanous | The senator launched into a lengthy diatribe against the proposed law.
+dis/dif/di | Latin | not, apart, away | disaffected,discern,discordant,disparage,disseminate | It is wrong to disparage someone for asking a question in class.
+doc/doct | Latin | teach | doctrine,docile,doctrinaire | The docile puppy followed every command without hesitation.
+dol | Latin | pain | condolence,doleful,dolorous,indolent | The indolent student refused to study and failed the exam.
+ego | Latin | self | ego,egoist,egocentric | His egocentric behavior made it difficult for him to work on group projects.
+en/em | Latin | in, into | encumber,endemic,ensconce,enthrall,embellish | The storyteller knew how to enthrall an audience with vivid details.
+err | Latin | wander | erratic,aberration,errant | The erratic weather made it impossible to plan outdoor activities.
+eu | Greek | well, good | eulogy,euphemism,euphony,euphoria | She delivered a moving eulogy at her grandfather's memorial service.
+ex/e | Latin | out, out of | exacerbate,exculpate,execrable,exonerate,expunge | The court voted to exonerate the defendant after new evidence emerged.
+fac/fic/fect/fy | Latin | make, do | factory,benefactor,fiction,magnify,feasible | The plan seemed feasible once the team reviewed the budget.
+fal/fals | Latin | deceive | false,infallible,fallacious | His argument was based on fallacious reasoning that fell apart under scrutiny.
+ferv | Latin | boil | fervent,fervid,effervescent | Her effervescent personality brightened every room she entered.
+fore | English | before | forecast,foreboding,forestall | A sense of foreboding crept over her as the sky darkened before the storm.
+graph/gram | Greek | writing | biography,bibliography,epigraph,grammar,epigram | The witty epigram at the start of the chapter set the tone for the essay.
+grav/griev | Latin | heavy | grave,gravity,aggravate,grieve,grievous | His rude comments only served to aggravate an already tense situation.
+habit/hibit | Latin | have, hold | habit,inhibit,cohabit,habitat | Stage fright can inhibit even the most talented performers.
+hap | English | by chance | happen,haphazard,hapless,mishap | The hapless traveler missed every connecting flight on his journey.
+helio/heli | Greek | sun | heliocentric,helium,heliotrope,aphelion | Copernicus proposed a heliocentric model with the sun at the center.
+hetero | Greek | other | heterosexual,heterogeneous,heterodox | The class was a heterogeneous mix of students from many different backgrounds.
+hol | Greek | whole | holocaust,catholic,holistic | The doctor took a holistic approach to treating both the mind and body.
+homo | Greek | same | homogenize,homogeneous,homonym | "Bat" is a homonym because it can mean a flying mammal or a piece of sports equipment.
+hydr | Greek | water | hydrant,hydrate,dehydration | Athletes must hydrate properly before, during, and after a competition.
+in/ig/il/im/ir | Latin | not | incorrigible,indefatigable,indelible,inexorable,impeccable | Her impeccable manners impressed everyone at the formal dinner.
+in/il/im/ir | Latin | in, on, into | inaugurate,incandescent,incarcerate,incarnate,imbue | The coach worked to imbue his players with a sense of discipline.
+inter | Latin | between, among | intercede,interject,interloper,intermediary,intermittent | The intermittent rain showers kept interrupting the baseball game.
+intra/intr | Latin | within | intrastate,intravenous,intramural,intrinsic | She had an intrinsic motivation to learn that no grade could measure.
+it/iter | Latin | go, between | transit,itinerant,reiterate,transitory | The itinerant musician traveled from town to town performing at local cafes.
+jour | French | day | journal,adjourn,sojourn | The committee voted to adjourn the meeting until the following week.
+jud | Latin | judge | judge,judicious,prejudice,adjudicate | A judicious use of study time helped her score well on every test.
+jur | Latin | swear, law | jury,abjure,adjure,conjure,perjure | The witness was warned that lying under oath constitutes perjury.
+lat | Latin | side | lateral,collateral,unilateral,bilateral,quadrilateral | The president made a unilateral decision without consulting the committee.
+lav/lau/lu | Latin | wash | lavatory,laundry,ablution,antediluvian | The morning ablution ritual helped him feel prepared for the day ahead.
+leg/lec/lex | Latin | read, speak | legible,lecture,lexicon | The doctor's handwriting was barely legible on the prescription.
+lig/lect | Latin | choose, gather | eligible,elect,select | Only students with a 3.5 GPA or higher were eligible for the scholarship.
+lig/li/ly | Latin | bind | ligament,oblige,religion,liable,liaison | She tore a ligament in her knee during the soccer match.
+liter | Latin | letter | literate,alliteration,literal | The poet used alliteration to create a musical quality in her verses.
+lith | Greek | stone | monolith,lithograph,megalith | The ancient megalith stood in the field, a mystery to archaeologists.
+lud/lus | Latin | play | ludicrous,allude,delusion,allusion,illusory | The villain's plan was so ludicrous that no one took the threat seriously.
+macro | Greek | great | macrocosm,macrobiotics | The classroom served as a macrocosm of the challenges found in society.
+mar | Latin | sea | submarine,marine,maritime | The coastal town had a long maritime history of fishing and shipbuilding.
+mater/matr | Latin | mother | maternal,matron,matrilineal | Her maternal instincts kicked in when she saw the lost child crying.
+medi | Latin | middle | intermediary,medieval,mediate | The counselor helped mediate the dispute between the two students.
+mega | Greek | great | megaphone,megalomania,megaton,megalith | The dictator's megalomania led him to build statues of himself everywhere.
+memor/memen | Latin | remember | memory,memento,memorabilia,memoir | She kept the ticket stub as a memento of her first concert.
+meter/metr/mens | Latin | measure | meter,thermometer,perimeter,metronome,commensurate | The pianist practiced with a metronome to keep perfect time.
+mis | English | wrong, bad, hate | misanthrope,misapprehension,misconstrue,misnomer | Calling it a "shortcut" was a misnomer since it actually took longer.
+moll | Latin | soft | mollify,emollient,mollusk | The teacher tried to mollify the upset student with kind words.
+mon/monit | Latin | warn | admonish,monitor,premonition | She had a strange premonition that something unexpected would happen.
+mor | Latin | custom, manner | moral,mores,morose | After losing the championship game, the team captain became morose.
+morph | Greek | shape | amorphous,anthropomorphic,metamorphosis,morphology | The caterpillar's metamorphosis into a butterfly amazed the young students.
+mov/mot/mob/mom | Latin | move | remove,motion,mobile,momentum,momentous | Graduation was a momentous occasion that the whole family celebrated.
+nat/nasc | Latin | born | native,nativity,natal,neonate,nascent | The nascent technology industry was just beginning to take shape in the region.
+nau/nav | Latin | ship, sailor | nautical,nauseous,navy,circumnavigate | Magellan's crew was the first to circumnavigate the entire globe.
+nihil | Latin | none, nothing | annihilation,nihilism | The philosopher's nihilism led him to question the meaning of everything.
+nox/nic/nec/noc | Latin | harm | obnoxious,noxious,pernicious,internecine,innocuous | The noxious fumes from the factory forced nearby residents to evacuate.
+numer | Latin | number | numeral,numerous,innumerable,enumerate | The night sky revealed innumerable stars stretching across the horizon.
+ob | Latin | against | obstruct,obdurate,obfuscate,obnoxious,obsequious | The obdurate negotiator refused to compromise on any point.
+oner | Latin | burden | onerous,onus,exonerate | The onerous workload left the students with little free time.
+palp | Latin | feel | palpable,palpitation | The tension in the room was palpable as the results were announced.
+pan | Greek | all | panorama,panacea,panegyric,pandemic,panoply | There is no panacea for the complex problems facing education today.
+pater/patr | Latin | father | paternal,paternity,patriot,expatriate,patrimony | The expatriate missed her home country but loved her new life abroad.
+pec | Latin | money | pecuniary,impecunious,peculation | The impecunious student worked two jobs to afford college tuition.
+pen | Latin | almost | peninsula,penultimate,penumbra | The penultimate chapter of the book contained the biggest plot twist.
+peri | Greek | around | perimeter,periphery,perihelion,peripatetic | The peripatetic teacher walked around the classroom while lecturing.
+pet | Latin | seek, go toward | petition,impetus,impetuous,petulant,centripetal | His impetuous decision to quit the team surprised all of his friends.
+phob | Greek | fear | phobia,claustrophobia,xenophobia | Her claustrophobia made it impossible for her to ride in elevators.
+plac | Latin | calm, please | placate,implacable,placid,complacent | The lake's placid surface reflected the mountains like a mirror.
+pot- | Latin | drink | potion,potable | The hikers needed to find a source of potable water before nightfall.
+pre | Latin | before | precede,precipitate,preclude,precocious,prescient | The precocious child was reading novels by the age of five.
+pro | Latin | ahead, forth | proclivity,procrastinator,profane,profuse,progenitor | She offered profuse apologies after accidentally knocking over the display.
+proto | Greek | first | prototype,protagonist,protocol | The engineer built a prototype to test the design before mass production.
+prox/prop | Latin | near | approximate,proximity,propinquity | The proximity of the library to the school made it easy to study after class.
+pseudo | Greek | false | pseudoscientific,pseudonym | The famous author published her early novels under a pseudonym.
+pyr | Greek | fire | pyre,pyrotechnics,pyromania | The pyrotechnics at the concert finale lit up the entire stadium.
+quad/quar/quat | Latin | four | quadrilateral,quadrant,quadruped,quarter,quarantine | The veterinarian explained that a horse is a quadruped with unique leg anatomy.
+ques/quer/quis/quir | Latin | question | quest,inquest,query,querulous,inquisitive | The querulous customer complained about every item on the menu.
+quie | Latin | quiet | disquiet,acquiesce,quiescent,requiem | After much debate, she decided to acquiesce to the group's decision.
+quint/quin | Latin | five | quintuplets,quintessence | The old bookshop was the quintessence of charm with its creaky floors and dusty shelves.
+radi/rami | Latin | branch | radius,radiate,radiant,eradicate,ramification | The committee discussed every ramification of the new policy before voting.
+reg | Latin | king, rule | regal,regent,interregnum | The queen's regal bearing commanded respect from everyone in the room.
+retro | Latin | backward | retrospective,retroactive,retrograde | In retrospect, she realized that the failure had taught her more than any success.
+rid/ris | Latin | laugh | ridiculous,deride,derision | The crowd began to deride the comedian after his jokes fell flat.
+rog | Latin | ask | interrogate,derogatory,abrogate,arrogate,arrogant | Making derogatory remarks about classmates is never acceptable.
+rud | Latin | rough, crude | rude,rudimentary | His rudimentary understanding of chemistry was not enough to pass the final.
+se | Latin | apart, away | separate,segregate,secede,sedition | The southern states voted to secede from the union before the Civil War.
+sed/sid | Latin | sit | sedate,sedentary,supersede,reside,assiduous | Her assiduous study habits earned her the top grade in every class.
+sem | Latin | seed, sow | seminar,seminal,disseminate | The internet makes it easy to disseminate information to a wide audience.
+sen | Latin | old | senior,senile,senescent | The senescent oak tree had stood in the town square for over three hundred years.
+sequ/secu | Latin | follow | sequence,sequel,subsequent,obsequious,consecutive | The obsequious assistant agreed with everything the boss said.
+sim/sem | Latin | similar, same | similar,verisimilitude,semblance,dissemble | The novel's verisimilitude made readers feel as though the events were real.
+sign | Latin | mark, sign | signal,designation,assignation | Her official designation as team captain came with new responsibilities.
+sin | Latin | curve | sinuous,insinuate | The sinuous river wound its way through the lush green valley.
+sol- | Latin | sun | solar,parasol,solarium,solstice | The summer solstice marks the longest day of the year.
+somn | Latin | sleep | insomnia,somnolent,somnambulist | The warm classroom made every student feel somnolent after lunch.
+son | Latin | sound | sonic,consonance,dissonance,assonance,sonorous | The pastor's sonorous voice echoed through the cathedral.
+soph | Greek | wisdom | philosopher,sophistry,sophisticated,sophomoric | The debater's sophistry sounded convincing but was full of logical errors.
+sper | Latin | hope | prosper,prosperous,despair,desperate | The town began to prosper after the new factory brought jobs to the area.
+spers/spar | Latin | scatter | disperse,aspersion,sparse,disparate | The police asked the crowd to disperse after the event ended.
+sub | Latin | under | subjugate,subliminal,subpoena,subterranean,subvert | The explorers discovered a subterranean cave system beneath the mountain.
+summ | Latin | highest | summit,summary,consummate | The climbers finally reached the summit after days of exhausting effort.
+super/sur | Latin | above | supercilious,supersede,superannuated,superfluous,surfeit | His supercilious attitude made his classmates reluctant to work with him.
+surge/surrect | Latin | rise | surge,resurgent,insurgent,insurrection | The resurgent team won five games in a row after a losing streak.
+syn/sym | Greek | together | synthesis,sympathy,synonym,synopsis,symbiosis | The symbiosis between the two species benefited both organisms equally.
+tacit/tic | Latin | silent | tacit,taciturn,reticent | The taciturn student rarely spoke in class but wrote brilliant essays.
+tend/tens/tent | Latin | stretch | intend,distend,tension,ostensible,contentious | The ostensible reason for the meeting was budget review, but other issues arose.
+term | Latin | end | terminal,terminus,terminate,interminable | The interminable lecture seemed to drag on for hours without a break.
+test | Latin | witness | testify,attest,testimonial,testament,detest | Her perfect score on the exam was a testament to her hard work.
+the | Greek | god | atheist,theology,apotheosis,theocracy | Winning the championship was the apotheosis of her athletic career.
+therm | Greek | heat | thermometer,thermal,thermonuclear,hypothermia | The hiker developed hypothermia after falling into the icy river.
+tim | Latin | fear, frightened | timid,intimidate,timorous | The timorous kitten hid under the bed during the thunderstorm.
+top | Greek | place | topic,topography,utopia | The explorer studied the topography of the region before planning the route.
+torp | Latin | stiff, numb | torpedo,torpid,torpor | The bear lay in a state of torpor throughout the long winter months.
+tox | Greek | poison | toxic,toxin,intoxication | The factory released toxic chemicals into the nearby stream.
+trans | Latin | across, over, through | transgress,transient,transitory,translucent,intransigent | The intransigent board members refused to consider any new proposals.
+trem/trep | Latin | shake | tremble,tremor,tremulous,trepidation,intrepid | She felt a wave of trepidation before stepping onto the stage.
+umbr | Latin | shadow | umbrella,umbrage,adumbrate,penumbra | He took umbrage at the suggestion that he had not done his share of the work.
+uni/un | Latin | one | unify,unilateral,unanimous | The jury reached a unanimous verdict after only two hours of deliberation.
+urb | Latin | city | urban,suburban,urbane | His urbane manner and polished speech impressed the interview panel.
+vac | Latin | empty | vacant,evacuate,vacuous | The vacuous expression on his face showed he had not been paying attention.
+val/vail | Latin | value, strength | valid,valor,ambivalent,convalescence,prevail | After surgery, her long convalescence required patience and determination.
+vert/vers | Latin | turn | avert,convert,revert,incontrovertible,versatile | She was a versatile musician who could play five different instruments.
+vict/vinc | Latin | conquer | victory,conviction,evict,evince,invincible | The team felt invincible after winning ten consecutive games.
+vid/vis | Latin | see | evident,vision,visage,supervise | It was evident from her expression that she had not expected the surprise.
+vil | Latin | base, mean | vile,vilify,revile | It is unfair to vilify someone based on rumors rather than facts.
+volv/volut | Latin | turn, roll | revolve,evolve,convoluted | The convoluted plot of the mystery novel kept readers guessing until the end.
+vor | Latin | eat | devour,carnivorous,omnivorous,voracious | The voracious reader finished three novels in a single weekend.
