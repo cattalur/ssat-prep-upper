@@ -195,7 +195,13 @@ const saveCR=r=>{
 };
 let progress=loadP(), customWords=loadC(), customRoots=loadCR();
 const allVocab=()=>[...BUILTIN_VOCAB,...customWords];
-const getDailyWords=()=>allVocab().map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(Date.now()-(h.t||0))/1e7}}).sort((a,b)=>b.score-a.score).slice(0,30);
+const getDailyWords=()=>{
+  const WEEK=7*24*60*60*1000,now=Date.now();
+  return allVocab()
+    .filter(w=>{const h=progress.vh[w.id];return !h||!h.t||now-h.t>=WEEK;})
+    .map(w=>{const h=progress.vh[w.id]||{c:0,i:0,t:0};return{...w,score:h.i/Math.max(1,h.c+h.i)*10+(now-(h.t||0))/1e7}})
+    .sort((a,b)=>b.score-a.score).slice(0,30);
+};
 const today=()=>new Date().toISOString().slice(0,10);
 const addXP=xp=>{const t=today(),prev=progress.lastDate,yest=new Date();yest.setDate(yest.getDate()-1);const ys=yest.toISOString().slice(0,10);let s=progress.streak;if(prev!==t)s=prev===ys?s+1:1;progress={...progress,xp:progress.xp+xp,streak:s,lastDate:t};saveP(progress)};
 
@@ -232,7 +238,7 @@ function renderHome(){
   <div class="stat-box"><div style="font-size:20px">📝</div><div class="stat-val">${totalWords}</div><div class="stat-lbl">Word Bank</div></div>
 </div>
 <h2 style="font-size:15px;margin-bottom:10px">Start Practicing</h2>
-<button class="quick-btn" style="border-color:#a78bfa;background:#f5f3ff" onclick="mqQuestions=[];mqDone=false;go('myquiz')"><div><div style="font-weight:800;font-size:14px;color:#5b21b6">🧠 My Quiz</div><div class="muted" style="font-size:12px;margin-top:2px">${(progress.learned?progress.learned.vocabIds.length:0)+(progress.learned?progress.learned.rootIds.length:0)} learned items · SSAT-style multiple choice</div></div><span style="font-size:18px">→</span></button>
+<button class="quick-btn" style="border-color:#a78bfa;background:#f5f3ff" onclick="mqQuestions=[];mqDone=false;mqEmpty=null;go('myquiz')"><div><div style="font-weight:800;font-size:14px;color:#5b21b6">🧠 My Quiz</div><div class="muted" style="font-size:12px;margin-top:2px">${(progress.learned?progress.learned.vocabIds.length:0)+(progress.learned?progress.learned.rootIds.length:0)} learned items · SSAT-style multiple choice</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#6ee7b7;background:#ecfdf5" onclick="go('mywords')"><div><div style="font-weight:800;font-size:14px;color:#065f46">✅ My Words</div><div class="muted" style="font-size:12px;margin-top:2px">Mark words you know · build your quiz pool</div></div><span style="font-size:18px">→</span></button>
 <button class="quick-btn" style="border-color:#bfdbfe;background:#eff6ff" onclick="startVocab()"><div><div style="font-weight:800;font-size:14px;color:#1e3a8a">📖 Daily Vocabulary</div><div class="muted" style="font-size:12px;margin-top:2px">30 smart-picked words · ${totalWords} word bank · spaced repetition</div></div><span style="font-size:18px">→</span></button>
 ${getMissedWords().length>=4?`<button class="quick-btn" style="border-color:#fca5a5;background:#fef2f2" onclick="startWeeklyReview()"><div><div style="font-weight:800;font-size:14px;color:#991b1b">🔄 Weekly Review</div><div class="muted" style="font-size:12px;margin-top:2px">${getMissedWords().length} missed words · quiz yourself on trouble spots</div></div><span style="font-size:18px">→</span></button>`:''}
@@ -260,7 +266,7 @@ function advanceVocab(override){
   const r=override||vMatchResult;
   const w=dailyWords[vIdx];
   const h=progress.vh[w.id]||{c:0,i:0,t:0};
-  progress.vh[w.id]={c:h.c+(r!=='missed'?1:0),i:h.i+(r==='missed'?1:0),t:Date.now()};
+  progress.vh[w.id]={c:h.c+(r!=='missed'?1:0),i:h.i+(r==='missed'?1:0),t:Date.now(),lastWrong:r==='missed'};
   addXP(r==='great'?10:r==='close'?5:2);
   vResults.push({w:w.w,r});
   if(vIdx+1>=dailyWords.length)vDone=true;
@@ -271,6 +277,12 @@ function startVocab(){dailyWords=getDailyWords();vIdx=0;vInput='';vChecked=false
 function renderVocab(){
   if(vDone){
     return `<div class="done-screen"><div style="font-size:60px">🎉</div><h1 style="margin:12px 0 6px">Session Complete!</h1><p class="muted" style="margin-bottom:24px">You reviewed ${dailyWords.length} words today.</p>${vResults.map(r=>`<div class="result-row"><span style="font-weight:700">${r.w}</span><span style="font-size:13px;color:${r.r==='great'?'#16a34a':r.r==='close'?'#d97706':'#dc2626'}">${r.r==='great'?'✓ Great!':r.r==='close'?'~ Close':'✗ Missed'}</span></div>`).join('')}<button class="btn btn-primary" style="margin-top:16px" onclick="go('home')">Back to Home</button></div>`;
+  }
+  if(dailyWords.length===0){
+    if(vResults.length===0){dailyWords=getDailyWords();}
+    if(dailyWords.length===0){
+      return`<div class="done-screen"><div style="font-size:60px">📅</div><h1 style="margin:12px 0 6px">All Caught Up!</h1><p class="muted" style="margin-bottom:24px">You've practiced every vocab word in the last 7 days. Words become available again as they age out — try the analogies, root words, or My Quiz in the meantime.</p><button class="btn btn-primary" onclick="go('home')">Back to Home</button></div>`;
+    }
   }
   const w=dailyWords[vIdx],isC=w.id&&String(w.id).startsWith('c'),pct=vIdx/dailyWords.length*100;
   const bannerColor=vMatchResult==='great'?'#dcfce7':vMatchResult==='close'?'#fef9c3':'#fee2e2';
@@ -559,18 +571,17 @@ function generateLearnedQuiz(){
     const choices=[r.meaning,...distractors].sort(()=>Math.random()-.5);
     items.push({type:'root',word:r.root.toUpperCase(),answer:r.meaning,choices,fullDef:r.meaning,tip:r.sentence,words:r.words,id:r.id,lvl:2});
   });
-  // Deprioritize words quizzed in the last 7 days
+  // Strictly exclude words quizzed in the last 7 days
   const WEEK=7*24*60*60*1000;const now=Date.now();
   items.forEach(it=>{const h=progress.vh[it.id]||progress.rh[it.id];it._lastT=h&&h.t?h.t:0;});
-  const fresh=items.filter(it=>now-it._lastT>=WEEK);
-  const recent=items.filter(it=>now-it._lastT<WEEK);
+  const fresh=items.filter(it=>!it._lastT||now-it._lastT>=WEEK);
   fresh.sort(()=>Math.random()-.5);
-  recent.sort(()=>Math.random()-.5);
-  return[...fresh,...recent].slice(0,30);
+  return fresh.slice(0,30);
 }
 
 function generateWrongWordsQuiz(){
-  const missed=getMissedWords();
+  const WEEK=7*24*60*60*1000,now=Date.now();
+  const missed=getMissedWords().filter(w=>!w.t||now-w.t>=WEEK);
   const allDefs=allVocab().filter(w=>w.d);
   const items=[];const seen=new Set();
   missed.forEach(w=>{
@@ -586,13 +597,17 @@ function generateWrongWordsQuiz(){
 }
 
 function startWrongWordsQuiz(){
-  mqQuestions=generateWrongWordsQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='wrong';go('myquiz');
+  const qs=generateWrongWordsQuiz();
+  if(qs.length===0){mqEmpty='wrong';mqQuestions=[];mqDone=false;go('myquiz');return;}
+  mqQuestions=qs;mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='wrong';mqEmpty=null;go('myquiz');
 }
 
 
-let mqMode='learned';
+let mqMode='learned',mqEmpty=null;
 function startMyQuiz(){
-  mqQuestions=generateLearnedQuiz();mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='learned';go('myquiz');
+  const qs=generateLearnedQuiz();
+  if(qs.length===0){mqEmpty='learned';mqQuestions=[];mqDone=false;go('myquiz');return;}
+  mqQuestions=qs;mqIdx=0;mqChosen=null;mqScore={c:0,t:0};mqDone=false;mqResults=[];mqMode='learned';mqEmpty=null;go('myquiz');
 }
 
 function answerMyQuiz(i){
@@ -603,7 +618,7 @@ function answerMyQuiz(i){
   mqScore={c:mqScore.c+(correct?1:0),t:mqScore.t+1};
   if(q.type==='vocab'){
     const h=progress.vh[q.id]||{c:0,i:0,t:0};
-    progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now()};
+    progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now(),lastWrong:!correct};
   }
   addXP(correct?10:2);
   mqResults.push({word:q.word,type:q.type,correct,lvl:q.lvl||2});
@@ -621,11 +636,17 @@ let wrQuestions=[],wrIdx=0,wrChosen=null,wrScore={c:0,t:0},wrDone=false,wrResult
 
 function getMissedWords(){
   const all=allVocab();
-  return all.filter(w=>{const h=progress.vh[w.id];return h&&h.i>0;}).map(w=>({...w,...progress.vh[w.id],missRate:progress.vh[w.id].i/(progress.vh[w.id].c+progress.vh[w.id].i)})).sort((a,b)=>b.missRate-a.missRate);
+  return all.filter(w=>{
+    const h=progress.vh[w.id];
+    if(!h)return false;
+    // lastWrong undefined → legacy entry; treat as missed if i>0
+    return h.lastWrong===undefined?h.i>0:h.lastWrong===true;
+  }).map(w=>({...w,...progress.vh[w.id],missRate:progress.vh[w.id].i/(progress.vh[w.id].c+progress.vh[w.id].i)})).sort((a,b)=>b.missRate-a.missRate);
 }
 
 function startWeeklyReview(){
-  const missed=getMissedWords();
+  const WEEK=7*24*60*60*1000,now=Date.now();
+  const missed=getMissedWords().filter(w=>!w.t||now-w.t>=WEEK);
   const allDefs=allVocab().filter(w=>w.d);
   const items=[];const seen=new Set();
   missed.forEach(w=>{
@@ -647,7 +668,7 @@ function answerWeeklyReview(i){
   const correct=q.choices[i]===q.answer;
   wrScore={c:wrScore.c+(correct?1:0),t:wrScore.t+1};
   const h=progress.vh[q.id]||{c:0,i:0,t:0};
-  progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now()};
+  progress.vh[q.id]={c:h.c+(correct?1:0),i:h.i+(correct?0:1),t:Date.now(),lastWrong:!correct};
   addXP(correct?10:2);
   wrResults.push({word:q.word,correct,missRate:q.missRate});
   render();
@@ -661,8 +682,12 @@ function nextWeeklyReview(){
 
 function renderWeeklyReview(){
   if(wrQuestions.length===0&&!wrDone){
+    const totalMissed=getMissedWords().length;
+    const msg=totalMissed>0
+      ?`You've reviewed all ${totalMissed} of your missed word${totalMissed!==1?'s':''} in the last 7 days. They'll be available to review again as they age out.`
+      :`No missed words to review yet. Keep practicing!`;
     return`<h1 style="margin-bottom:4px">🔄 Weekly Review</h1>
-    <p class="muted" style="margin-bottom:18px">Not enough missed words yet. Keep practicing!</p>
+    <p class="muted" style="margin-bottom:18px">${msg}</p>
     <button class="btn btn-primary" onclick="go('home')">Back to Home</button>`;
   }
   if(wrDone){
@@ -703,8 +728,14 @@ function renderMyQuiz(){
   const wrongCount=getMissedWords().length;
   if(mqQuestions.length===0&&!mqDone){
     const canQuiz=totalLearned>=4;
+    const emptyBanner=mqEmpty==='learned'
+      ?`<div style="background:#fef3c7;border:2px solid #fcd34d;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#854d0e;font-weight:700">📅 You've quizzed every learned word in the last 7 days. Mark more words as learned, or come back later as words age out.</div>`
+      :mqEmpty==='wrong'
+      ?`<div style="background:#fef3c7;border:2px solid #fcd34d;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#854d0e;font-weight:700">📅 You've already reviewed all your wrong words in the last 7 days. They'll be available again as they age out.</div>`
+      :'';
     return`<h1 style="margin-bottom:4px">🧠 My Quiz</h1>
     <p class="muted" style="margin-bottom:18px">Test yourself on words and roots you've marked as learned!</p>
+    ${emptyBanner}
     <div class="card" style="text-align:center;padding:24px">
       <div style="font-size:48px;margin-bottom:12px">${canQuiz?'🚀':'📝'}</div>
       <div style="font-size:20px;font-weight:900;color:#0f2545;margin-bottom:4px">${totalLearned} items learned</div>
